@@ -111,6 +111,7 @@
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="amount" destination="Z2r-VV-M9Y" id="x5t-uN-My0"/>
+                <outlet property="delete" destination="8Bc-UG-wmm" id="fzg-24-CAo"/>
                 <outlet property="label" destination="Fvi-Aa-mlF" id="6zn-t4-LIb"/>
                 <outlet property="words" destination="xuN-cO-jZ8" id="tXe-el-PqZ"/>
             </connections>

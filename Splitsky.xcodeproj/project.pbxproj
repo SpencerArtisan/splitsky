@@ -18,6 +18,7 @@
 		977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235A1D5DE9F00054F075 /* PaymentRepository.swift */; };
 		977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977F235C1D5E38F10054F075 /* PaymentType.xib */; };
 		977F235F1D5E54C10054F075 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235E1D5E54C10054F075 /* Modal.swift */; };
+		97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A315FE1D69A93600A2A28D /* AllListsController.swift */; };
 		97A53F711D16A8B800BED436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F701D16A8B800BED436 /* AppDelegate.swift */; };
 		97A53F731D16A8B800BED436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F721D16A8B800BED436 /* ViewController.swift */; };
 		97A53F761D16A8B800BED436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A53F741D16A8B800BED436 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		977F235A1D5DE9F00054F075 /* PaymentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
 		977F235C1D5E38F10054F075 /* PaymentType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentType.xib; sourceTree = "<group>"; };
 		977F235E1D5E54C10054F075 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		97A315FE1D69A93600A2A28D /* AllListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsController.swift; sourceTree = "<group>"; };
 		97A53F6D1D16A8B800BED436 /* Splitsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splitsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A53F701D16A8B800BED436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97A53F721D16A8B800BED436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				977F23581D5DE8670054F075 /* Payments.plist */,
 				977F235A1D5DE9F00054F075 /* PaymentRepository.swift */,
 				977F235C1D5E38F10054F075 /* PaymentType.xib */,
+				97A315FE1D69A93600A2A28D /* AllListsController.swift */,
 			);
 			name = Splitsky;
 			path = splitsky;
@@ -302,6 +305,7 @@
 				97A53F731D16A8B800BED436 /* ViewController.swift in Sources */,
 				97484F641D5DAC0A0056912B /* Payment.swift in Sources */,
 				972719721D5BB49800149251 /* DetailController.swift in Sources */,
+				97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */,
 				97A53F711D16A8B800BED436 /* AppDelegate.swift in Sources */,
 				97484F611D5DA1050056912B /* HeaderCell.swift in Sources */,
 				977F235F1D5E54C10054F075 /* Modal.swift in Sources */,

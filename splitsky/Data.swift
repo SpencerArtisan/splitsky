@@ -12,6 +12,15 @@ class Data {
     private static var _payments = [String:[Payment]]()
     private static var _listName: String = ""
     
+    static func newList() {
+        var candidateSuffix = 1
+        while _payments.keys.contains("List \(candidateSuffix)") {
+            candidateSuffix = candidateSuffix + 1
+        }
+        _payments["List \(candidateSuffix)"] = [Payment]()
+        setList("List \(candidateSuffix)")
+    }
+    
     static func set(payments: [String:[Payment]]) {
         _payments = payments
         _listName = payments.first!.0
@@ -19,6 +28,14 @@ class Data {
     
     static func setList(name: String) {
         _listName = name
+    }
+    
+    static func listCount() -> Int {
+        return _payments.count
+    }
+    
+    static func listName() -> String {
+        return _listName
     }
     
     static func paymentCount() -> Int {
@@ -41,6 +58,11 @@ class Data {
     static func removePayment(index: Int) {
         _payments[_listName]!.removeAtIndex(index)
         PaymentRepository.save(_payments)
+    }
+    
+    static func removeList(name: String) {
+            _payments.removeValueForKey(name)
+         PaymentRepository.save(_payments)
     }
     
     static func iPaidTotal() -> Float {

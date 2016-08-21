@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var iSettledButton: UIButton!
     @IBOutlet weak var theySettledButton: UIButton!
     
+    @IBOutlet weak var listName: UILabel!
+    
     let SPACE = " \u{200c}"
 
     @IBAction func onDot(sender: AnyObject) {
@@ -91,6 +93,12 @@ class ViewController: UIViewController {
         addPayment(amount(), type: Type.theySettled)
     }
     
+    @IBAction func onNewList(sender: AnyObject) {
+        Data.newList()
+        update()
+    }
+    
+    
     private func addPayment(amount: Float, type: Type) {
         if (amount > 0) {
             let payment = Payment(amount: amount, type: type, label: "")
@@ -101,6 +109,11 @@ class ViewController: UIViewController {
     }
     
     private func update() {
+        if Data.listCount() > 1 {
+            listName.text = Data.listName()
+        } else {
+            listName.text = ""
+        }
         youPaidTotal.text = toMoney(Data.iPaidTotal())
         theyPaidTotal.text = toMoney(Data.theyPaidTotal())
         iSettledTotal.text = toMoney(Data.iSettledTotal())

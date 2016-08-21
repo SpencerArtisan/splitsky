@@ -14,7 +14,7 @@ class PaymentCell: UITableViewCell {
 
     @IBOutlet weak var words: UILabel!
     @IBOutlet weak var amount: UILabel!
-
+    @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var label: UIButton!
     
     @IBAction func onLabel(sender: AnyObject) {
