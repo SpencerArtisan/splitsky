@@ -12,8 +12,9 @@ class PaymentCell: UITableViewCell {
     var deleteCallback: (() -> ())?
     var labelCallback: (() -> ())?
 
+    @IBOutlet weak var words: UILabel!
     @IBOutlet weak var amount: UILabel!
-    @IBOutlet weak var iOweThem: UILabel!
+
     @IBOutlet weak var label: UIButton!
     
     @IBAction func onLabel(sender: AnyObject) {

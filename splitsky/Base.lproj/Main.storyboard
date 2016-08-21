@@ -198,7 +198,7 @@
                                     <constraint firstAttribute="width" constant="101" id="qri-9f-0gh"/>
                                     <constraint firstAttribute="height" constant="130" id="rIj-Vi-GLn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.2040451831" green="0.21965751259999999" blue="0.058339536999999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -213,28 +213,6 @@
                                     <action selector="onClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLY-hf-MgQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ndN-Br-27c">
-                                <rect key="frame" x="282" y="262" width="93.5" height="92"/>
-                                <color key="backgroundColor" red="0.24433688219999999" green="0.47737748899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="lba-4x-Fxy"/>
-                                    <constraint firstAttribute="height" constant="130" id="od3-Bq-iZg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <state key="normal" title="List">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.2040451831" green="0.21965751259999999" blue="0.058339536999999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lba-4x-Fxy"/>
-                                        <exclude reference="od3-Bq-iZg"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="boc-po-orv" kind="show" id="7jn-ON-mdP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0HF-TW-xeJ">
                                 <rect key="frame" x="282" y="355" width="93" height="92.5"/>
                                 <color key="backgroundColor" red="0.24433688219999999" green="0.47737748899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -242,8 +220,8 @@
                                     <constraint firstAttribute="width" constant="101" id="Sf4-UV-7RF"/>
                                     <constraint firstAttribute="height" constant="130" id="nCM-pM-EFk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <state key="normal" title="?">
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <state key="normal" title="Detail">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.2040451831" green="0.21965751259999999" blue="0.058339536999999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -253,6 +231,9 @@
                                         <exclude reference="nCM-pM-EFk"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="boc-po-orv" kind="show" id="Udo-mV-1g5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Zt2-ro-Kmw">
                                 <rect key="frame" x="282" y="168" width="93" height="92.5"/>
@@ -261,8 +242,8 @@
                                     <constraint firstAttribute="width" constant="101" id="2zC-AK-y0B"/>
                                     <constraint firstAttribute="height" constant="130" id="hJ8-4d-f23"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <state key="normal" title="?">
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <state key="normal" title="New">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.2040451831" green="0.21965751259999999" blue="0.058339536999999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -275,7 +256,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngd-3C-xSe" userLabel="owings">
                                 <rect key="frame" x="0.0" y="633" width="375" height="34"/>
-                                <color key="backgroundColor" red="0.71028645833333326" green="0.35536066475175243" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Dd4-Pi-WDF"/>
                                 </constraints>
@@ -295,7 +276,7 @@
                             </button>
                             <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ld7-gi-fyB" userLabel="theyPaid">
                                 <rect key="frame" x="188" y="449" width="187" height="91"/>
-                                <color key="backgroundColor" red="0.71028645833333326" green="0.35536066475175243" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50030612379999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="16"/>
                                 <state key="normal" title="They Paid"/>
@@ -308,17 +289,17 @@
                                 <color key="backgroundColor" red="0.73552001420000002" green="0.79346196339999997" blue="0.2176424019" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="16"/>
-                                <state key="normal" title="I Settled Up"/>
+                                <state key="normal" title="I Settled"/>
                                 <connections>
                                     <action selector="onISettleUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15F-PI-xs9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="02j-iD-q5a" userLabel="theySettleUp">
                                 <rect key="frame" x="188" y="541" width="187" height="91"/>
-                                <color key="backgroundColor" red="0.48557402296064628" green="0.52272727272727271" blue="0.13883279794458864" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.73552001420000002" green="0.79346196339999997" blue="0.2176424019" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="16"/>
-                                <state key="normal" title="They Settled Up"/>
+                                <state key="normal" title="They Settled"/>
                                 <connections>
                                     <action selector="onTheySettleUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1XU-Gc-STG"/>
                                 </connections>
@@ -359,6 +340,25 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ndN-Br-27c">
+                                <rect key="frame" x="282" y="262" width="93.5" height="92"/>
+                                <color key="backgroundColor" red="0.24433688219999999" green="0.47737748899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="lba-4x-Fxy"/>
+                                    <constraint firstAttribute="height" constant="130" id="od3-Bq-iZg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <state key="normal" title="All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.2040451831" green="0.21965751259999999" blue="0.058339536999999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lba-4x-Fxy"/>
+                                        <exclude reference="od3-Bq-iZg"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

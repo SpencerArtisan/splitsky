@@ -110,10 +110,8 @@ class ViewController: UIViewController {
         
         if (abs(totalOwingsAmount) < 0.01) {
             totalOwings.text = "We're Even!"
-            totalOwings.backgroundColor = UIColor.blackColor()
         } else {
             let prefix = totalOwingsAmount < 0 ? "I Owe Them" : "They Owe Me"
-            totalOwings.backgroundColor = totalOwingsAmount < 0 ? iSettledButton.backgroundColor : theySettledButton.backgroundColor
             totalOwings.text = prefix + " " + toMoney(abs(totalOwingsAmount))
         }
     }
@@ -160,12 +158,6 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let vc = segue.destinationViewController as! DetailController
-        vc.theySettledColor = theySettledButton.backgroundColor!
-        vc.iSettledColor = iSettledButton.backgroundColor!
-        vc.theyPaidColor = theyPaidButton.backgroundColor!
-        vc.iPaidColor = iPaidButton.backgroundColor!
-        
         navigationController!.setNavigationBarHidden(false, animated: false)
     }
 }

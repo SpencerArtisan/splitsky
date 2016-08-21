@@ -10,10 +10,6 @@ import UIKit
 
 class DetailController: UITableViewController {
     let SPACE = "  \u{200c}"
-    var theySettledColor: UIColor = UIColor.blackColor()
-    var iSettledColor: UIColor = UIColor.blackColor()
-    var theyPaidColor: UIColor = UIColor.blackColor()
-    var iPaidColor: UIColor = UIColor.blackColor()
     var labelColor: UIColor?
     var typeModal: Modal?
     
@@ -52,75 +48,58 @@ class DetailController: UITableViewController {
     
     private func addLabel(name: String) {
         activePayment!._label = name
-        PaymentRepository.save(Data.payments())
+        PaymentRepository.save(Data.allPayments())
         tableView.reloadData()
         self.typeModal!.slideDownToBottom(self.view)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.paymentCount() + 1
+        return Data.paymentCount()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("HeaderCell", forIndexPath: indexPath)
-            cell.separatorInset = UIEdgeInsetsZero
-            cell.backgroundColor = UIColor.blackColor()
-            
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath) as! PaymentCell
-            let payment = Data.payments()[indexPath.row - 1]
-            
-            if labelColor == nil {
-                labelColor = cell.label.backgroundColor
-            }
-            
-            cell.deleteCallback = {
-                Data.removePayment(indexPath.row - 1)
-                tableView.reloadData()
-            }
-            
-            cell.labelCallback = {
-                self.activePayment = payment
-                self.typeModal!.slideUpFromBottom(self.view)
-            }
-            
-            if payment._type == Type.theyPaid || payment._type == Type.theySettled {
-                cell.iOweThem.text = toMoney(payment._amount) + SPACE
-                cell.iOweThem.backgroundColor = payment._type == Type.theySettled ? theySettledColor : theyPaidColor
-                //cell.label.hidden = payment._type == Type.theySettled
-                cell.amount.backgroundColor = UIColor.blackColor()
-                cell.amount.text = ""
-            } else {
-                cell.amount.text = toMoney(payment._amount) + SPACE
-                cell.amount.backgroundColor = payment._type == Type.iSettled ? iSettledColor : iPaidColor
-                //cell.label.hidden = payment._type == Type.iSettled
-                cell.iOweThem.backgroundColor = UIColor.blackColor()
-                cell.iOweThem.text = ""
-            }
-            
-            if payment._type == Type.iSettled {
-                cell.label.setTitle("", forState: UIControlState.Normal)
-                cell.label.setImage(UIImage(named: "MoneyRight"), forState: UIControlState.Normal)
-                cell.label.backgroundColor = UIColor.blackColor()
-            } else if payment._type == Type.theySettled {
-                cell.label.setTitle("", forState: UIControlState.Normal)
-                cell.label.setImage(UIImage(named: "MoneyLeft"), forState: UIControlState.Normal)
-                cell.label.backgroundColor = UIColor.blackColor()
-            } else if payment._label != "" {
-                cell.label.setTitle("", forState: UIControlState.Normal)
-                cell.label.setImage(UIImage(named: payment._label + "Small"), forState: UIControlState.Normal)
-                cell.label.backgroundColor = UIColor.blackColor()
-            } else if labelColor != nil {
-                cell.label.setTitle("Label", forState: UIControlState.Normal)
-                cell.label.backgroundColor = labelColor!
-            }
-            cell.separatorInset = UIEdgeInsetsZero
-            cell.backgroundColor = UIColor.blackColor()
-            
-            return cell
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath) as! PaymentCell
+        let payment = Data.payments()[indexPath.row]
+        
+        if labelColor == nil {
+            labelColor = cell.label.backgroundColor
         }
+        
+        cell.deleteCallback = {
+            Data.removePayment(indexPath.row)
+            tableView.reloadData()
+        }
+        
+        cell.labelCallback = {
+            self.activePayment = payment
+            self.typeModal!.slideUpFromBottom(self.view)
+        }
+        
+        if payment._type == Type.theyPaid {
+            cell.words.text = "They paid"
+        } else if payment._type == Type.iPaid {
+            cell.words.text = "I paid"
+        } else if payment._type == Type.iSettled {
+            cell.words.text = "I settled"
+        } else if payment._type == Type.theySettled {
+            cell.words.text = "They settled"
+        }
+        cell.amount.text = toMoney(payment._amount) + SPACE
+        cell.label.hidden = payment._type == Type.theySettled || payment._type == Type.iSettled
+        
+        if payment._label != "" {
+            cell.label.setTitle("", forState: UIControlState.Normal)
+            cell.label.setImage(UIImage(named: payment._label + "Small"), forState: UIControlState.Normal)
+            cell.label.backgroundColor = UIColor.blackColor()
+        } else if labelColor != nil {
+            cell.label.setTitle("Label", forState: UIControlState.Normal)
+            cell.label.backgroundColor = labelColor!
+        }
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.backgroundColor = UIColor.blackColor()
+        
+        return cell
     }
     
     private func toMoney(amount: Float) -> String  {

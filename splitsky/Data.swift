@@ -9,27 +9,37 @@
 import Foundation
 
 class Data {
-    private static var _payments = [Payment]()
+    private static var _payments = [String:[Payment]]()
+    private static var _listName: String = ""
     
-    static func set(payments: [Payment]) {
+    static func set(payments: [String:[Payment]]) {
         _payments = payments
+        _listName = payments.first!.0
+    }
+    
+    static func setList(name: String) {
+        _listName = name
     }
     
     static func paymentCount() -> Int {
-        return _payments.count
+        return _payments[_listName]!.count
     }
     
     static func payments() -> [Payment] {
+        return _payments[_listName]!
+    }
+    
+    static func allPayments() -> [String: [Payment]] {
         return _payments
     }
     
     static func addPayment(payment: Payment) {
-        _payments.append(payment)
+        _payments[_listName]!.append(payment)
         PaymentRepository.save(_payments)
     }
     
     static func removePayment(index: Int) {
-        _payments.removeAtIndex(index)
+        _payments[_listName]!.removeAtIndex(index)
         PaymentRepository.save(_payments)
     }
     
@@ -50,7 +60,7 @@ class Data {
     }
     
     private static func sum(type: Type) -> Float {
-        return _payments.filter({$0._type == type}).reduce(0, combine: { $0 + $1._amount } )
+        return _payments[_listName]!.filter({$0._type == type}).reduce(0, combine: { $0 + $1._amount } )
     }
     
     static func totalOwings() -> Float {

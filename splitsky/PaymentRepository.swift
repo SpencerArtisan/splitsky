@@ -8,22 +8,56 @@
 
 import Foundation
 
-class PaymentRepository {
-    static func load() -> [Payment] {
-        let props = properties()
-        let paymentCodes: [String] = props.valueForKey("Payments") as! [String]
-        return paymentCodes.map {decode($0)}
+extension Dictionary {
+    init(_ pairs: [Element]) {
+        self.init()
+        for (k, v) in pairs {
+            self[k] = v
+        }
     }
     
-    static func save(payments: [Payment]) {
-        let encodedPayments = payments.map {payment in encode(payment)}
+    func mapPairs<OutKey: Hashable, OutValue>(@noescape transform: Element throws -> (OutKey, OutValue)) rethrows -> [OutKey: OutValue] {
+        return Dictionary<OutKey, OutValue>(try map(transform))
+    }
+    
+    func filterPairs(@noescape includeElement: Element throws -> Bool) rethrows -> [Key: Value] {
+        return Dictionary(try filter(includeElement))
+    }
+}
+
+
+class PaymentRepository {
+    static func load() -> [String:[Payment]] {
+        let props = properties()
+        var payments: [String: [String]]
+        let allPayments = props.valueForKey("AllPayments")
+        if allPayments == nil {
+            payments = [String:[String]]()
+            payments["List 1"] = [String]()
+        } else {
+            payments = allPayments as! [String: [String]]
+        }
+        
+        return payments.mapPairs {(name, payments) in (name, decode(payments))}
+    }
+    
+    static func save(payments: [String:[Payment]]) {
+        let encodedPayments = payments.mapPairs { (name, payments) in (name, encode(payments)) }
         let props: NSMutableDictionary = NSMutableDictionary()
-        props.setValue(encodedPayments, forKey: "Payments")
+        props.setValue(encodedPayments, forKey: "AllPayments")
         props.writeToFile(path(), atomically: true)
+    }
+    
+    private static func encode(payments: [Payment]) -> [String] {
+        return payments.map { encode($0) }
     }
     
     private static func encode(payment: Payment) -> String {
         return "\(payment._amount):\(payment._type.toCode()):\(payment._label)"
+    }
+    
+    private static func decode(payments: [String]) -> [Payment] {
+        return payments.map {decode($0)}
     }
     
     private static func decode(code: String) -> Payment {
