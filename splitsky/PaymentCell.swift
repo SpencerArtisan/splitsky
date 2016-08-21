@@ -11,6 +11,7 @@ import UIKit
 class PaymentCell: UITableViewCell {
     var deleteCallback: (() -> ())?
     var labelCallback: (() -> ())?
+    var wordsCallback: (() -> ())?
 
     @IBOutlet weak var words: UILabel!
     @IBOutlet weak var amount: UILabel!

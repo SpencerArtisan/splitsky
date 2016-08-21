@@ -43,6 +43,14 @@ class AllListsController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let allPayments = Data.allPayments()
+        let names = allPayments.keys.sort()
+        let name = names[indexPath.row]
+        Data.setList(name)
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     private func toMoney(amount: Float) -> String  {
         return (NSString(format: "%.2f", amount) as String)
     }
