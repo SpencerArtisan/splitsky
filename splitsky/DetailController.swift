@@ -84,7 +84,7 @@ class DetailController: UITableViewController {
         } else if payment._type == Type.theySettled {
             cell.words.text = "They settled"
         }
-        cell.amount.text = toMoney(payment._amount) + SPACE
+        cell.amount.text = Util.toMoney(payment._amount) + SPACE
         cell.label.hidden = payment._type == Type.theySettled || payment._type == Type.iSettled
         
         if payment._label != "" {
@@ -99,9 +99,5 @@ class DetailController: UITableViewController {
         cell.backgroundColor = UIColor.blackColor()
         
         return cell
-    }
-    
-    private func toMoney(amount: Float) -> String  {
-        return (NSString(format: "%.2f", amount) as String)
     }
 }

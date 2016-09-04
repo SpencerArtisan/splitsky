@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var theySettledButton: UIButton!
     
     @IBOutlet weak var listName: UILabel!
+    @IBOutlet weak var listSummary: UILabel!
     
     let SPACE = " \u{200c}"
 
@@ -114,18 +115,18 @@ class ViewController: UIViewController {
         } else {
             listName.text = ""
         }
-        youPaidTotal.text = toMoney(Data.iPaidTotal())
-        theyPaidTotal.text = toMoney(Data.theyPaidTotal())
-        iSettledTotal.text = toMoney(Data.iSettledTotal())
-        theySettledTotal.text = toMoney(Data.theySettledTotal())
+        youPaidTotal.text = Util.toMoney(Data.iPaidTotal())
+        theyPaidTotal.text = Util.toMoney(Data.theyPaidTotal())
+        iSettledTotal.text = Util.toMoney(Data.iSettledTotal())
+        theySettledTotal.text = Util.toMoney(Data.theySettledTotal())
         
         let totalOwingsAmount: Float = Data.totalOwings()
         
         if (abs(totalOwingsAmount) < 0.01) {
             totalOwings.setTitle("We're Even!", forState: UIControlState.Normal)
         } else {
-            let prefix = totalOwingsAmount < 0 ? "I Owe Them" : "They Owe Me"
-            totalOwings.setTitle(prefix + " " + toMoney(abs(totalOwingsAmount)), forState:  UIControlState.Normal)
+            let prefix = totalOwingsAmount < 0 ? "is owed " : "owes me "
+            listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
         }
     }
     
@@ -133,15 +134,11 @@ class ViewController: UIViewController {
         return Float(numberText())!
     }
     
-    private func toMoney(amount: Float) -> String  {
-        return (NSString(format: "%.2f", amount) as String)
-    }
-    
     private func onDigit(digit: String) {
         if number.text! == "0" + SPACE {
             number.text = ""
         }
-        if number.text!.characters.count < 8 && noMoreThan2DecimalPlaces() {
+        if number.text!.characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
     }

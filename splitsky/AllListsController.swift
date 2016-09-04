@@ -37,7 +37,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
             cell.amount.text = ""
         } else {
             cell.words.text = totalOwingsAmount < 0 ? "I Owe Them" : "They Owe Me"
-            cell.amount.text = toMoney(abs(totalOwingsAmount))
+            cell.amount.text = Util.toMoney(abs(totalOwingsAmount))
         }
 
         Data.setList(oldList)
@@ -98,9 +98,5 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
             tableView.reloadData()
         }
         return true
-    }
-    
-    private func toMoney(amount: Float) -> String  {
-        return (NSString(format: "%.2f", amount) as String)
     }
 }
