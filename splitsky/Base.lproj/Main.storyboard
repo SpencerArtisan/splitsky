@@ -647,7 +647,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-D2-eB8">
                                 <rect key="frame" x="188" y="95" width="187" height="205.5"/>
-                                <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
                                 <state key="normal" title="They Borrowed">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -658,7 +658,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ws4-Ci-CkI">
                                 <rect key="frame" x="188" y="301.5" width="187" height="206"/>
-                                <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
                                 <state key="normal" title="They Paid Bill">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -787,6 +787,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="blackLabel" destination="DPE-dd-hMk" id="Wps-ve-PLk"/>
                         <outlet property="iBorrowed" destination="ilb-b0-4bE" id="utx-mf-bNu"/>
                         <outlet property="iPaidBill" destination="grC-ej-Np8" id="WqI-GB-7Vp"/>
                         <outlet property="theyBorrowed" destination="Snu-D2-eB8" id="xBZ-Rc-6hG"/>

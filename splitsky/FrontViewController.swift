@@ -10,6 +10,7 @@ import UIKit
 
 class FrontViewController: UIViewController {
 
+    @IBOutlet weak var blackLabel: UILabel!
     @IBOutlet weak var iBorrowed: UIButton!
     @IBOutlet weak var theyBorrowed: UIButton!
     @IBOutlet weak var iPaidBill: UIButton!
@@ -22,6 +23,11 @@ class FrontViewController: UIViewController {
         iPaidBill.titleLabel?.textAlignment = NSTextAlignment.Center
         theyPaidBill.titleLabel?.textAlignment = NSTextAlignment.Center
         // Do any additional setup after loading the view.
+        
+        Data.set(PaymentRepository.load())
+        
+        theyBorrowed.setTitle(getLabel(Type.theyBorrowed), forState: UIControlState.Normal)
+        theyPaidBill.setTitle(getLabel(Type.theyPaid), forState: UIControlState.Normal)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -34,5 +40,14 @@ class FrontViewController: UIViewController {
         // Pass the selected object to the new view controller.
         let dest: ViewController = segue.destinationViewController as! ViewController
         dest.type = Type.fromCode(segue.identifier!)
+        dest.doneButtonTitle = getLabel(dest.type!)
+    }
+    
+    func getLabel(type: Type) -> String {
+        let they = Data.isNamed() ? Data.listName().capitalizedString : "They"
+        return type == Type.iPaid ? "I\nPaid Bill" :
+            (type == Type.theyPaid ? "\(they)\nPaid Bill" :
+                (type == Type.iBorrowed ? "I\nBorrowed" :
+                    "\(they)\nBorrowed"))
     }
 }

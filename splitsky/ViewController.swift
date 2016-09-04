@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var type: Type?
+    var doneButtonTitle: String?
     
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
@@ -128,19 +129,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButton.titleLabel?.textAlignment = NSTextAlignment.Center
-        Data.set(PaymentRepository.load())
+        doneButton.setTitle(doneButtonTitle, forState: UIControlState.Normal)
         update()
         onClear("")
-        labelDoneButton()
-    }
-    
-    private func labelDoneButton() {
-        let they = "They"
-        let title = type == Type.iPaid ? "I\nPaid Bill" :
-            (type == Type.theyPaid ? "\(they)\nPaid Bill" :
-                (type == Type.iBorrowed ? "I\nBorrowed" :
-                    "\(they)\nBorrowed"))
-        doneButton.setTitle(title, forState: UIControlState.Normal)
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "FrontViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():FrontViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender!">
+            </PersistentString>
+            <PersistentString
+               value = "dest.type!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Data.isNamed() -&gt; Bool:Data.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_listName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

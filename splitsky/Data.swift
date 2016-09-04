@@ -41,6 +41,10 @@ class Data {
         return _listName
     }
     
+    static func isNamed() -> Bool {
+        return !_listName.containsString("tab") && _listName != ""
+    }
+    
     static func paymentCount() -> Int {
         return _payments[listName()]!.count
     }
