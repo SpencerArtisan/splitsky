@@ -173,9 +173,5 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         navigationController!.setNavigationBarHidden(false, animated: false)
     }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 }
 
