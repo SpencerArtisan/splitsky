@@ -11,14 +11,14 @@
 		9727A4FE1D5BD2D30076F98A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727A4FD1D5BD2D30076F98A /* Data.swift */; };
 		9727A5031D5BDF0B0076F98A /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727A5011D5BDF0B0076F98A /* PaymentCell.swift */; };
 		9727A5041D5BDF0B0076F98A /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9727A5021D5BDF0B0076F98A /* PaymentCell.xib */; };
-		97484F611D5DA1050056912B /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97484F5F1D5DA1050056912B /* HeaderCell.swift */; };
-		97484F621D5DA1050056912B /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97484F601D5DA1050056912B /* HeaderCell.xib */; };
 		97484F641D5DAC0A0056912B /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97484F631D5DAC0A0056912B /* Payment.swift */; };
 		977F23591D5DE8670054F075 /* Payments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 977F23581D5DE8670054F075 /* Payments.plist */; };
 		977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235A1D5DE9F00054F075 /* PaymentRepository.swift */; };
 		977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977F235C1D5E38F10054F075 /* PaymentType.xib */; };
 		977F235F1D5E54C10054F075 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235E1D5E54C10054F075 /* Modal.swift */; };
+		9797AB231D7C162200D44D93 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797AB221D7C162200D44D93 /* FrontViewController.swift */; };
 		97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A315FE1D69A93600A2A28D /* AllListsController.swift */; };
+		97A316011D6A005800A2A28D /* Label.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A316001D6A005800A2A28D /* Label.xib */; };
 		97A53F711D16A8B800BED436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F701D16A8B800BED436 /* AppDelegate.swift */; };
 		97A53F731D16A8B800BED436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F721D16A8B800BED436 /* ViewController.swift */; };
 		97A53F761D16A8B800BED436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A53F741D16A8B800BED436 /* Main.storyboard */; };
@@ -50,14 +50,14 @@
 		9727A4FD1D5BD2D30076F98A /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9727A5011D5BDF0B0076F98A /* PaymentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		9727A5021D5BDF0B0076F98A /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
-		97484F5F1D5DA1050056912B /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
-		97484F601D5DA1050056912B /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		97484F631D5DAC0A0056912B /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		977F23581D5DE8670054F075 /* Payments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Payments.plist; sourceTree = "<group>"; };
 		977F235A1D5DE9F00054F075 /* PaymentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
 		977F235C1D5E38F10054F075 /* PaymentType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentType.xib; sourceTree = "<group>"; };
 		977F235E1D5E54C10054F075 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		9797AB221D7C162200D44D93 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		97A315FE1D69A93600A2A28D /* AllListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsController.swift; sourceTree = "<group>"; };
+		97A316001D6A005800A2A28D /* Label.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Label.xib; sourceTree = "<group>"; };
 		97A53F6D1D16A8B800BED436 /* Splitsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splitsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A53F701D16A8B800BED436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97A53F721D16A8B800BED436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,17 +128,17 @@
 				97A53F771D16A8B800BED436 /* Assets.xcassets */,
 				97A53F791D16A8B800BED436 /* LaunchScreen.storyboard */,
 				97A53F7C1D16A8B800BED436 /* Info.plist */,
+				97A315FE1D69A93600A2A28D /* AllListsController.swift */,
 				972719711D5BB49800149251 /* DetailController.swift */,
 				9727A4FD1D5BD2D30076F98A /* Data.swift */,
 				9727A5011D5BDF0B0076F98A /* PaymentCell.swift */,
 				9727A5021D5BDF0B0076F98A /* PaymentCell.xib */,
-				97484F5F1D5DA1050056912B /* HeaderCell.swift */,
-				97484F601D5DA1050056912B /* HeaderCell.xib */,
 				97484F631D5DAC0A0056912B /* Payment.swift */,
 				977F23581D5DE8670054F075 /* Payments.plist */,
 				977F235A1D5DE9F00054F075 /* PaymentRepository.swift */,
 				977F235C1D5E38F10054F075 /* PaymentType.xib */,
-				97A315FE1D69A93600A2A28D /* AllListsController.swift */,
+				97A316001D6A005800A2A28D /* Label.xib */,
+				9797AB221D7C162200D44D93 /* FrontViewController.swift */,
 			);
 			name = Splitsky;
 			path = splitsky;
@@ -269,13 +269,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97484F621D5DA1050056912B /* HeaderCell.xib in Resources */,
 				977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */,
 				97A53F7B1D16A8B800BED436 /* LaunchScreen.storyboard in Resources */,
 				97A53F781D16A8B800BED436 /* Assets.xcassets in Resources */,
 				9727A5041D5BDF0B0076F98A /* PaymentCell.xib in Resources */,
 				97A53F761D16A8B800BED436 /* Main.storyboard in Resources */,
 				977F23591D5DE8670054F075 /* Payments.plist in Resources */,
+				97A316011D6A005800A2A28D /* Label.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,12 +302,12 @@
 			files = (
 				977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */,
 				9727A5031D5BDF0B0076F98A /* PaymentCell.swift in Sources */,
+				9797AB231D7C162200D44D93 /* FrontViewController.swift in Sources */,
 				97A53F731D16A8B800BED436 /* ViewController.swift in Sources */,
 				97484F641D5DAC0A0056912B /* Payment.swift in Sources */,
 				972719721D5BB49800149251 /* DetailController.swift in Sources */,
 				97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */,
 				97A53F711D16A8B800BED436 /* AppDelegate.swift in Sources */,
-				97484F611D5DA1050056912B /* HeaderCell.swift in Sources */,
 				977F235F1D5E54C10054F075 /* Modal.swift in Sources */,
 				9727A4FE1D5BD2D30076F98A /* Data.swift in Sources */,
 			);

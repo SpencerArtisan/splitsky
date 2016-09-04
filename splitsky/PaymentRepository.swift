@@ -33,7 +33,7 @@ class PaymentRepository {
         let allPayments = props.valueForKey("AllPayments")
         if allPayments == nil {
             payments = [String:[String]]()
-            payments["List 1"] = [String]()
+            payments["tab 1"] = [String]()
         } else {
             payments = allPayments as! [String: [String]]
         }

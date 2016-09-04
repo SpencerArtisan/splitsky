@@ -36,11 +36,11 @@ class Modal {
     }
     
     func slideUpFromBottom(parentView: UIView) {
-        slideVertically(parentView, start: 600, end: 380, hide: false)
+        slideVertically(parentView, start: 604, end: 604 - self.view.frame.height, hide: false)
     }
     
     func slideDownToBottom(parentView: UIView) {
-        slideVertically(parentView, start: 380, end: 600, hide: true)
+        slideVertically(parentView, start: 604 - self.view.frame.height, end: 604, hide: true)
     }
     
     func slideOutFromLeft(parentView: UIView) {
@@ -97,7 +97,7 @@ class Modal {
         }
         self.view.frame.origin.x = start
         
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             var sliderFrame = self.view.frame
             sliderFrame.origin.x = end
             self.view.frame = sliderFrame
@@ -105,13 +105,14 @@ class Modal {
     }
     
     private func slideVertically(parentView: UIView, start: CGFloat, end: CGFloat, hide: Bool) {
+        //var sliderFrame = self.view.frame
         if self.view.superview == nil {
             parentView.addSubview(self.view)
             self.view.frame = CGRectMake(0, 0, parentView.frame.width, self.view.frame.height)
         }
         self.view.frame.origin.y = start
         
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             var sliderFrame = self.view.frame
             sliderFrame.origin.y = end
             self.view.frame = sliderFrame

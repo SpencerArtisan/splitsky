@@ -19,7 +19,7 @@ class PaymentCell: UITableViewCell {
     @IBOutlet weak var label: UIButton!
     
     @IBAction func onLabel(sender: AnyObject) {
-        labelCallback!()
+       labelCallback!()
     }
     
     @IBAction func onDelete(sender: AnyObject) {

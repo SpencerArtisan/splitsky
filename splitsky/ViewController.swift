@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var iSettledTotal: UILabel!
     @IBOutlet weak var theySettledTotal: UILabel!
     
-    @IBOutlet weak var totalOwings: UILabel!
+    @IBOutlet weak var totalOwings: UIButton!
+
     @IBOutlet weak var iPaidButton: UIButton!
     @IBOutlet weak var theyPaidButton: UIButton!
     @IBOutlet weak var iSettledButton: UIButton!
@@ -98,7 +99,6 @@ class ViewController: UIViewController {
         update()
     }
     
-    
     private func addPayment(amount: Float, type: Type) {
         if (amount > 0) {
             let payment = Payment(amount: amount, type: type, label: "")
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
     }
     
     private func update() {
-        if Data.listCount() > 1 {
+        if Data.listCount() > 1 || (Data.listName().rangeOfString("tab", options: .RegularExpressionSearch) == nil) {
             listName.text = Data.listName()
         } else {
             listName.text = ""
@@ -122,10 +122,10 @@ class ViewController: UIViewController {
         let totalOwingsAmount: Float = Data.totalOwings()
         
         if (abs(totalOwingsAmount) < 0.01) {
-            totalOwings.text = "We're Even!"
+            totalOwings.setTitle("We're Even!", forState: UIControlState.Normal)
         } else {
             let prefix = totalOwingsAmount < 0 ? "I Owe Them" : "They Owe Me"
-            totalOwings.text = prefix + " " + toMoney(abs(totalOwingsAmount))
+            totalOwings.setTitle(prefix + " " + toMoney(abs(totalOwingsAmount)), forState:  UIControlState.Normal)
         }
     }
     
@@ -172,6 +172,10 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         navigationController!.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }
 

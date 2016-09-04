@@ -8,10 +8,14 @@
 
 import UIKit
 
-class AllListsController: UITableViewController {
+class AllListsController: UITableViewController, UITextFieldDelegate {
+    var activeList: String?
+    var labelModal: Modal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell")
+        labelModal = Modal(viewName: "Label", owner: self)
     }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,15 +30,40 @@ class AllListsController: UITableViewController {
         let name = names[indexPath.row]
         let oldList = Data.listName()
         Data.setList(name)
-        cell.words.text = "They owe me"
-        cell.amount.text = toMoney(abs(Data.totalOwings()))
+        let totalOwingsAmount = Data.totalOwings()
+        
+        if (abs(totalOwingsAmount) < 0.01) {
+            cell.words.text = "We're Even!"
+            cell.amount.text = ""
+        } else {
+            cell.words.text = totalOwingsAmount < 0 ? "I Owe Them" : "They Owe Me"
+            cell.amount.text = toMoney(abs(totalOwingsAmount))
+        }
+
         Data.setList(oldList)
         cell.label.setTitle(name, forState: UIControlState.Normal)
+        cell.label.titleLabel!.numberOfLines = 1
+        cell.label.titleLabel!.adjustsFontSizeToFitWidth = true
+        cell.label.titleLabel!.lineBreakMode = NSLineBreakMode.ByClipping
+        
         cell.delete.hidden = Data.listCount() == 1
         
         cell.deleteCallback = {
             Data.removeList(name)
+            if Data.listName() == name {
+                Data.setList(names[0])
+            }
             tableView.reloadData()
+        }
+        
+        cell.labelCallback = {
+            self.activeList = name
+            self.labelModal!.slideUpFromBottom(self.view)
+            let labelTextBox = self.labelModal?.findElementByTag(1) as! UITextField
+            labelTextBox.enablesReturnKeyAutomatically = true
+            labelTextBox.text = name
+            labelTextBox.becomeFirstResponder()
+            labelTextBox.delegate = self
         }
         
         cell.separatorInset = UIEdgeInsetsZero
@@ -49,6 +78,26 @@ class AllListsController: UITableViewController {
         let name = names[indexPath.row]
         Data.setList(name)
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= 10
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let labelTextBox = self.labelModal?.findElementByTag(1) as! UITextField
+        labelTextBox.resignFirstResponder()
+        self.labelModal!.slideDownToBottom(self.view)
+        if activeList != textField.text {
+            Data.changeName(activeList!, newName: textField.text!)
+            if Data.listName() == activeList {
+                Data.setList(textField.text!)
+            }
+            tableView.reloadData()
+        }
+        return true
     }
     
     private func toMoney(amount: Float) -> String  {

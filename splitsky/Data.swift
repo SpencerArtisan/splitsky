@@ -14,11 +14,11 @@ class Data {
     
     static func newList() {
         var candidateSuffix = 1
-        while _payments.keys.contains("List \(candidateSuffix)") {
+        while _payments.keys.contains("tab \(candidateSuffix)") {
             candidateSuffix = candidateSuffix + 1
         }
-        _payments["List \(candidateSuffix)"] = [Payment]()
-        setList("List \(candidateSuffix)")
+        _payments["tab \(candidateSuffix)"] = [Payment]()
+        setList("tab \(candidateSuffix)")
     }
     
     static func set(payments: [String:[Payment]]) {
@@ -35,28 +35,37 @@ class Data {
     }
     
     static func listName() -> String {
+        if _payments[_listName] == nil {
+            setList(_payments.keys.sort()[0])
+        }
         return _listName
     }
     
     static func paymentCount() -> Int {
-        return _payments[_listName]!.count
+        return _payments[listName()]!.count
     }
     
     static func payments() -> [Payment] {
-        return _payments[_listName]!
+        return _payments[listName()]!
     }
     
     static func allPayments() -> [String: [Payment]] {
         return _payments
     }
     
+    static func changeName(oldName: String, newName: String) {
+        _payments[newName] = _payments[oldName]!
+        _payments.removeValueForKey(oldName)
+        PaymentRepository.save(_payments)
+    }
+    
     static func addPayment(payment: Payment) {
-        _payments[_listName]!.append(payment)
+        _payments[listName()]!.append(payment)
         PaymentRepository.save(_payments)
     }
     
     static func removePayment(index: Int) {
-        _payments[_listName]!.removeAtIndex(index)
+        _payments[listName()]!.removeAtIndex(index)
         PaymentRepository.save(_payments)
     }
     
@@ -82,10 +91,11 @@ class Data {
     }
     
     private static func sum(type: Type) -> Float {
-        return _payments[_listName]!.filter({$0._type == type}).reduce(0, combine: { $0 + $1._amount } )
+        return _payments[listName()]!.filter({$0._type == type}).reduce(0, combine: { $0 + $1._amount } )
     }
     
     static func totalOwings() -> Float {
         return iSettledTotal() - theySettledTotal() + (iPaidTotal() - theyPaidTotal()) / 2
     }
+    
 }
