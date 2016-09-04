@@ -25,25 +25,32 @@ class FrontViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         Data.set(PaymentRepository.load())
-        
-        blackLabel.text = getBlackLabel()
-        
-        theyBorrowed.setTitle(getButtonLabel(Type.theyBorrowed), forState: UIControlState.Normal)
-        theyPaidBill.setTitle(getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
     }
 
     override func viewWillAppear(animated: Bool) {
-      //  navigationController!.setNavigationBarHidden(true, animated: false)
+        navigationController!.setNavigationBarHidden(true, animated: false)
+        update()
+    }
+    
+    private func update() {
+        blackLabel.text = getBlackLabel()
+        theyBorrowed.setTitle(getButtonLabel(Type.theyBorrowed), forState: UIControlState.Normal)
+        theyPaidBill.setTitle(getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let dest: ViewController = segue.destinationViewController as! ViewController
-        dest.type = Type.fromCode(segue.identifier!)
-        dest.doneButtonTitle = getButtonLabel(dest.type!)
+        let dest: ViewController? = segue.destinationViewController as? ViewController
+        if (dest != nil) {
+            dest!.type = Type.fromCode(segue.identifier!)
+            dest!.doneButtonTitle = getButtonLabel(dest!.type!)
+        }
         navigationController!.setNavigationBarHidden(false, animated: false)
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController!.navigationBar.clipsToBounds = true
     }
     
     private func getBlackLabel() -> String {
