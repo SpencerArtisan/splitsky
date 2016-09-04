@@ -15,11 +15,12 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell")
+        tableView.registerNib(UINib(nibName: "AddFriendCell", bundle: nil), forCellReuseIdentifier: "AddFriendCell")
         labelModal = Modal(viewName: "Label", owner: self)
     }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notWorthMentioning() ? 0 : Data.listCount()
+        return notWorthMentioning() ? 1 : 1 + Data.listCount()
     }
     
     private func notWorthMentioning() -> Bool {
@@ -28,10 +29,35 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        if indexPath.row == 0 {
+            return addFriendCell(tableView, indexPath: indexPath)
+        } else {
+            return addRowCell(tableView, indexPath: indexPath)
+        }
+    }
+    
+    private func addFriendCell(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("AddFriendCell", forIndexPath: indexPath) as! AddFriendCell
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.backgroundColor = UIColor.blackColor()
+        cell.addCallback = {
+            if self.notWorthMentioning() {
+                let kill = Data.listName()
+                Data.newList()
+                Data.removeList(kill)
+            } else {
+                Data.newList()
+            }
+            tableView.reloadData()
+        }
+        return cell
+    }
+    
+    private func addRowCell(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath) as! PaymentCell
         let allPayments = Data.allPayments()
         let names = allPayments.keys.sort()
-        let name = names[indexPath.row]
+        let name = names[indexPath.row - 1]
         let oldList = Data.listName()
         Data.setList(name)
 
@@ -45,7 +71,6 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         
         cell.deleteCallback = {
             Data.removeList(name)
-
             tableView.reloadData()
         }
         
@@ -79,7 +104,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let allPayments = Data.allPayments()
         let names = allPayments.keys.sort()
-        let name = names[indexPath.row]
+        let name = names[indexPath.row - 1]
         Data.setList(name)
         navigationController?.popViewControllerAnimated(true)
     }
