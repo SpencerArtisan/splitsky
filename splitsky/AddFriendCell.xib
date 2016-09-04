@@ -29,7 +29,7 @@
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="nof-Wv-YQ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Uml-Rv-UhV"/>
                     <constraint firstItem="nof-Wv-YQ7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ayd-cF-wr3"/>

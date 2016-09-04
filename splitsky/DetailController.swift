@@ -95,13 +95,13 @@ class DetailController: UITableViewController {
     
     private func setWords(payment: Payment, cell: PaymentCell) {
         if payment._type == Type.theyPaid {
-            cell.words.text = "They paid"
+            cell.words.text = "\(Data.listName().capitalizedString) paid"
         } else if payment._type == Type.iPaid {
             cell.words.text = "I paid"
         } else if payment._type == Type.theyBorrowed {
-            cell.words.text = "I settled"
+            cell.words.text = "\(Data.listName().capitalizedString) borrowed"
         } else if payment._type == Type.iBorrowed {
-            cell.words.text = "They settled"
+            cell.words.text = "I borrowed"
         }
         cell.words.text = cell.words.text! + " " + Util.toMoney(payment._amount) + SPACE
     }

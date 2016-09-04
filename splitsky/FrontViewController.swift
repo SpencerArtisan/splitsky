@@ -18,12 +18,11 @@ class FrontViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
         Data.set(PaymentRepository.load())
     }
-
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
     override func viewWillAppear(animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
         update()
@@ -35,7 +34,6 @@ class FrontViewController: UIViewController {
         style(theyPaidBill, text: FrontViewController.getButtonLabel(Type.theyPaid))
         style(iBorrowed, text: "I\nBorrowed")
         style(iPaidBill, text: "I\nPaid Bill")
-        theyPaidBill.setTitle(FrontViewController.getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
     }
     
     private func style(button: UIButton, text: String) {
@@ -57,6 +55,7 @@ class FrontViewController: UIViewController {
         if (dest != nil) {
             dest!.type = Type.fromCode(segue.identifier!)
         }
+        
         navigationController!.setNavigationBarHidden(false, animated: false)
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         navigationController!.navigationBar.barTintColor = UIColor.blackColor()
