@@ -23,9 +23,9 @@ class Payment {
 enum Type : String {
     case iPaid = "IP"
     case theyPaid = "TP"
-    case iSettled = "IS"
-    case theySettled = "TS"
-    
+    case iBorrowed = "TS"
+    case theyBorrowed = "IS"
+
     func toCode() -> String {
         return rawValue
     }
@@ -37,9 +37,9 @@ enum Type : String {
         case "TP":
             return .theyPaid
         case "IS":
-            return .iSettled
+            return .theyBorrowed
         case "TS":
-            return .theySettled
+            return .iBorrowed
         default:
             assertionFailure()
             return .iPaid

@@ -82,12 +82,12 @@ class Data {
         return sum(Type.theyPaid)
     }
     
-    static func iSettledTotal() -> Float {
-        return sum(Type.iSettled)
+    static func theyBorrowedTotal() -> Float {
+        return sum(Type.theyBorrowed)
     }
     
-    static func theySettledTotal() -> Float {
-        return sum(Type.theySettled)
+    static func iBorrowedTotal() -> Float {
+        return sum(Type.iBorrowed)
     }
     
     private static func sum(type: Type) -> Float {
@@ -95,7 +95,7 @@ class Data {
     }
     
     static func totalOwings() -> Float {
-        return iSettledTotal() - theySettledTotal() + (iPaidTotal() - theyPaidTotal()) / 2
+        return theyBorrowedTotal() - iBorrowedTotal() + (iPaidTotal() - theyPaidTotal()) / 2
     }
     
 }

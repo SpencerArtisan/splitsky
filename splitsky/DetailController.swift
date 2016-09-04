@@ -79,13 +79,13 @@ class DetailController: UITableViewController {
             cell.words.text = "They paid"
         } else if payment._type == Type.iPaid {
             cell.words.text = "I paid"
-        } else if payment._type == Type.iSettled {
+        } else if payment._type == Type.theyBorrowed {
             cell.words.text = "I settled"
-        } else if payment._type == Type.theySettled {
+        } else if payment._type == Type.iBorrowed {
             cell.words.text = "They settled"
         }
         cell.amount.text = Util.toMoney(payment._amount) + SPACE
-        cell.label.hidden = payment._type == Type.theySettled || payment._type == Type.iSettled
+        cell.label.hidden = payment._type == Type.iBorrowed || payment._type == Type.theyBorrowed
         
         if payment._label != "" {
             cell.label.setTitle("", forState: UIControlState.Normal)

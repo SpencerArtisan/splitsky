@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var listSummary: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     let SPACE = " \u{200c}"
 
@@ -105,7 +106,7 @@ class ViewController: UIViewController {
         if number.text! == "0" + SPACE {
             number.text = ""
         }
-        if number.text!.characters.count < 7 && noMoreThan2DecimalPlaces() {
+        if number.text!.stringByReplacingOccurrencesOfString(".", withString: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
     }
