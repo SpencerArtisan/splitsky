@@ -14,7 +14,6 @@ class PaymentCell: UITableViewCell {
     var wordsCallback: (() -> ())?
 
     @IBOutlet weak var words: UILabel!
-    @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var label: UIButton!
     

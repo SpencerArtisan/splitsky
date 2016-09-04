@@ -74,17 +74,9 @@ class DetailController: UITableViewController {
             self.activePayment = payment
             self.typeModal!.slideUpFromBottom(self.view)
         }
-        
-        if payment._type == Type.theyPaid {
-            cell.words.text = "They paid"
-        } else if payment._type == Type.iPaid {
-            cell.words.text = "I paid"
-        } else if payment._type == Type.theyBorrowed {
-            cell.words.text = "I settled"
-        } else if payment._type == Type.iBorrowed {
-            cell.words.text = "They settled"
-        }
-        cell.amount.text = Util.toMoney(payment._amount) + SPACE
+
+        setWords(payment, cell: cell)
+
         cell.label.hidden = payment._type == Type.iBorrowed || payment._type == Type.theyBorrowed
         
         if payment._label != "" {
@@ -99,5 +91,18 @@ class DetailController: UITableViewController {
         cell.backgroundColor = UIColor.blackColor()
         
         return cell
+    }
+    
+    private func setWords(payment: Payment, cell: PaymentCell) {
+        if payment._type == Type.theyPaid {
+            cell.words.text = "They paid"
+        } else if payment._type == Type.iPaid {
+            cell.words.text = "I paid"
+        } else if payment._type == Type.theyBorrowed {
+            cell.words.text = "I settled"
+        } else if payment._type == Type.iBorrowed {
+            cell.words.text = "They settled"
+        }
+        cell.words.text = cell.words.text! + " " + Util.toMoney(payment._amount) + SPACE
     }
 }

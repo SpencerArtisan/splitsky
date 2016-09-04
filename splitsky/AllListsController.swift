@@ -30,16 +30,9 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         let name = names[indexPath.row]
         let oldList = Data.listName()
         Data.setList(name)
-        let totalOwingsAmount = Data.totalOwings()
-        
-        if (abs(totalOwingsAmount) < 0.01) {
-            cell.words.text = "We're Even!"
-            cell.amount.text = ""
-        } else {
-            cell.words.text = totalOwingsAmount < 0 ? "I Owe Them" : "They Owe Me"
-            cell.amount.text = Util.toMoney(abs(totalOwingsAmount))
-        }
 
+        setWords(cell)
+        
         Data.setList(oldList)
         cell.label.setTitle(name, forState: UIControlState.Normal)
         cell.label.titleLabel!.numberOfLines = 1
@@ -70,6 +63,17 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         cell.backgroundColor = UIColor.blackColor()
         
         return cell
+    }
+    
+    private func setWords(cell: PaymentCell) {
+        let totalOwingsAmount = Data.totalOwings()
+        
+        if (abs(totalOwingsAmount) < 0.01) {
+            cell.words.text = "owes me nothing"
+        } else {
+            cell.words.text = totalOwingsAmount < 0 ? "is owed" : "owes me"
+            cell.words.text = cell.words.text! + " " + Util.toMoney(abs(totalOwingsAmount))
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         if (abs(totalOwingsAmount) < 0.01) {
             listSummary.text = ""
         } else {
-            let prefix = totalOwingsAmount < 0 ? "is owed " : "owes me "
+            let prefix = totalOwingsAmount < 0 ? "is owed" : "owes me"
             listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
         }
     }
@@ -125,6 +125,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        doneButton.titleLabel?.textAlignment = NSTextAlignment.Center
         Data.set(PaymentRepository.load())
         update()
         onClear("")
