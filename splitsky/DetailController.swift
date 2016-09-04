@@ -90,6 +90,14 @@ class DetailController: UITableViewController {
         cell.separatorInset = UIEdgeInsetsZero
         cell.backgroundColor = UIColor.blackColor()
         
+        cell.layoutIfNeeded()
+        cell.label.frame = CGRectMake(cell.label.frame.origin.x, cell.label.frame.origin.y, 60, cell.label.frame.height)
+        cell.delete.frame = CGRectMake(cell.delete.frame.origin.x + 30, cell.delete.frame.origin.y, 60, cell.delete.frame.height)
+        cell.words.frame = CGRectMake(cell.label.frame.maxX + 10, cell.words.frame.origin.y, 240, cell.words.frame.height)
+        
+        //        cell.label.sizeToFit()
+        //cell.label.setNeedsLayout()
+        
         return cell
     }
     

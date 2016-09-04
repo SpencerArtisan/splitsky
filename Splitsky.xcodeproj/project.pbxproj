@@ -20,6 +20,7 @@
 		9797AB251D7C35C800D44D93 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797AB241D7C35C800D44D93 /* Util.swift */; };
 		9797AB2A1D7C989400D44D93 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797AB281D7C989400D44D93 /* AddFriendCell.swift */; };
 		9797AB2B1D7C989400D44D93 /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9797AB291D7C989400D44D93 /* AddFriendCell.xib */; };
+		9797AB4E1D7CB17700D44D93 /* CHARRING.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9797AB4D1D7CB17700D44D93 /* CHARRING.ttf */; };
 		97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A315FE1D69A93600A2A28D /* AllListsController.swift */; };
 		97A316011D6A005800A2A28D /* Label.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A316001D6A005800A2A28D /* Label.xib */; };
 		97A53F711D16A8B800BED436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F701D16A8B800BED436 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		9797AB241D7C35C800D44D93 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		9797AB281D7C989400D44D93 /* AddFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
 		9797AB291D7C989400D44D93 /* AddFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendCell.xib; sourceTree = "<group>"; };
+		9797AB4D1D7CB17700D44D93 /* CHARRING.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CHARRING.ttf; sourceTree = "<group>"; };
 		97A315FE1D69A93600A2A28D /* AllListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsController.swift; sourceTree = "<group>"; };
 		97A316001D6A005800A2A28D /* Label.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Label.xib; sourceTree = "<group>"; };
 		97A53F6D1D16A8B800BED436 /* Splitsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splitsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9797AB2C1D7CB0B700D44D93 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9797AB4D1D7CB17700D44D93 /* CHARRING.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		97A53F641D16A8B700BED436 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		97A53F6F1D16A8B800BED436 /* Splitsky */ = {
 			isa = PBXGroup;
 			children = (
+				9797AB2C1D7CB0B700D44D93 /* Fonts */,
 				97A53F771D16A8B800BED436 /* Assets.xcassets */,
 				97A53F7C1D16A8B800BED436 /* Info.plist */,
 				977F23581D5DE8670054F075 /* Payments.plist */,
@@ -284,6 +295,7 @@
 				9797AB2B1D7C989400D44D93 /* AddFriendCell.xib in Resources */,
 				9727A5041D5BDF0B0076F98A /* PaymentCell.xib in Resources */,
 				97A53F761D16A8B800BED436 /* Main.storyboard in Resources */,
+				9797AB4E1D7CB17700D44D93 /* CHARRING.ttf in Resources */,
 				977F23591D5DE8670054F075 /* Payments.plist in Resources */,
 				97A316011D6A005800A2A28D /* Label.xib in Resources */,
 			);
