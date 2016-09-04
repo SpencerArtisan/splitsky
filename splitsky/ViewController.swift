@@ -69,10 +69,9 @@ class ViewController: UIViewController {
     @IBAction func onClear(sender: AnyObject) {
         number.text = "0" + SPACE
     }
-    
-    @IBAction func onNewList(sender: AnyObject) {
-        Data.newList()
-        update()
+
+    @IBAction func onCancel(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
     }
     
     private func addPayment(amount: Float, type: Type) {
@@ -94,7 +93,7 @@ class ViewController: UIViewController {
         let totalOwingsAmount: Float = Data.totalOwings()
         
         if (abs(totalOwingsAmount) < 0.01) {
-            listSummary.text = ""
+            listSummary.text = "owes me nothing"
         } else {
             let prefix = totalOwingsAmount < 0 ? "is owed" : "owes me"
             listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
@@ -135,7 +134,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        navigationController!.setNavigationBarHidden(true, animated: false)
+//        navigationController!.setNavigationBarHidden(true, animated: false)
       update()
     }
     

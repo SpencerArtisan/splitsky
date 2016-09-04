@@ -26,12 +26,14 @@ class FrontViewController: UIViewController {
         
         Data.set(PaymentRepository.load())
         
-        theyBorrowed.setTitle(getLabel(Type.theyBorrowed), forState: UIControlState.Normal)
-        theyPaidBill.setTitle(getLabel(Type.theyPaid), forState: UIControlState.Normal)
+        blackLabel.text = getBlackLabel()
+        
+        theyBorrowed.setTitle(getButtonLabel(Type.theyBorrowed), forState: UIControlState.Normal)
+        theyPaidBill.setTitle(getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
     }
 
     override func viewWillAppear(animated: Bool) {
-        navigationController!.setNavigationBarHidden(true, animated: false)
+      //  navigationController!.setNavigationBarHidden(true, animated: false)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -40,10 +42,24 @@ class FrontViewController: UIViewController {
         // Pass the selected object to the new view controller.
         let dest: ViewController = segue.destinationViewController as! ViewController
         dest.type = Type.fromCode(segue.identifier!)
-        dest.doneButtonTitle = getLabel(dest.type!)
+        dest.doneButtonTitle = getButtonLabel(dest.type!)
+        navigationController!.setNavigationBarHidden(false, animated: false)
     }
     
-    func getLabel(type: Type) -> String {
+    private func getBlackLabel() -> String {
+        var text = Data.listName()
+        
+        let totalOwingsAmount: Float = Data.totalOwings()
+        if (abs(totalOwingsAmount) < 0.01) {
+            text = text + " owes me nothing"
+        } else {
+            text = text + (totalOwingsAmount < 0 ? " is owed " : " owes me ")
+            text = text + Util.toMoney(abs(totalOwingsAmount))
+        }
+        return text
+    }
+    
+    private func getButtonLabel(type: Type) -> String {
         let they = Data.isNamed() ? Data.listName().capitalizedString : "They"
         return type == Type.iPaid ? "I\nPaid Bill" :
             (type == Type.theyPaid ? "\(they)\nPaid Bill" :
