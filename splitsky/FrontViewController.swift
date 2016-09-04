@@ -18,11 +18,8 @@ class FrontViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        iBorrowed.titleLabel?.textAlignment = NSTextAlignment.Center
-        theyBorrowed.titleLabel?.textAlignment = NSTextAlignment.Center
-        iPaidBill.titleLabel?.textAlignment = NSTextAlignment.Center
-        theyPaidBill.titleLabel?.textAlignment = NSTextAlignment.Center
-        // Do any additional setup after loading the view.
+        
+
         
         Data.set(PaymentRepository.load())
     }
@@ -34,8 +31,22 @@ class FrontViewController: UIViewController {
     
     private func update() {
         blackLabel.text = getBlackLabel()
-        theyBorrowed.setTitle(FrontViewController.getButtonLabel(Type.theyBorrowed), forState: UIControlState.Normal)
+        style(theyBorrowed, text: FrontViewController.getButtonLabel(Type.theyBorrowed))
+        style(theyPaidBill, text: FrontViewController.getButtonLabel(Type.theyPaid))
+        style(iBorrowed, text: "I\nBorrowed")
+        style(iPaidBill, text: "I\nPaid Bill")
         theyPaidBill.setTitle(FrontViewController.getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
+    }
+    
+    private func style(button: UIButton, text: String) {
+        let attributedString = NSMutableAttributedString(string: text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 16 // Whatever line spacing you want in points
+        paragraphStyle.alignment  = NSTextAlignment.Center
+        attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor(), range:NSMakeRange(0, attributedString.length))
+        
+        button.setAttributedTitle(attributedString, forState: UIControlState.Normal)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
