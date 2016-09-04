@@ -11,19 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var number: UILabel!
-    @IBOutlet weak var youPaidTotal: UILabel!
-    @IBOutlet weak var theyPaidTotal: UILabel!
-    
-    @IBOutlet weak var iSettledTotal: UILabel!
-    @IBOutlet weak var theySettledTotal: UILabel!
-    
-    @IBOutlet weak var totalOwings: UIButton!
-
-    @IBOutlet weak var iPaidButton: UIButton!
-    @IBOutlet weak var theyPaidButton: UIButton!
-    @IBOutlet weak var iSettledButton: UIButton!
-    @IBOutlet weak var theySettledButton: UIButton!
-    
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var listSummary: UILabel!
     
@@ -79,22 +66,6 @@ class ViewController: UIViewController {
         number.text = "0" + SPACE
     }
     
-    @IBAction func onIPaid(sender: AnyObject) {
-        addPayment(amount(), type: Type.iPaid)
-    }
-
-    @IBAction func onTheyPaid(sender: AnyObject) {
-        addPayment(amount(), type: Type.theyPaid)
-    }
-    
-    @IBAction func onISettleUp(sender: AnyObject) {
-        addPayment(amount(), type: Type.iSettled)
-    }
-
-    @IBAction func onTheySettleUp(sender: AnyObject) {
-        addPayment(amount(), type: Type.theySettled)
-    }
-    
     @IBAction func onNewList(sender: AnyObject) {
         Data.newList()
         update()
@@ -115,15 +86,11 @@ class ViewController: UIViewController {
         } else {
             listName.text = ""
         }
-        youPaidTotal.text = Util.toMoney(Data.iPaidTotal())
-        theyPaidTotal.text = Util.toMoney(Data.theyPaidTotal())
-        iSettledTotal.text = Util.toMoney(Data.iSettledTotal())
-        theySettledTotal.text = Util.toMoney(Data.theySettledTotal())
-        
+
         let totalOwingsAmount: Float = Data.totalOwings()
         
         if (abs(totalOwingsAmount) < 0.01) {
-            totalOwings.setTitle("We're Even!", forState: UIControlState.Normal)
+            listSummary.text = ""
         } else {
             let prefix = totalOwingsAmount < 0 ? "is owed " : "owes me "
             listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
@@ -164,7 +131,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
-        update()
+      update()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
