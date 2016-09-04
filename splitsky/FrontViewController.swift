@@ -34,8 +34,8 @@ class FrontViewController: UIViewController {
     
     private func update() {
         blackLabel.text = getBlackLabel()
-        theyBorrowed.setTitle(getButtonLabel(Type.theyBorrowed), forState: UIControlState.Normal)
-        theyPaidBill.setTitle(getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
+        theyBorrowed.setTitle(FrontViewController.getButtonLabel(Type.theyBorrowed), forState: UIControlState.Normal)
+        theyPaidBill.setTitle(FrontViewController.getButtonLabel(Type.theyPaid), forState: UIControlState.Normal)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,7 +45,6 @@ class FrontViewController: UIViewController {
         let dest: ViewController? = segue.destinationViewController as? ViewController
         if (dest != nil) {
             dest!.type = Type.fromCode(segue.identifier!)
-            dest!.doneButtonTitle = getButtonLabel(dest!.type!)
         }
         navigationController!.setNavigationBarHidden(false, animated: false)
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
@@ -66,7 +65,7 @@ class FrontViewController: UIViewController {
         return text
     }
     
-    private func getButtonLabel(type: Type) -> String {
+    static func getButtonLabel(type: Type) -> String {
         let they = Data.isNamed() ? Data.listName().capitalizedString : "They"
         return type == Type.iPaid ? "I\nPaid Bill" :
             (type == Type.theyPaid ? "\(they)\nPaid Bill" :

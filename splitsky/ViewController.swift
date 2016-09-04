@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     var type: Type?
-    var doneButtonTitle: String?
     
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
@@ -98,6 +97,8 @@ class ViewController: UIViewController {
             let prefix = totalOwingsAmount < 0 ? "is owed" : "owes me"
             listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
         }
+        
+        doneButton.setTitle(FrontViewController.getButtonLabel(type!), forState: UIControlState.Normal)
     }
     
     private func amount() -> Float {
@@ -128,7 +129,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButton.titleLabel?.textAlignment = NSTextAlignment.Center
-        doneButton.setTitle(doneButtonTitle, forState: UIControlState.Normal)
         update()
         onClear("")
     }
