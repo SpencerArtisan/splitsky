@@ -15,8 +15,6 @@ class FrontViewController: UIViewController {
     @IBOutlet weak var iPaidBill: UIButton!
     @IBOutlet weak var theyPaidBill: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         iBorrowed.titleLabel?.textAlignment = NSTextAlignment.Center
@@ -30,14 +28,11 @@ class FrontViewController: UIViewController {
         navigationController!.setNavigationBarHidden(true, animated: false)
     }
     
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let dest: ViewController = segue.destinationViewController as! ViewController
+        dest.type = Type.fromCode(segue.identifier!)
     }
-    */
-
 }

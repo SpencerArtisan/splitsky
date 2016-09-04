@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var type: Type?
+    
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var listSummary: UILabel!
@@ -129,6 +131,16 @@ class ViewController: UIViewController {
         Data.set(PaymentRepository.load())
         update()
         onClear("")
+        labelDoneButton()
+    }
+    
+    private func labelDoneButton() {
+        let they = "They"
+        let title = type == Type.iPaid ? "I\nPaid Bill" :
+            (type == Type.theyPaid ? "\(they)\nPaid Bill" :
+                (type == Type.iBorrowed ? "I\nBorrowed" :
+                    "\(they)\nBorrowed"))
+        doneButton.setTitle(title, forState: UIControlState.Normal)
     }
     
     override func viewWillAppear(animated: Bool) {
