@@ -73,6 +73,10 @@ class ViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func onDone(sender: AnyObject) {
+        addPayment(amount(), type: type!)
+    }
+    
     private func addPayment(amount: Float, type: Type) {
         if (amount > 0) {
             let payment = Payment(amount: amount, type: type, label: "")

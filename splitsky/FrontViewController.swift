@@ -66,7 +66,7 @@ class FrontViewController: UIViewController {
     }
     
     static func getButtonLabel(type: Type) -> String {
-        let they = Data.isNamed() ? Data.listName().capitalizedString : "They"
+        let they = Data.listName().capitalizedString
         return type == Type.iPaid ? "I\nPaid Bill" :
             (type == Type.theyPaid ? "\(they)\nPaid Bill" :
                 (type == Type.iBorrowed ? "I\nBorrowed" :

@@ -14,20 +14,23 @@ class Data {
     
     static func newList() {
         var candidateSuffix = 1
-        while _payments.keys.contains("tab \(candidateSuffix)") {
+        while _payments.keys.contains("friend \(candidateSuffix)") {
             candidateSuffix = candidateSuffix + 1
         }
-        _payments["tab \(candidateSuffix)"] = [Payment]()
-        setList("tab \(candidateSuffix)")
+        _payments["friend \(candidateSuffix)"] = [Payment]()
+        setList("friend \(candidateSuffix)")
     }
     
     static func set(payments: [String:[Payment]]) {
         _payments = payments
-        _listName = payments.first!.0
+        setList(defaultName())
     }
     
     static func setList(name: String) {
         _listName = name
+        if _payments[_listName] == nil {
+            _payments[_listName] = [Payment]()
+        }
     }
     
     static func listCount() -> Int {
@@ -35,18 +38,15 @@ class Data {
     }
     
     static func listName() -> String {
-        if _payments[_listName] == nil {
-            setList(_payments.keys.sort()[0])
-        }
         return _listName
     }
     
     static func isNamed() -> Bool {
-        return !_listName.containsString("tab") && _listName != ""
+        return _listName != "" && _listName != "my friend"
     }
     
     static func paymentCount() -> Int {
-        return _payments[listName()]!.count
+        return payments().count
     }
     
     static func payments() -> [Payment] {
@@ -75,7 +75,15 @@ class Data {
     
     static func removeList(name: String) {
             _payments.removeValueForKey(name)
-         PaymentRepository.save(_payments)
+        PaymentRepository.save(_payments)
+
+        if Data.listName() == name {
+            Data.setList(defaultName())
+        }
+    }
+    
+    static func defaultName() -> String {
+        return _payments.count > 0 ? _payments.keys.sort()[0] : "my friend"
     }
     
     static func iPaidTotal() -> Float {

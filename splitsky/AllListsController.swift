@@ -19,7 +19,11 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.listCount()
+        return notWorthMentioning() ? 0 : Data.listCount()
+    }
+    
+    private func notWorthMentioning() -> Bool {
+        return Data.totalOwings() == 0 && Data.listCount() <= 1 && !Data.isNamed()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,13 +43,9 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         cell.label.titleLabel!.adjustsFontSizeToFitWidth = true
         cell.label.titleLabel!.lineBreakMode = NSLineBreakMode.ByClipping
         
-        cell.delete.hidden = Data.listCount() == 1
-        
         cell.deleteCallback = {
             Data.removeList(name)
-            if Data.listName() == name {
-                Data.setList(names[0])
-            }
+
             tableView.reloadData()
         }
         

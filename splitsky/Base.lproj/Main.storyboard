@@ -231,6 +231,9 @@
                                         <exclude reference="Z9e-mK-etO"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="onDone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pah-mL-IpN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xbS-De-7IM" userLabel="changeButton">
                                 <rect key="frame" x="251" y="102" width="124" height="112.5"/>
@@ -691,7 +694,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splitsky" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-dd-hMk">
-                                <rect key="frame" x="12" y="41" width="82.5" height="31.5"/>
+                                <rect key="frame" x="12" y="43" width="82.5" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Fzk-Cg-GAz"/>
                                 </constraints>
@@ -712,7 +715,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="jgt-AI-gij" secondAttribute="trailing" id="4pE-sM-hHb"/>
                             <constraint firstItem="LCd-aH-cET" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="bottom" constant="1" id="5e3-Jr-eLZ"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="top" secondItem="jgt-AI-gij" secondAttribute="bottom" id="74d-vW-zeR"/>
-                            <constraint firstItem="DPE-dd-hMk" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" constant="21" id="91e-M3-BUS"/>
+                            <constraint firstItem="DPE-dd-hMk" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" constant="23" id="91e-M3-BUS"/>
                             <constraint firstAttribute="trailing" secondItem="3C1-cG-jWj" secondAttribute="trailing" id="B5U-2N-vYj"/>
                             <constraint firstItem="ws4-Ci-CkI" firstAttribute="leading" secondItem="Snu-D2-eB8" secondAttribute="leading" id="BKH-Qo-0sg"/>
                             <constraint firstItem="ws4-Ci-CkI" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="top" id="E4T-Sn-2u0"/>
@@ -845,6 +848,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uo1-TV-Jfx"/>
-        <segue reference="lKm-yE-pHc"/>
+        <segue reference="5lt-6b-7PF"/>
     </inferredMetricsTieBreakers>
 </document>
