@@ -72,8 +72,8 @@ class ViewController: UIViewController {
     
     @IBAction func onClear(sender: AnyObject) {
         number.text = "0" + SPACE
-        Util.greyOut(evenSplitButton)
-        Util.greyOut(lobsterButton)
+        Util.disable(evenSplitButton)
+        Util.disable(lobsterButton)
     }
 
     @IBAction func onCancel(sender: AnyObject) {
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         if splitPayment != nil {
             splitPayment!.allocateToThem(amount())
         } else {
-            Util.darkBlue(labelButton)
+            Util.enable(labelButton)
             Util.setText(labelButton, text: "Split\nRemainder\n50/50")
             Util.setText(evenSplitButton, text: "My\nLobster")
             Util.setText(lobsterButton, text: "\(Data.listName().capitalizedString)\nLobster")
@@ -195,8 +195,13 @@ class ViewController: UIViewController {
         if number.text!.stringByReplacingOccurrencesOfString(".", withString: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
-        Util.darkBlue(evenSplitButton)
-        Util.darkBlue(lobsterButton)
+        if splitPayment == nil || amount() <= splitPayment!.evenlySplit() {
+            Util.enable(evenSplitButton)
+            Util.enable(lobsterButton)
+        } else {
+            Util.disable(evenSplitButton)
+            Util.disable(lobsterButton)
+        }
     }
     
     private func noMoreThan2DecimalPlaces() -> Bool {

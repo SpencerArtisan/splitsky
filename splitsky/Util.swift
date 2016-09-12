@@ -21,12 +21,12 @@ class Util {
         return formatter.stringFromNumber(amount)! as String
     }
     
-    static func greyOut(button: UIButton) {
+    static func disable(button: UIButton) {
         button.backgroundColor = DARK_GRAY
         button.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
     }
     
-    static func darkBlue(button: UIButton) {
+    static func enable(button: UIButton) {
         button.backgroundColor = DARK_BLUE
         button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
