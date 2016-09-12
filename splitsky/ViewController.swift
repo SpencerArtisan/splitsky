@@ -71,6 +71,8 @@ class ViewController: UIViewController {
     
     @IBAction func onClear(sender: AnyObject) {
         number.text = "0" + SPACE
+        doneButton.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        doneButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
     }
 
     @IBAction func onCancel(sender: AnyObject) {
@@ -162,6 +164,8 @@ class ViewController: UIViewController {
         if number.text!.stringByReplacingOccurrencesOfString(".", withString: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
+        doneButton.backgroundColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        doneButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
     
     private func noMoreThan2DecimalPlaces() -> Bool {
