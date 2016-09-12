@@ -82,7 +82,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onLabel(sender: AnyObject) {
+        UIView.animateWithDuration(0.1, animations: {
+            self.view.subviews.forEach { $0.alpha = 0.7 }
+        })
         self.typeModal!.slideUpFromBottom(self.view)
+
     }
     
     @IBAction func onFood(sender: AnyObject) {
@@ -110,6 +114,9 @@ class ViewController: UIViewController {
     }
     
     private func addLabel(name: String) {
+        UIView.animateWithDuration(0.1, animations: {
+            self.view.subviews.forEach { $0.alpha = 1 }
+        })
         label = name
         labelButton.setTitle("", forState: UIControlState.Normal)
         labelButton.setImage(UIImage(named: name), forState: UIControlState.Normal)

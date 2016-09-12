@@ -267,7 +267,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="28"/>
                                 <state key="normal" title="Label">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -619,10 +619,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="T3m-36-Qf3">
                                 <rect key="frame" x="188" y="105" width="187" height="186.5"/>
-                                <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.51667324049999996" blue="0.010451051310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="Breakdown">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="boc-po-orv" kind="show" id="UuX-s8-h1y"/>
@@ -630,10 +630,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCd-aH-cET">
                                 <rect key="frame" x="0.0" y="105" width="187" height="186.5"/>
-                                <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.51667324049999996" blue="0.010451051310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="Friends">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ydc-Fb-d0C" kind="show" id="lKm-yE-pHc"/>
@@ -647,7 +647,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="I Borrowed">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -663,7 +663,7 @@
                                 <color key="backgroundColor" red="0.72051329600000003" green="0.7385357266" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="They Borrowed">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="IS" id="9Ug-TJ-Mg5"/>
