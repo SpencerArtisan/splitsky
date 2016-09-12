@@ -13,7 +13,7 @@ class Data {
     private static var _listName: String = ""
     
     static func newList() {
-        var candidateSuffix = 1
+        var candidateSuffix = 2
         while _payments.keys.contains("friend \(candidateSuffix)") {
             candidateSuffix = candidateSuffix + 1
         }

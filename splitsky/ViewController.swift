@@ -11,12 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     var type: Type?
+    var typeModal: Modal?
+    var label: String = ""
     
+    @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var listSummary: UILabel!
     @IBOutlet weak var doneButton: UIButton!
-    
+    @IBOutlet weak var labelButton: UIButton!
+
     let SPACE = " \u{200c}"
 
     @IBAction func onDot(sender: AnyObject) {
@@ -77,9 +81,44 @@ class ViewController: UIViewController {
         addPayment(amount(), type: type!)
     }
     
+    @IBAction func onLabel(sender: AnyObject) {
+        self.typeModal!.slideUpFromBottom(self.view)
+    }
+    
+    @IBAction func onFood(sender: AnyObject) {
+        addLabel("Food")
+    }
+    
+    @IBAction func onDrink(sender: AnyObject) {
+        addLabel("Drink")
+    }
+    
+    @IBAction func onAccommodation(sender: AnyObject) {
+        addLabel("Accommodation")
+    }
+    
+    @IBAction func onTickets(sender: AnyObject) {
+        addLabel("Tickets")
+    }
+    
+    @IBAction func onTravel(sender: AnyObject) {
+        addLabel("Travel")
+    }
+    
+    @IBAction func onGroceries(sender: AnyObject) {
+        addLabel("Groceries")
+    }
+    
+    private func addLabel(name: String) {
+        label = name
+        labelButton.setTitle("", forState: UIControlState.Normal)
+        labelButton.setImage(UIImage(named: name), forState: UIControlState.Normal)
+        self.typeModal!.slideDownToBottom(self.view)
+    }
+    
     private func addPayment(amount: Float, type: Type) {
         if (amount > 0) {
-            let payment = Payment(amount: amount, type: type, label: "")
+            let payment = Payment(amount: amount, type: type, label: label)
             Data.addPayment(payment)
             update()
             onClear("")
@@ -102,7 +141,7 @@ class ViewController: UIViewController {
             listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
         }
         
-        doneButton.setTitle(FrontViewController.getButtonLabel(type!), forState: UIControlState.Normal)
+        navigation.title = FrontViewController.getButtonLabel(type!).stringByReplacingOccurrencesOfString("\n", withString: " ")
     }
     
     private func amount() -> Float {
@@ -135,6 +174,7 @@ class ViewController: UIViewController {
         doneButton.titleLabel?.textAlignment = NSTextAlignment.Center
         update()
         onClear("")
+        typeModal = Modal(viewName: "PaymentType", owner: self)
     }
     
     override func viewWillAppear(animated: Bool) {

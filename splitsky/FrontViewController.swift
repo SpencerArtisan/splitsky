@@ -15,6 +15,7 @@ class FrontViewController: UIViewController {
     @IBOutlet weak var theyBorrowed: UIButton!
     @IBOutlet weak var iPaidBill: UIButton!
     @IBOutlet weak var theyPaidBill: UIButton!
+    @IBOutlet weak var breakdownButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,9 @@ class FrontViewController: UIViewController {
         blackLabel.text = getBlackLabel()
         style(theyBorrowed, text: FrontViewController.getButtonLabel(Type.theyBorrowed))
         style(theyPaidBill, text: FrontViewController.getButtonLabel(Type.theyPaid))
-        style(iBorrowed, text: "I\nBorrowed")
-        style(iPaidBill, text: "I\nPaid Bill")
+        style(iBorrowed, text: FrontViewController.getButtonLabel(Type.iBorrowed))
+        style(iPaidBill, text:FrontViewController.getButtonLabel(Type.iPaid))
+        style(breakdownButton, text: "\(Data.listName().capitalizedString)\nBreakdown")
     }
     
     private func style(button: UIButton, text: String) {
@@ -42,7 +44,7 @@ class FrontViewController: UIViewController {
         paragraphStyle.lineSpacing = 16 // Whatever line spacing you want in points
         paragraphStyle.alignment  = NSTextAlignment.Center
         attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor(), range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: button.currentTitleColor, range:NSMakeRange(0, attributedString.length))
         
         button.setAttributedTitle(attributedString, forState: UIControlState.Normal)
     }
@@ -79,7 +81,7 @@ class FrontViewController: UIViewController {
         let they = Data.listName().capitalizedString
         return type == Type.iPaid ? "I\nPaid Bill" :
             (type == Type.theyPaid ? "\(they)\nPaid Bill" :
-                (type == Type.iBorrowed ? "I\nBorrowed" :
-                    "\(they)\nBorrowed"))
+                (type == Type.iBorrowed ? "\(they)\nGave Me" :
+                    "I Gave\n\(they)"))
     }
 }
