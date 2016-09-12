@@ -122,7 +122,9 @@ class ViewController: UIViewController {
         })
         label = name
         labelButton.setTitle("", forState: UIControlState.Normal)
-        labelButton.setImage(UIImage(named: name), forState: UIControlState.Normal)
+        let image = UIImage(named: name)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        labelButton.setImage(image, forState: UIControlState.Normal)
+        labelButton.tintColor = UIColor.whiteColor()
         self.typeModal!.slideDownToBottom(self.view)
     }
     
@@ -187,17 +189,13 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-
         update()
     }
     
     override func viewDidLayoutSubviews() {
         if (type == Type.iBorrowed || type == Type.theyBorrowed) {
-            //        view.layoutIfNeeded()
-            
             doneButton.frame = CGRectMake(0, doneButton.frame.origin.y, view.frame.width, doneButton.frame.height)
             labelButton.removeFromSuperview()
-            
         }
     }
     
