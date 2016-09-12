@@ -138,12 +138,7 @@ class ViewController: UIViewController {
     }
     
     private func update() {
-        if Data.listCount() > 1 || (Data.listName().rangeOfString("tab", options: .RegularExpressionSearch) == nil) {
-            listName.text = Data.listName()
-        } else {
-            listName.text = ""
-        }
-
+        listName.text = Data.listName().capitalizedString
         let totalOwingsAmount: Float = Data.totalOwings()
         
         if (abs(totalOwingsAmount) < 0.01) {

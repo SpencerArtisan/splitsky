@@ -57,7 +57,6 @@ class DetailController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath) as! PaymentCell
         let payment = Data.payments()[indexPath.row]
         
@@ -94,22 +93,20 @@ class DetailController: UITableViewController {
         cell.label.frame = CGRectMake(cell.label.frame.origin.x, cell.label.frame.origin.y, 60, cell.label.frame.height)
         cell.delete.frame = CGRectMake(cell.delete.frame.origin.x + 30, cell.delete.frame.origin.y, 60, cell.delete.frame.height)
         cell.words.frame = CGRectMake(cell.label.frame.maxX + 10, cell.words.frame.origin.y, 240, cell.words.frame.height)
-        
-        //        cell.label.sizeToFit()
-        //cell.label.setNeedsLayout()
-        
+
         return cell
     }
     
     private func setWords(payment: Payment, cell: PaymentCell) {
+        let they = "\(Data.listName().capitalizedString)"
         if payment._type == Type.theyPaid {
-            cell.words.text = "\(Data.listName().capitalizedString) paid"
+            cell.words.text = "\(they) paid bill of"
         } else if payment._type == Type.iPaid {
-            cell.words.text = "I paid"
+            cell.words.text = "I paid bill of"
         } else if payment._type == Type.theyBorrowed {
-            cell.words.text = "\(Data.listName().capitalizedString) borrowed"
+            cell.words.text = "I gave \(they)"
         } else if payment._type == Type.iBorrowed {
-            cell.words.text = "I borrowed"
+            cell.words.text = "\(they) gave me"
         }
         cell.words.text = cell.words.text! + " " + Util.toMoney(payment._amount) + SPACE
     }

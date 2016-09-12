@@ -64,7 +64,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         setWords(cell)
         
         Data.setList(oldList)
-        cell.label.setTitle(name, forState: UIControlState.Normal)
+        cell.label.setTitle(name.capitalizedString, forState: UIControlState.Normal)
         cell.label.titleLabel!.numberOfLines = 1
         cell.label.titleLabel!.adjustsFontSizeToFitWidth = true
         cell.label.titleLabel!.lineBreakMode = NSLineBreakMode.ByClipping
@@ -104,7 +104,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let allPayments = Data.allPayments()
         let names = allPayments.keys.sort()
-        let name = names[indexPath.row - 1]
+        let name = names.count > indexPath.row ? names[indexPath.row - 1] : Data.defaultName()
         Data.setList(name)
         navigationController?.popViewControllerAnimated(true)
     }
@@ -121,7 +121,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         self.labelModal!.slideDownToBottom(self.view)
         if activeList != textField.text {
             Data.changeName(activeList!, newName: textField.text!)
-            if Data.listName() == activeList {
+            if Data.listName().uppercaseString == activeList?.uppercaseString {
                 Data.setList(textField.text!)
             }
             tableView.reloadData()

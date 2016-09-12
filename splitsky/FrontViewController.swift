@@ -65,7 +65,7 @@ class FrontViewController: UIViewController {
     }
     
     private func getBlackLabel() -> String {
-        var text = Data.listName()
+        var text = Data.listName().capitalizedString
         
         let totalOwingsAmount: Float = Data.totalOwings()
         if (abs(totalOwingsAmount) < 0.01) {
