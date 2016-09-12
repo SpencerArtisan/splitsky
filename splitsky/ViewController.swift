@@ -187,8 +187,18 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-//        navigationController!.setNavigationBarHidden(true, animated: false)
-      update()
+
+        update()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if (type == Type.iBorrowed || type == Type.theyBorrowed) {
+            //        view.layoutIfNeeded()
+            
+            doneButton.frame = CGRectMake(0, doneButton.frame.origin.y, view.frame.width, doneButton.frame.height)
+            labelButton.removeFromSuperview()
+            
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
