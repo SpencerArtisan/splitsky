@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
 
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var evenSplitButton: UIButton!
+    @IBOutlet weak var lobsterButton: UIButton!
+
     @IBOutlet weak var labelButton: UIButton!
 
     let SPACE = " \u{200c}"
@@ -72,16 +74,21 @@ class ViewController: UIViewController {
     
     @IBAction func onClear(sender: AnyObject) {
         number.text = "0" + SPACE
-        doneButton.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        doneButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        evenSplitButton.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        evenSplitButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        lobsterButton.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        lobsterButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
     }
 
     @IBAction func onCancel(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    @IBAction func onDone(sender: AnyObject) {
+    @IBAction func onEvenSplit(sender: AnyObject) {
         addPayment(amount(), type: type!)
+    }
+    
+    @IBAction func onLobsterSplit(sender: AnyObject) {
     }
     
     @IBAction func onLabel(sender: AnyObject) {
@@ -91,7 +98,7 @@ class ViewController: UIViewController {
         self.typeModal!.slideUpFromBottom(self.view)
 
     }
-    
+
     @IBAction func onFood(sender: AnyObject) {
         addLabel("Food")
     }
@@ -164,8 +171,10 @@ class ViewController: UIViewController {
         if number.text!.stringByReplacingOccurrencesOfString(".", withString: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
-        doneButton.backgroundColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
-        doneButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        evenSplitButton.backgroundColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        evenSplitButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        lobsterButton.backgroundColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        lobsterButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
     
     private func noMoreThan2DecimalPlaces() -> Bool {
@@ -182,7 +191,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doneButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        evenSplitButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        lobsterButton.titleLabel?.textAlignment = NSTextAlignment.Center
         update()
         onClear("")
         typeModal = Modal(viewName: "PaymentType", owner: self)
@@ -194,8 +204,10 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         if (type == Type.iBorrowed || type == Type.theyBorrowed) {
-            doneButton.frame = CGRectMake(0, doneButton.frame.origin.y, view.frame.width, doneButton.frame.height)
+            evenSplitButton.frame = CGRectMake(0, evenSplitButton.frame.origin.y, view.frame.width, evenSplitButton.frame.height)
             labelButton.removeFromSuperview()
+            lobsterButton.removeFromSuperview()
+            evenSplitButton.setTitle("Done", forState: UIControlState.Normal)
         }
     }
     

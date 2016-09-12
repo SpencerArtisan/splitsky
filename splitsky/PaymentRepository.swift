@@ -25,7 +25,6 @@ extension Dictionary {
     }
 }
 
-
 class PaymentRepository {
     static func load() -> [String:[Payment]] {
         let props = properties()
