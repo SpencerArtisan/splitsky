@@ -14,10 +14,11 @@ class ViewController: UIViewController {
     var typeModal: Modal?
     var label: String = ""
     
+    @IBOutlet weak var listSummary: UIButton!
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
-    @IBOutlet weak var listSummary: UILabel!
+
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var labelButton: UIButton!
 
@@ -146,10 +147,10 @@ class ViewController: UIViewController {
         let totalOwingsAmount: Float = Data.totalOwings()
         
         if (abs(totalOwingsAmount) < 0.01) {
-            listSummary.text = "owes me nothing"
+            listSummary.setTitle("owes me nothing", forState: UIControlState.Normal)
         } else {
             let prefix = totalOwingsAmount < 0 ? "is owed" : "owes me"
-            listSummary.text = prefix + " " + Util.toMoney(abs(totalOwingsAmount))
+            listSummary.setTitle(prefix + " " + Util.toMoney(abs(totalOwingsAmount)), forState: UIControlState.Normal)
         }
         
         navigation.title = FrontViewController.getButtonLabel(type!).stringByReplacingOccurrencesOfString("\n", withString: " ")
