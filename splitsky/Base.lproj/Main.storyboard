@@ -19,7 +19,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--gtgrtg-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Splitsky" customModuleProvider="target" sceneMemberID="viewController">
@@ -236,7 +236,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Z9e-mK-etO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -263,13 +263,13 @@
                             </label>
                             <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xbS-De-7IM" userLabel="changeButton">
                                 <rect key="frame" x="0.0" y="515" width="124.5" height="107.5"/>
-                                <color key="backgroundColor" red="0.64580906149999995" green="0.73801884149999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="TV3-yI-Fm1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="Label">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -519,9 +519,7 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="gtgrtg" id="be5-nX-BzB">
-                        <barButtonItem key="backBarButtonItem" title="qqq" id="dxV-gk-Rzf"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="be5-nX-BzB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

@@ -131,6 +131,8 @@ class ViewController: UIViewController {
             Data.addPayment(payment)
             update()
             onClear("")
+            labelButton.setTitle("Label", forState: UIControlState.Normal)
+            labelButton.setImage(nil, forState: UIControlState.Normal)
         }
     }
     
