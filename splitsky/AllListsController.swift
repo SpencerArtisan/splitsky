@@ -18,13 +18,20 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         tableView.registerNib(UINib(nibName: "AddFriendCell", bundle: nil), forCellReuseIdentifier: "AddFriendCell")
         labelModal = Modal(viewName: "Label", owner: self)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController!.setNavigationBarHidden(false, animated: false)
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController!.navigationBar.clipsToBounds = true
+    }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notWorthMentioning() ? 1 : 1 + Data.listCount()
     }
     
     private func notWorthMentioning() -> Bool {
-        return Data.totalOwings() == 0 && Data.listCount() <= 1 && !Data.isNamed()
+        return Data.theyOweMe() == 0 && Data.listCount() <= 1 && !Data.isNamed()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -91,7 +98,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     private func setWords(cell: PaymentCell) {
-        let totalOwingsAmount = Data.totalOwings()
+        let totalOwingsAmount = Data.theyOweMe()
         
         if (abs(totalOwingsAmount) < 0.01) {
             cell.words.text = "owes me nothing"

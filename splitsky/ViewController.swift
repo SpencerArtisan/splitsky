@@ -9,19 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     var type: Type?
-    var typeModal: Modal?
-    var label: String = ""
+    private var typeModal: Modal?
+    private var label: String = ""
+    private var splitPayment: Payment?
     
-    @IBOutlet weak var listSummary: UIButton!
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
-
+    @IBOutlet weak var listSummary: UIButton!
     @IBOutlet weak var evenSplitButton: UIButton!
     @IBOutlet weak var lobsterButton: UIButton!
-
     @IBOutlet weak var labelButton: UIButton!
 
     let SPACE = " \u{200c}"
@@ -74,29 +72,56 @@ class ViewController: UIViewController {
     
     @IBAction func onClear(sender: AnyObject) {
         number.text = "0" + SPACE
-        evenSplitButton.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        evenSplitButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        lobsterButton.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        lobsterButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        Util.greyOut(evenSplitButton)
+        Util.greyOut(lobsterButton)
     }
 
     @IBAction func onCancel(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
     }
     
+    // Or the My Lobster button in lobster mode
     @IBAction func onEvenSplit(sender: AnyObject) {
-        addPayment(amount(), type: type!)
+        if splitPayment != nil {
+            splitPayment!.allocateToMe(amount())
+            updateLobsterMode()
+        } else if amount() > 0 {
+            addPayment(Payment(amount: amount(), type: type!, label: label))
+        }
+        onClear("")
     }
     
+    // Or the Their Lobster button in lobster mode
     @IBAction func onLobsterSplit(sender: AnyObject) {
+        if splitPayment != nil {
+            splitPayment!.allocateToThem(amount())
+        } else {
+            Util.darkBlue(labelButton)
+            Util.setText(labelButton, text: "Split\nRemainder\n50/50")
+            Util.setText(evenSplitButton, text: "My\nLobster")
+            Util.setText(lobsterButton, text: "\(Data.listName().capitalizedString)\nLobster")
+            listName.text = "Uneven Split Bill"
+            listSummary.enabled = false
+            splitPayment = Payment.init(amount: amount(), type: type!, label: label)
+        }
+        updateLobsterMode()
+        onClear("")
     }
     
+    private func updateLobsterMode() {
+        Util.setText(listSummary, text: "Remainder \(splitPayment!.evenlySplit())")
+    }
+    
+    // Or the Split Remainder button in lobster mode
     @IBAction func onLabel(sender: AnyObject) {
-        UIView.animateWithDuration(0.1, animations: {
-            self.view.subviews.forEach { $0.alpha = 0.7 }
-        })
-        self.typeModal!.slideUpFromBottom(self.view)
-
+        if splitPayment != nil {
+            addPayment(splitPayment!)
+        } else {
+            UIView.animateWithDuration(0.1, animations: {
+                self.view.subviews.forEach { $0.alpha = 0.7 }
+            })
+            self.typeModal!.slideUpFromBottom(self.view)
+        }
     }
 
     @IBAction func onFood(sender: AnyObject) {
@@ -128,36 +153,35 @@ class ViewController: UIViewController {
             self.view.subviews.forEach { $0.alpha = 1 }
         })
         label = name
-        labelButton.setTitle("", forState: UIControlState.Normal)
-        let image = UIImage(named: name)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        labelButton.setImage(image, forState: UIControlState.Normal)
+        Util.setImage(labelButton!, image: UIImage(named: name)!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate))
         labelButton.tintColor = UIColor.whiteColor()
         self.typeModal!.slideDownToBottom(self.view)
     }
     
-    private func addPayment(amount: Float, type: Type) {
-        if (amount > 0) {
-            let payment = Payment(amount: amount, type: type, label: label)
-            Data.addPayment(payment)
-            update()
-            onClear("")
-            labelButton.setTitle("Label", forState: UIControlState.Normal)
-            labelButton.setImage(nil, forState: UIControlState.Normal)
-        }
+    private func addPayment(payment: Payment) {
+        Data.addPayment(payment)
+        update()
+        onClear("")
+        Util.setText(labelButton!, text: "Label")
     }
     
     private func update() {
         listName.text = Data.listName().capitalizedString
-        let totalOwingsAmount: Float = Data.totalOwings()
-        
-        if (abs(totalOwingsAmount) < 0.01) {
+        let totalOwingsAmount: Float = Data.theyOweMe()
+        if abs(totalOwingsAmount) < 0.01 {
             listSummary.setTitle("owes me nothing", forState: UIControlState.Normal)
         } else {
-            let prefix = totalOwingsAmount < 0 ? "is owed" : "owes me"
-            listSummary.setTitle(prefix + " " + Util.toMoney(abs(totalOwingsAmount)), forState: UIControlState.Normal)
+            let prefix = totalOwingsAmount > 0 ? "owes me" : "is owed"
+            Util.setText(listSummary, text: prefix + " " + Util.toMoney(abs(totalOwingsAmount)))
         }
         
         navigation.title = FrontViewController.getButtonLabel(type!).stringByReplacingOccurrencesOfString("\n", withString: " ")
+        listSummary.enabled = true
+        label = ""
+        splitPayment = nil
+        Util.setText(lobsterButton!, text: "Uneven\nSplit")
+        Util.setText(evenSplitButton!, text: "50/50\nSplit")
+        Util.setText(labelButton!, text: "Label")
     }
     
     private func amount() -> Float {
@@ -171,10 +195,8 @@ class ViewController: UIViewController {
         if number.text!.stringByReplacingOccurrencesOfString(".", withString: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
-        evenSplitButton.backgroundColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
-        evenSplitButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        lobsterButton.backgroundColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
-        lobsterButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        Util.darkBlue(evenSplitButton)
+        Util.darkBlue(lobsterButton)
     }
     
     private func noMoreThan2DecimalPlaces() -> Bool {
@@ -191,8 +213,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        evenSplitButton.titleLabel?.textAlignment = NSTextAlignment.Center
-        lobsterButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        Util.center(evenSplitButton)
+        Util.center(lobsterButton)
+        Util.center(labelButton)
         update()
         onClear("")
         typeModal = Modal(viewName: "PaymentType", owner: self)
@@ -200,19 +223,19 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         update()
+        navigationController!.setNavigationBarHidden(false, animated: false)
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController!.navigationBar.clipsToBounds = true
     }
     
     override func viewDidLayoutSubviews() {
-        if (type == Type.iBorrowed || type == Type.theyBorrowed) {
+        if type == Type.iBorrowed || type == Type.theyBorrowed {
             evenSplitButton.frame = CGRectMake(0, evenSplitButton.frame.origin.y, view.frame.width, evenSplitButton.frame.height)
             labelButton.removeFromSuperview()
             lobsterButton.removeFromSuperview()
             evenSplitButton.setTitle("Done", forState: UIControlState.Normal)
         }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        navigationController!.setNavigationBarHidden(false, animated: false)
     }
 }
 

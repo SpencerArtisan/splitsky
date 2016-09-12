@@ -86,28 +86,8 @@ class Data {
         return _payments.count > 0 ? _payments.keys.sort()[0] : "my friend"
     }
     
-    static func iPaidTotal() -> Float {
-        return sum(Type.iPaid)
-    }
-    
-    static func theyPaidTotal() -> Float {
-        return sum(Type.theyPaid)
-    }
-    
-    static func theyBorrowedTotal() -> Float {
-        return sum(Type.theyBorrowed)
-    }
-    
-    static func iBorrowedTotal() -> Float {
-        return sum(Type.iBorrowed)
-    }
-    
-    private static func sum(type: Type) -> Float {
-        return _payments[listName()]!.filter({$0._type == type}).reduce(0, combine: { $0 + $1._amount } )
-    }
-    
-    static func totalOwings() -> Float {
-        return theyBorrowedTotal() - iBorrowedTotal() + (iPaidTotal() - theyPaidTotal()) / 2
+    static func theyOweMe() -> Float {
+        return _payments[listName()]!.reduce(0, combine: { $0 + $1.theyOweMe() } )
     }
     
 }

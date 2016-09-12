@@ -54,25 +54,20 @@ class FrontViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let dest: ViewController? = segue.destinationViewController as? ViewController
-        if (dest != nil) {
+        if dest != nil {
             dest!.type = Type.fromCode(segue.identifier!)
         }
-        
-        navigationController!.setNavigationBarHidden(false, animated: false)
-        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
-        navigationController!.navigationBar.clipsToBounds = true
     }
     
     private func getBlackLabel() -> String {
         var text = Data.listName().capitalizedString
         
-        let totalOwingsAmount: Float = Data.totalOwings()
-        if (abs(totalOwingsAmount) < 0.01) {
+        let theyOweMe: Float = Data.theyOweMe()
+        if abs(theyOweMe) < 0.01 {
             text = text + " owes me nothing"
         } else {
-            text = text + (totalOwingsAmount < 0 ? " is owed " : " owes me ")
-            text = text + Util.toMoney(abs(totalOwingsAmount))
+            text = text + (theyOweMe > 0 ? " owes me " : " is owed ")
+            text = text + Util.toMoney(abs(theyOweMe))
         }
         return text
     }

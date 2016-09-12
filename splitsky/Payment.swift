@@ -9,14 +9,78 @@
 import Foundation
 
 class Payment {
-    var _amount: Float
-    var _type: Type
-    var _label: String
+    private var _amount: Float
+    private var _myLobsters: Float
+    private var _theirLobsters: Float
+    private var _type: Type
+    private var _label: String
     
-    init(amount: Float, type: Type, label: String) {
-        _amount = amount
+    convenience init(amount: Float, type: Type, label: String) {
+        self.init(even:amount, my:0, theirs: 0, type: type, label: label)
+    }
+    
+    init(even: Float, my: Float, theirs: Float, type: Type, label: String) {
+        _amount = even
+        _myLobsters = my
+        _theirLobsters = theirs
         _type = type
         _label = label
+    }
+    
+    func amount() -> Float {
+        return _amount
+    }
+    
+    func setLabel(text: String) {
+        _label = text
+    }
+    
+    func hasLabel() -> Bool {
+        return _label != ""
+    }
+    
+    func label() -> String {
+        return _label
+    }
+    
+    func type() -> Type {
+        return _type
+    }
+    
+    func theyOweMe() -> Float {
+        if _type == Type.iBorrowed {
+            return -_amount
+        } else if _type == Type.theyBorrowed {
+            return _amount
+        } else if _type == Type.iPaid {
+            return evenlySplit()/2 + _theirLobsters
+        } else {
+            return -evenlySplit()/2 - _myLobsters
+        }
+    }
+    
+    func allocateToMe(amount: Float) {
+        _myLobsters = _myLobsters + amount
+    }
+
+    func allocateToThem(amount: Float) {
+        _theirLobsters = _theirLobsters + amount
+    }
+    
+    func evenlySplit() -> Float {
+        return _amount - _myLobsters - _theirLobsters
+    }
+    
+    func isUneven() -> Bool {
+        return _myLobsters > 0 || _theirLobsters > 0
+    }
+    
+    func myAllocations() -> Float {
+        return _myLobsters
+    }
+    
+    func theirAllocations() -> Float {
+        return _theirLobsters
     }
 }
 

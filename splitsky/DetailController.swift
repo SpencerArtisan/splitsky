@@ -21,6 +21,13 @@ class DetailController: UITableViewController {
         typeModal = Modal(viewName: "PaymentType", owner: self)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        navigationController!.setNavigationBarHidden(false, animated: false)
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController!.navigationBar.clipsToBounds = true
+    }
+    
     @IBAction func onFood(sender: AnyObject) {
         addLabel("Food")
     }
@@ -46,7 +53,7 @@ class DetailController: UITableViewController {
     }
     
     private func addLabel(name: String) {
-        activePayment!._label = name
+        activePayment!.setLabel(name)
         PaymentRepository.save(Data.allPayments())
         tableView.reloadData()
         self.typeModal!.slideDownToBottom(self.view)
@@ -76,14 +83,13 @@ class DetailController: UITableViewController {
 
         setWords(payment, cell: cell)
 
-        cell.label.hidden = payment._type == Type.iBorrowed || payment._type == Type.theyBorrowed
+        cell.label.hidden = payment.type() == Type.iBorrowed || payment.type() == Type.theyBorrowed
         
-        if payment._label != "" {
-            cell.label.setTitle("", forState: UIControlState.Normal)
-            cell.label.setImage(UIImage(named: payment._label + "Small"), forState: UIControlState.Normal)
+        if payment.hasLabel() {
+            Util.setImage(cell.label, image: UIImage(named: payment.label() + "Small")!)
             cell.label.backgroundColor = UIColor.blackColor()
         } else if labelColor != nil {
-            cell.label.setTitle("Label", forState: UIControlState.Normal)
+            Util.setText(cell.label, text: "Label")
             cell.label.backgroundColor = labelColor!
         }
         cell.separatorInset = UIEdgeInsetsZero
@@ -99,15 +105,25 @@ class DetailController: UITableViewController {
     
     private func setWords(payment: Payment, cell: PaymentCell) {
         let they = "\(Data.listName().capitalizedString)"
-        if payment._type == Type.theyPaid {
+        if payment.type() == Type.theyPaid {
             cell.words.text = "\(they) paid bill of"
-        } else if payment._type == Type.iPaid {
+        } else if payment.type() == Type.iPaid {
             cell.words.text = "I paid bill of"
-        } else if payment._type == Type.theyBorrowed {
+        } else if payment.type() == Type.theyBorrowed {
             cell.words.text = "I gave \(they)"
-        } else if payment._type == Type.iBorrowed {
+        } else if payment.type() == Type.iBorrowed {
             cell.words.text = "\(they) gave me"
         }
-        cell.words.text = cell.words.text! + " " + Util.toMoney(payment._amount) + SPACE
+        cell.words.text = cell.words.text! + " \(Util.toMoney(payment.amount()))\(SPACE)"
+        if payment.isUneven() {
+            cell.words.text = cell.words.text! + "\n(\(Util.toMoney(payment.evenlySplit())) even"
+            if payment.myAllocations() > 0 {
+                cell.words.text = cell.words.text! + ", \(Util.toMoney(payment.myAllocations())) me"
+            }
+            if payment.theirAllocations() > 0 {
+                cell.words.text = cell.words.text! + ", \(Util.toMoney(payment.theirAllocations())) \(they)"
+            }
+            cell.words.text = cell.words.text! + ")\(SPACE)\(SPACE)"
+        }
     }
 }

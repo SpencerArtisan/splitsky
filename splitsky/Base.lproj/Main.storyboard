@@ -237,7 +237,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Z9e-mK-etO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="26"/>
                                 <state key="normal" title="50/50 Split">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -262,7 +262,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="TV3-yI-Fm1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="26"/>
                                 <state key="normal" title="Label">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -291,8 +291,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="I4h-8Q-v2f"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
-                                <state key="normal" title="Lobster">
+                                <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="26"/>
+                                <state key="normal" title="Uneven Split">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -591,7 +591,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ws4-Ci-CkI">
-                                <rect key="frame" x="188" y="292.5" width="187" height="187"/>
+                                <rect key="frame" x="188" y="319" width="187" height="174"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="They Paid Bill">
@@ -602,7 +602,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="grC-ej-Np8">
-                                <rect key="frame" x="0.0" y="292.5" width="187" height="187"/>
+                                <rect key="frame" x="0.0" y="319" width="187" height="174"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="I Paid Bill">
@@ -627,7 +627,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgt-AI-gij" userLabel="black">
-                                <rect key="frame" x="0.0" y="20" width="375" height="85"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="85"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="KKL-1D-T2y"/>
@@ -637,7 +637,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splitsky" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-dd-hMk">
-                                <rect key="frame" x="12" y="23" width="91" height="31.5"/>
+                                <rect key="frame" x="12" y="74" width="91" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Fzk-Cg-GAz"/>
                                 </constraints>
@@ -651,7 +651,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="T3m-36-Qf3">
-                                <rect key="frame" x="188" y="105" width="187" height="186.5"/>
+                                <rect key="frame" x="188" y="145" width="187" height="173.5"/>
                                 <color key="backgroundColor" red="1" green="0.51667324049999996" blue="0.010451051310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="Breakdown">
@@ -662,7 +662,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCd-aH-cET">
-                                <rect key="frame" x="0.0" y="105" width="187" height="186.5"/>
+                                <rect key="frame" x="0.0" y="145" width="187" height="173.5"/>
                                 <color key="backgroundColor" red="1" green="0.51667324049999996" blue="0.010451051310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="Friends">
@@ -673,7 +673,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-b0-4bE">
-                                <rect key="frame" x="0.0" y="480.5" width="187" height="186.5"/>
+                                <rect key="frame" x="0.0" y="493.5" width="187" height="173.5"/>
                                 <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ilb-b0-4bE" secondAttribute="height" multiplier="1:1.1" id="1ky-ch-SQA"/>
@@ -692,7 +692,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-D2-eB8">
-                                <rect key="frame" x="188" y="480.5" width="187" height="186.5"/>
+                                <rect key="frame" x="188" y="493.5" width="187" height="173.5"/>
                                 <color key="backgroundColor" red="0.85128630049999998" green="0.85128630049999998" blue="0.85128630049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Charrington" family="Charrington" pointSize="30"/>
                                 <state key="normal" title="They Borrowed">
@@ -713,7 +713,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="jgt-AI-gij" secondAttribute="trailing" id="4pE-sM-hHb"/>
                             <constraint firstItem="LCd-aH-cET" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="bottom" constant="1" id="5e3-Jr-eLZ"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="top" secondItem="jgt-AI-gij" secondAttribute="bottom" id="74d-vW-zeR"/>
-                            <constraint firstItem="DPE-dd-hMk" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" constant="23" id="91e-M3-BUS"/>
+                            <constraint firstItem="DPE-dd-hMk" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" constant="74" id="91e-M3-BUS"/>
                             <constraint firstAttribute="trailing" secondItem="3C1-cG-jWj" secondAttribute="trailing" id="B5U-2N-vYj"/>
                             <constraint firstItem="ws4-Ci-CkI" firstAttribute="leading" secondItem="Snu-D2-eB8" secondAttribute="leading" id="BKH-Qo-0sg"/>
                             <constraint firstItem="dgV-Gr-aST" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="bottom" id="DAh-1g-MQJ"/>
@@ -746,7 +746,7 @@
                             <constraint firstItem="grC-ej-Np8" firstAttribute="top" secondItem="LCd-aH-cET" secondAttribute="bottom" constant="1" id="gu4-Vg-Ahd"/>
                             <constraint firstItem="DPE-dd-hMk" firstAttribute="leading" secondItem="Kvs-4K-ETV" secondAttribute="leadingMargin" constant="-4" id="il1-zK-Kep"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="width" secondItem="LCd-aH-cET" secondAttribute="width" id="ixd-TO-0ls"/>
-                            <constraint firstItem="jgt-AI-gij" firstAttribute="top" secondItem="Kvs-4K-ETV" secondAttribute="topMargin" constant="20" id="lBP-NV-B3h"/>
+                            <constraint firstItem="jgt-AI-gij" firstAttribute="top" secondItem="Kvs-4K-ETV" secondAttribute="topMargin" constant="60" id="lBP-NV-B3h"/>
                             <constraint firstItem="3C1-cG-jWj" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" id="lR0-eT-ap6"/>
                             <constraint firstItem="Snu-D2-eB8" firstAttribute="trailing" secondItem="T3m-36-Qf3" secondAttribute="trailing" id="mUh-ic-XNT"/>
                             <constraint firstAttribute="trailing" secondItem="jgt-AI-gij" secondAttribute="trailing" id="rz1-Rx-ljO"/>
