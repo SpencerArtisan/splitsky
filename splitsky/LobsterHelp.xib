@@ -16,14 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ok, so you had the soup and your friend had the lobster.   Enter the lob-sided parts of the bill, then split the rest 50/50." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-4o-SUh">
-                    <rect key="frame" x="20" y="173" width="335" height="125.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ok, so you had the soup and your friend had the lobster.   Enter the lopsided parts of the bill, then split the rest 50/50." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-4o-SUh">
+                    <rect key="frame" x="20" y="103" width="333" height="125.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobsters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-A4-1ES">
-                    <rect key="frame" x="0.0" y="80" width="375" height="53"/>
+                    <rect key="frame" x="0.0" y="10" width="375" height="53"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -35,14 +35,14 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="0.76064387583892612" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="0.83245071308724827" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottomMargin" secondItem="nCn-BE-98t" secondAttribute="bottom" id="C8b-Sg-O8R"/>
                 <constraint firstItem="nCn-BE-98t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="O5I-u3-Fdc"/>
-                <constraint firstItem="PVp-A4-1ES" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="UjM-g3-d2d"/>
+                <constraint firstItem="PVp-A4-1ES" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="UjM-g3-d2d"/>
                 <constraint firstItem="nCn-BE-98t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="W4f-BI-uYR"/>
                 <constraint firstItem="PVp-A4-1ES" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WVi-Tu-EZh"/>
-                <constraint firstAttribute="trailing" secondItem="WxL-4o-SUh" secondAttribute="trailing" constant="20" id="Yt3-By-lXB"/>
+                <constraint firstAttribute="trailing" secondItem="WxL-4o-SUh" secondAttribute="trailing" constant="22" id="Yt3-By-lXB"/>
                 <constraint firstAttribute="trailing" secondItem="PVp-A4-1ES" secondAttribute="trailing" id="aaQ-RM-rcf"/>
                 <constraint firstItem="WxL-4o-SUh" firstAttribute="top" secondItem="PVp-A4-1ES" secondAttribute="bottom" constant="40" id="kMV-Cc-cAk"/>
                 <constraint firstItem="WxL-4o-SUh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="r0J-zx-S4u"/>
