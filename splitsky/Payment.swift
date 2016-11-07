@@ -9,11 +9,11 @@
 import Foundation
 
 class Payment {
-    private var _amount: Float
-    private var _myLobsters: Float
-    private var _theirLobsters: Float
-    private var _type: Type
-    private var _label: String
+    fileprivate var _amount: Float
+    fileprivate var _myLobsters: Float
+    fileprivate var _theirLobsters: Float
+    fileprivate var _type: Type
+    fileprivate var _label: String
     
     convenience init(amount: Float, type: Type, label: String) {
         self.init(even:amount, my:0, theirs: 0, type: type, label: label)
@@ -31,7 +31,7 @@ class Payment {
         return _amount
     }
     
-    func setLabel(text: String) {
+    func setLabel(_ text: String) {
         _label = text
     }
     
@@ -59,11 +59,11 @@ class Payment {
         }
     }
     
-    func allocateToMe(amount: Float) {
+    func allocateToMe(_ amount: Float) {
         _myLobsters = _myLobsters + amount
     }
 
-    func allocateToThem(amount: Float) {
+    func allocateToThem(_ amount: Float) {
         _theirLobsters = _theirLobsters + amount
     }
     
@@ -94,7 +94,7 @@ enum Type : String {
         return rawValue
     }
     
-    static func fromCode(str: String) -> Type {
+    static func fromCode(_ str: String) -> Type {
         switch str {
         case "IP":
             return .iPaid

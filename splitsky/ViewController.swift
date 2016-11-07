@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     var type: Type?
-    private var typeModal: Modal?
-    private var label: String = ""
-    private var splitPayment: Payment?
+    fileprivate var typeModal: Modal?
+    fileprivate var label: String = ""
+    fileprivate var splitPayment: Payment?
     
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
@@ -24,159 +24,160 @@ class ViewController: UIViewController {
 
     let SPACE = " \u{200c}"
 
-    @IBAction func onDot(sender: AnyObject) {
-        if !number.text!.containsString(".") {
+    @IBAction func onDot(_ sender: AnyObject) {
+        if !number.text!.contains(".") {
             addText(".")
         }
     }
     
-    @IBAction func on0(sender: AnyObject) {
+    @IBAction func on0(_ sender: AnyObject) {
         onDigit("0")
     }
     
-    @IBAction func on1(sender: AnyObject) {
+    @IBAction func on1(_ sender: AnyObject) {
         onDigit("1")
     }
     
-    @IBAction func on2(sender: AnyObject) {
+    @IBAction func on2(_ sender: AnyObject) {
         onDigit("2")
     }
     
-    @IBAction func on3(sender: AnyObject) {
+    @IBAction func on3(_ sender: AnyObject) {
         onDigit("3")
     }
     
-    @IBAction func on4(sender: AnyObject) {
+    @IBAction func on4(_ sender: AnyObject) {
         onDigit("4")
     }
     
-    @IBAction func on5(sender: AnyObject) {
+    @IBAction func on5(_ sender: AnyObject) {
         onDigit("5")
     }
     
-    @IBAction func on6(sender: AnyObject) {
+    @IBAction func on6(_ sender: AnyObject) {
         onDigit("6")
     }
     
-    @IBAction func on7(sender: AnyObject) {
+    @IBAction func on7(_ sender: AnyObject) {
         onDigit("7")
     }
 
-    @IBAction func on8(sender: AnyObject) {
+    @IBAction func on8(_ sender: AnyObject) {
         onDigit("8")
     }
     
-    @IBAction func on9(sender: AnyObject) {
+    @IBAction func on9(_ sender: AnyObject) {
         onDigit("9")
     }
     
-    @IBAction func onClear(sender: AnyObject) {
+    @IBAction func onClear(_ sender: AnyObject) {
         number.text = "0" + SPACE
         Util.disable(evenSplitButton)
         Util.disable(lobsterButton)
     }
 
-    @IBAction func onCancel(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func onCancel(_ sender: AnyObject) {
+        navigationController?.popViewController(animated: true)
     }
     
     // Or the My Lobster button in lobster mode
-    @IBAction func onEvenSplit(sender: AnyObject) {
+    @IBAction func onEvenSplit(_ sender: AnyObject) {
         if splitPayment != nil {
             splitPayment!.allocateToMe(amount())
             updateLobsterMode()
         } else if amount() > 0 {
             addPayment(Payment(amount: amount(), type: type!, label: label))
         }
-        onClear("")
+        onClear("" as AnyObject)
     }
     
     // Or the Their Lobster button in lobster mode
-    @IBAction func onLobsterSplit(sender: AnyObject) {
+    @IBAction func onLobsterSplit(_ sender: AnyObject) {
         if splitPayment != nil {
             splitPayment!.allocateToThem(amount())
         } else {
             Util.enable(labelButton)
-            Util.setText(labelButton, text: "Split\nRemainder\n50/50")
+            Util.setText(labelButton, text: "Split\nRest\n50/50")
             Util.setText(evenSplitButton, text: "My\nLobster")
-            Util.setText(lobsterButton, text: "\(Data.listName().capitalizedString)\nLobster")
+            Util.setText(lobsterButton, text: "\(Data.listName().capitalized)\nLobster")
             listName.text = "Uneven Split Bill"
-            listSummary.enabled = false
+            listSummary.isEnabled = false
             splitPayment = Payment.init(amount: amount(), type: type!, label: label)
         }
         updateLobsterMode()
-        onClear("")
+        onClear("" as AnyObject)
     }
     
-    private func updateLobsterMode() {
+    fileprivate func updateLobsterMode() {
         Util.setText(listSummary, text: "Remainder \(splitPayment!.evenlySplit())")
     }
     
     // Or the Split Remainder button in lobster mode
-    @IBAction func onLabel(sender: AnyObject) {
+    @IBAction func onLabel(_ sender: AnyObject) {
         if splitPayment != nil {
             addPayment(splitPayment!)
         } else {
-            UIView.animateWithDuration(0.1, animations: {
+            UIView.animate(withDuration: 0.1, animations: {
                 self.view.subviews.forEach { $0.alpha = 0.7 }
             })
             self.typeModal!.slideUpFromBottom(self.view)
         }
     }
 
-    @IBAction func onFood(sender: AnyObject) {
+    @IBAction func onFood(_ sender: AnyObject) {
         addLabel("Food")
     }
     
-    @IBAction func onDrink(sender: AnyObject) {
+    @IBAction func onDrink(_ sender: AnyObject) {
         addLabel("Drink")
     }
     
-    @IBAction func onAccommodation(sender: AnyObject) {
+    @IBAction func onAccommodation(_ sender: AnyObject) {
         addLabel("Accommodation")
     }
     
-    @IBAction func onTickets(sender: AnyObject) {
+    @IBAction func onTickets(_ sender: AnyObject) {
         addLabel("Tickets")
     }
     
-    @IBAction func onTravel(sender: AnyObject) {
+    @IBAction func onTravel(_ sender: AnyObject) {
         addLabel("Travel")
     }
     
-    @IBAction func onGroceries(sender: AnyObject) {
+    @IBAction func onGroceries(_ sender: AnyObject) {
         addLabel("Groceries")
     }
     
-    private func addLabel(name: String) {
-        UIView.animateWithDuration(0.1, animations: {
+    fileprivate func addLabel(_ name: String) {
+        UIView.animate(withDuration: 0.1, animations: {
             self.view.subviews.forEach { $0.alpha = 1 }
         })
         label = name
-        Util.setImage(labelButton!, image: UIImage(named: name)!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate))
-        labelButton.tintColor = UIColor.whiteColor()
+        Util.setImage(labelButton!, image: UIImage(named: name)!.withRenderingMode(UIImageRenderingMode.alwaysTemplate))
+        labelButton.tintColor = UIColor.white
         self.typeModal!.slideDownToBottom(self.view)
     }
     
-    private func addPayment(payment: Payment) {
+    fileprivate func addPayment(_ payment: Payment) {
         Data.addPayment(payment)
         update()
-        onClear("")
+        onClear("" as AnyObject)
         Util.setText(labelButton!, text: "Label")
+        Util.orange(labelButton!)
     }
     
-    private func update() {
-        listName.text = Data.listName().capitalizedString
+    fileprivate func update() {
+        listName.text = Data.listName().capitalized
         let totalOwingsAmount: Float = Data.theyOweMe()
         if abs(totalOwingsAmount) < 0.01 {
-            listSummary.setTitle("owes me nothing", forState: UIControlState.Normal)
+            listSummary.setTitle("owes me nothing", for: UIControlState())
         } else {
             let prefix = totalOwingsAmount > 0 ? "owes me" : "is owed"
-            Util.setText(listSummary, text: prefix + " " + Util.toMoney(abs(totalOwingsAmount)))
+            Util.setText(listSummary, text: prefix + " " + Util.toMoney(amount: abs(totalOwingsAmount)))
         }
         
-        navigation.title = FrontViewController.getButtonLabel(type!).stringByReplacingOccurrencesOfString("\n", withString: " ")
-        listSummary.enabled = true
+        navigation.title = FrontViewController.getButtonLabel(type!).replacingOccurrences(of: "\n", with: " ")
+        listSummary.isEnabled = true
         label = ""
         splitPayment = nil
         Util.setText(lobsterButton!, text: "Uneven\nSplit")
@@ -184,15 +185,15 @@ class ViewController: UIViewController {
         Util.setText(labelButton!, text: "Label")
     }
     
-    private func amount() -> Float {
+    fileprivate func amount() -> Float {
         return Float(numberText())!
     }
     
-    private func onDigit(digit: String) {
+    fileprivate func onDigit(_ digit: String) {
         if number.text! == "0" + SPACE {
             number.text = ""
         }
-        if number.text!.stringByReplacingOccurrencesOfString(".", withString: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
+        if number.text!.replacingOccurrences(of: ".", with: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
         if splitPayment == nil || amount() <= splitPayment!.evenlySplit() {
@@ -204,16 +205,16 @@ class ViewController: UIViewController {
         }
     }
     
-    private func noMoreThan2DecimalPlaces() -> Bool {
-        return !numberText().containsString(".") || (numberText() as NSString).substringFromIndex(numberText().characters.count - 2).containsString(("."))
+    fileprivate func noMoreThan2DecimalPlaces() -> Bool {
+        return !numberText().contains(".") || (numberText() as NSString).substring(from: numberText().characters.count - 2).contains(("."))
     }
 
-    private func addText(char: String) {
+    fileprivate func addText(_ char: String) {
         number.text = numberText() + char + SPACE
     }
     
-    private func numberText() -> String {
-        return number.text!.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: SPACE))
+    fileprivate func numberText() -> String {
+        return number.text!.trimmingCharacters(in: CharacterSet(charactersIn: SPACE))
     }
     
     override func viewDidLoad() {
@@ -222,24 +223,24 @@ class ViewController: UIViewController {
         Util.center(lobsterButton)
         Util.center(labelButton)
         update()
-        onClear("")
+        onClear("" as AnyObject)
         typeModal = Modal(viewName: "PaymentType", owner: self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         update()
         navigationController!.setNavigationBarHidden(false, animated: false)
-        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController!.navigationBar.tintColor = UIColor.white
+        navigationController!.navigationBar.barTintColor = UIColor.black
         navigationController!.navigationBar.clipsToBounds = true
     }
     
     override func viewDidLayoutSubviews() {
         if type == Type.iBorrowed || type == Type.theyBorrowed {
-            evenSplitButton.frame = CGRectMake(0, evenSplitButton.frame.origin.y, view.frame.width, evenSplitButton.frame.height)
+            evenSplitButton.frame = CGRect(x: 0, y: evenSplitButton.frame.origin.y, width: view.frame.width, height: evenSplitButton.frame.height)
             labelButton.removeFromSuperview()
             lobsterButton.removeFromSuperview()
-            evenSplitButton.setTitle("Done", forState: UIControlState.Normal)
+            evenSplitButton.setTitle("Done", for: UIControlState())
         }
     }
 }

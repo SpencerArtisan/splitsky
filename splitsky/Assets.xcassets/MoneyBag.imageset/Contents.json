@@ -1,8 +1,7 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "Image.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

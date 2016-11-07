@@ -10,7 +10,7 @@
 		972719721D5BB49800149251 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972719711D5BB49800149251 /* DetailController.swift */; };
 		9727A4FE1D5BD2D30076F98A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727A4FD1D5BD2D30076F98A /* Data.swift */; };
 		9727A5031D5BDF0B0076F98A /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727A5011D5BDF0B0076F98A /* PaymentCell.swift */; };
-		9727A5041D5BDF0B0076F98A /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9727A5021D5BDF0B0076F98A /* PaymentCell.xib */; };
+		9727A5041D5BDF0B0076F98A /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9727A5021D5BDF0B0076F98A /* DetailCell.xib */; };
 		97484F641D5DAC0A0056912B /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97484F631D5DAC0A0056912B /* Payment.swift */; };
 		977F23591D5DE8670054F075 /* Payments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 977F23581D5DE8670054F075 /* Payments.plist */; };
 		977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235A1D5DE9F00054F075 /* PaymentRepository.swift */; };
@@ -18,8 +18,6 @@
 		977F235F1D5E54C10054F075 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235E1D5E54C10054F075 /* Modal.swift */; };
 		9797AB231D7C162200D44D93 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797AB221D7C162200D44D93 /* FrontViewController.swift */; };
 		9797AB251D7C35C800D44D93 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797AB241D7C35C800D44D93 /* Util.swift */; };
-		9797AB2A1D7C989400D44D93 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797AB281D7C989400D44D93 /* AddFriendCell.swift */; };
-		9797AB2B1D7C989400D44D93 /* AddFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9797AB291D7C989400D44D93 /* AddFriendCell.xib */; };
 		9797AB4E1D7CB17700D44D93 /* CHARRING.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9797AB4D1D7CB17700D44D93 /* CHARRING.ttf */; };
 		97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A315FE1D69A93600A2A28D /* AllListsController.swift */; };
 		97A316011D6A005800A2A28D /* Label.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A316001D6A005800A2A28D /* Label.xib */; };
@@ -27,33 +25,15 @@
 		97A53F731D16A8B800BED436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F721D16A8B800BED436 /* ViewController.swift */; };
 		97A53F761D16A8B800BED436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A53F741D16A8B800BED436 /* Main.storyboard */; };
 		97A53F781D16A8B800BED436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A53F771D16A8B800BED436 /* Assets.xcassets */; };
-		97A53F7B1D16A8B800BED436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A53F791D16A8B800BED436 /* LaunchScreen.storyboard */; };
-		97A53F861D16A8B800BED436 /* SplitskyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F851D16A8B800BED436 /* SplitskyTests.swift */; };
-		97A53F911D16A8B800BED436 /* SplitskyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A53F901D16A8B800BED436 /* SplitskyUITests.swift */; };
+		97C184111DA828EB0010FBE2 /* AllListsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C184101DA828EB0010FBE2 /* AllListsCell.xib */; };
+		97D716611D8748D4001EF468 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D716601D8748D4001EF468 /* Launch.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		97A53F821D16A8B800BED436 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97A53F651D16A8B700BED436 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 97A53F6C1D16A8B800BED436;
-			remoteInfo = splitsky;
-		};
-		97A53F8D1D16A8B800BED436 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97A53F651D16A8B700BED436 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 97A53F6C1D16A8B800BED436;
-			remoteInfo = splitsky;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		972719711D5BB49800149251 /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		9727A4FD1D5BD2D30076F98A /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9727A5011D5BDF0B0076F98A /* PaymentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
-		9727A5021D5BDF0B0076F98A /* PaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		9727A5021D5BDF0B0076F98A /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		97484F631D5DAC0A0056912B /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		977F23581D5DE8670054F075 /* Payments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Payments.plist; sourceTree = "<group>"; };
 		977F235A1D5DE9F00054F075 /* PaymentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
@@ -61,8 +41,6 @@
 		977F235E1D5E54C10054F075 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		9797AB221D7C162200D44D93 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		9797AB241D7C35C800D44D93 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		9797AB281D7C989400D44D93 /* AddFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
-		9797AB291D7C989400D44D93 /* AddFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendCell.xib; sourceTree = "<group>"; };
 		9797AB4D1D7CB17700D44D93 /* CHARRING.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CHARRING.ttf; sourceTree = "<group>"; };
 		97A315FE1D69A93600A2A28D /* AllListsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsController.swift; sourceTree = "<group>"; };
 		97A316001D6A005800A2A28D /* Label.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Label.xib; sourceTree = "<group>"; };
@@ -71,32 +49,13 @@
 		97A53F721D16A8B800BED436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		97A53F751D16A8B800BED436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97A53F771D16A8B800BED436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		97A53F7A1D16A8B800BED436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97A53F7C1D16A8B800BED436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97A53F811D16A8B800BED436 /* Splitsky.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Splitsky.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97A53F851D16A8B800BED436 /* SplitskyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitskyTests.swift; sourceTree = "<group>"; };
-		97A53F871D16A8B800BED436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97A53F8C1D16A8B800BED436 /* Splitsky.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Splitsky.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97A53F901D16A8B800BED436 /* SplitskyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitskyUITests.swift; sourceTree = "<group>"; };
-		97A53F921D16A8B800BED436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97C184101DA828EB0010FBE2 /* AllListsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllListsCell.xib; sourceTree = "<group>"; };
+		97D716601D8748D4001EF468 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		97A53F6A1D16A8B800BED436 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97A53F7E1D16A8B800BED436 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97A53F891D16A8B800BED436 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -118,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				97A53F6F1D16A8B800BED436 /* Splitsky */,
-				97A53F841D16A8B800BED436 /* SplitskyTests */,
-				97A53F8F1D16A8B800BED436 /* SplitskyUITests */,
 				97A53F6E1D16A8B800BED436 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,8 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				97A53F6D1D16A8B800BED436 /* Splitsky.app */,
-				97A53F811D16A8B800BED436 /* Splitsky.xctest */,
-				97A53F8C1D16A8B800BED436 /* Splitsky.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,47 +96,26 @@
 				97A53F771D16A8B800BED436 /* Assets.xcassets */,
 				97A53F7C1D16A8B800BED436 /* Info.plist */,
 				977F23581D5DE8670054F075 /* Payments.plist */,
-				97A53F791D16A8B800BED436 /* LaunchScreen.storyboard */,
 				97A53F741D16A8B800BED436 /* Main.storyboard */,
 				977F235E1D5E54C10054F075 /* Modal.swift */,
 				97A53F701D16A8B800BED436 /* AppDelegate.swift */,
 				9797AB221D7C162200D44D93 /* FrontViewController.swift */,
 				97A53F721D16A8B800BED436 /* ViewController.swift */,
 				97A315FE1D69A93600A2A28D /* AllListsController.swift */,
+				97C184101DA828EB0010FBE2 /* AllListsCell.xib */,
 				972719711D5BB49800149251 /* DetailController.swift */,
+				9727A5021D5BDF0B0076F98A /* DetailCell.xib */,
 				9727A4FD1D5BD2D30076F98A /* Data.swift */,
 				9727A5011D5BDF0B0076F98A /* PaymentCell.swift */,
-				9797AB281D7C989400D44D93 /* AddFriendCell.swift */,
 				97484F631D5DAC0A0056912B /* Payment.swift */,
 				977F235A1D5DE9F00054F075 /* PaymentRepository.swift */,
-				9797AB291D7C989400D44D93 /* AddFriendCell.xib */,
-				9727A5021D5BDF0B0076F98A /* PaymentCell.xib */,
 				977F235C1D5E38F10054F075 /* PaymentType.xib */,
 				97A316001D6A005800A2A28D /* Label.xib */,
 				9797AB241D7C35C800D44D93 /* Util.swift */,
+				97D716601D8748D4001EF468 /* Launch.xib */,
 			);
 			name = Splitsky;
 			path = splitsky;
-			sourceTree = "<group>";
-		};
-		97A53F841D16A8B800BED436 /* SplitskyTests */ = {
-			isa = PBXGroup;
-			children = (
-				97A53F851D16A8B800BED436 /* SplitskyTests.swift */,
-				97A53F871D16A8B800BED436 /* Info.plist */,
-			);
-			name = SplitskyTests;
-			path = splitskyTests;
-			sourceTree = "<group>";
-		};
-		97A53F8F1D16A8B800BED436 /* SplitskyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				97A53F901D16A8B800BED436 /* SplitskyUITests.swift */,
-				97A53F921D16A8B800BED436 /* Info.plist */,
-			);
-			name = SplitskyUITests;
-			path = splitskyUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,42 +138,6 @@
 			productReference = 97A53F6D1D16A8B800BED436 /* Splitsky.app */;
 			productType = "com.apple.product-type.application";
 		};
-		97A53F801D16A8B800BED436 /* SplitskyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 97A53F981D16A8B800BED436 /* Build configuration list for PBXNativeTarget "SplitskyTests" */;
-			buildPhases = (
-				97A53F7D1D16A8B800BED436 /* Sources */,
-				97A53F7E1D16A8B800BED436 /* Frameworks */,
-				97A53F7F1D16A8B800BED436 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				97A53F831D16A8B800BED436 /* PBXTargetDependency */,
-			);
-			name = SplitskyTests;
-			productName = splitskyTests;
-			productReference = 97A53F811D16A8B800BED436 /* Splitsky.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		97A53F8B1D16A8B800BED436 /* SplitskyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 97A53F9B1D16A8B800BED436 /* Build configuration list for PBXNativeTarget "SplitskyUITests" */;
-			buildPhases = (
-				97A53F881D16A8B800BED436 /* Sources */,
-				97A53F891D16A8B800BED436 /* Frameworks */,
-				97A53F8A1D16A8B800BED436 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				97A53F8E1D16A8B800BED436 /* PBXTargetDependency */,
-			);
-			name = SplitskyUITests;
-			productName = splitskyUITests;
-			productReference = 97A53F8C1D16A8B800BED436 /* Splitsky.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -253,14 +151,7 @@
 					97A53F6C1D16A8B800BED436 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = YWXKS4E5M8;
-					};
-					97A53F801D16A8B800BED436 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 97A53F6C1D16A8B800BED436;
-					};
-					97A53F8B1D16A8B800BED436 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 97A53F6C1D16A8B800BED436;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -278,8 +169,6 @@
 			projectRoot = "";
 			targets = (
 				97A53F6C1D16A8B800BED436 /* Splitsky */,
-				97A53F801D16A8B800BED436 /* SplitskyTests */,
-				97A53F8B1D16A8B800BED436 /* SplitskyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,28 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */,
-				97A53F7B1D16A8B800BED436 /* LaunchScreen.storyboard in Resources */,
 				97A53F781D16A8B800BED436 /* Assets.xcassets in Resources */,
-				9797AB2B1D7C989400D44D93 /* AddFriendCell.xib in Resources */,
-				9727A5041D5BDF0B0076F98A /* PaymentCell.xib in Resources */,
+				97C184111DA828EB0010FBE2 /* AllListsCell.xib in Resources */,
+				97D716611D8748D4001EF468 /* Launch.xib in Resources */,
+				9727A5041D5BDF0B0076F98A /* DetailCell.xib in Resources */,
 				97A53F761D16A8B800BED436 /* Main.storyboard in Resources */,
 				9797AB4E1D7CB17700D44D93 /* CHARRING.ttf in Resources */,
 				977F23591D5DE8670054F075 /* Payments.plist in Resources */,
 				97A316011D6A005800A2A28D /* Label.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97A53F7F1D16A8B800BED436 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97A53F8A1D16A8B800BED436 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +200,6 @@
 				9797AB251D7C35C800D44D93 /* Util.swift in Sources */,
 				977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */,
 				9727A5031D5BDF0B0076F98A /* PaymentCell.swift in Sources */,
-				9797AB2A1D7C989400D44D93 /* AddFriendCell.swift in Sources */,
 				9797AB231D7C162200D44D93 /* FrontViewController.swift in Sources */,
 				97A53F731D16A8B800BED436 /* ViewController.swift in Sources */,
 				97484F641D5DAC0A0056912B /* Payment.swift in Sources */,
@@ -337,36 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97A53F7D1D16A8B800BED436 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97A53F861D16A8B800BED436 /* SplitskyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97A53F881D16A8B800BED436 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97A53F911D16A8B800BED436 /* SplitskyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		97A53F831D16A8B800BED436 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 97A53F6C1D16A8B800BED436 /* Splitsky */;
-			targetProxy = 97A53F821D16A8B800BED436 /* PBXContainerItemProxy */;
-		};
-		97A53F8E1D16A8B800BED436 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 97A53F6C1D16A8B800BED436 /* Splitsky */;
-			targetProxy = 97A53F8D1D16A8B800BED436 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		97A53F741D16A8B800BED436 /* Main.storyboard */ = {
@@ -375,14 +220,6 @@
 				97A53F751D16A8B800BED436 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		97A53F791D16A8B800BED436 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97A53F7A1D16A8B800BED436 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -480,6 +317,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Splitsky;
 				PRODUCT_NAME = Splitsky;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -492,52 +330,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Splitsky;
 				PRODUCT_NAME = Splitsky;
-			};
-			name = Release;
-		};
-		97A53F991D16A8B800BED436 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = splitskyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.artisan-software.splitskyTests";
-				PRODUCT_NAME = Splitsky;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Splitsky.app/Splitsky";
-			};
-			name = Debug;
-		};
-		97A53F9A1D16A8B800BED436 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = splitskyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.artisan-software.splitskyTests";
-				PRODUCT_NAME = Splitsky;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Splitsky.app/Splitsky";
-			};
-			name = Release;
-		};
-		97A53F9C1D16A8B800BED436 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = splitskyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.artisan-software.splitskyUITests";
-				PRODUCT_NAME = Splitsky;
-				TEST_TARGET_NAME = splitsky;
-			};
-			name = Debug;
-		};
-		97A53F9D1D16A8B800BED436 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = splitskyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.artisan-software.splitskyUITests";
-				PRODUCT_NAME = Splitsky;
-				TEST_TARGET_NAME = splitsky;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -558,24 +351,6 @@
 			buildConfigurations = (
 				97A53F961D16A8B800BED436 /* Debug */,
 				97A53F971D16A8B800BED436 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		97A53F981D16A8B800BED436 /* Build configuration list for PBXNativeTarget "SplitskyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97A53F991D16A8B800BED436 /* Debug */,
-				97A53F9A1D16A8B800BED436 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		97A53F9B1D16A8B800BED436 /* Build configuration list for PBXNativeTarget "SplitskyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97A53F9C1D16A8B800BED436 /* Debug */,
-				97A53F9D1D16A8B800BED436 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

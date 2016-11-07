@@ -16,12 +16,13 @@ class PaymentCell: UITableViewCell {
     @IBOutlet weak var words: UILabel!
     @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var label: UIButton!
+    @IBOutlet weak var breakdown: UILabel!
     
-    @IBAction func onLabel(sender: AnyObject) {
+    @IBAction func onLabel(_ sender: AnyObject) {
        labelCallback!()
     }
     
-    @IBAction func onDelete(sender: AnyObject) {
+    @IBAction func onDelete(_ sender: AnyObject) {
         deleteCallback!()
     }
 }

@@ -16,11 +16,11 @@ extension Dictionary {
         }
     }
     
-    func mapPairs<OutKey: Hashable, OutValue>(@noescape transform: Element throws -> (OutKey, OutValue)) rethrows -> [OutKey: OutValue] {
+    func mapPairs<OutKey: Hashable, OutValue>(_ transform: (Element) throws -> (OutKey, OutValue)) rethrows -> [OutKey: OutValue] {
         return Dictionary<OutKey, OutValue>(try map(transform))
     }
     
-    func filterPairs(@noescape includeElement: Element throws -> Bool) rethrows -> [Key: Value] {
+    func filterPairs(_ includeElement: (Element) throws -> Bool) rethrows -> [Key: Value] {
         return Dictionary(try filter(includeElement))
     }
 }
@@ -29,7 +29,7 @@ class PaymentRepository {
     static func load() -> [String:[Payment]] {
         let props = properties()
         var payments: [String: [String]]
-        let allPayments = props.valueForKey("AllPayments")
+        let allPayments = props.value(forKey: "AllPayments")
         if allPayments == nil {
             payments = [String:[String]]()
         } else {
@@ -39,27 +39,27 @@ class PaymentRepository {
         return payments.mapPairs {(name, payments) in (name, decode(payments))}
     }
     
-    static func save(payments: [String:[Payment]]) {
+    static func save(_ payments: [String:[Payment]]) {
         let encodedPayments = payments.mapPairs { (name, payments) in (name, encode(payments)) }
         let props: NSMutableDictionary = NSMutableDictionary()
         props.setValue(encodedPayments, forKey: "AllPayments")
-        props.writeToFile(path(), atomically: true)
+        props.write(toFile: path(), atomically: true)
     }
     
-    private static func encode(payments: [Payment]) -> [String] {
+    fileprivate static func encode(_ payments: [Payment]) -> [String] {
         return payments.map { encode($0) }
     }
     
-    private static func encode(payment: Payment) -> String {
+    fileprivate static func encode(_ payment: Payment) -> String {
         return "\(payment.amount()):\(payment.type().toCode()):\(payment.label()):\(payment.myAllocations()):\(payment.theirAllocations())"
     }
     
-    private static func decode(payments: [String]) -> [Payment] {
+    fileprivate static func decode(_ payments: [String]) -> [Payment] {
         return payments.map {decode($0)}
     }
     
-    private static func decode(code: String) -> Payment {
-        let parts = code.componentsSeparatedByString(":")
+    fileprivate static func decode(_ code: String) -> Payment {
+        let parts = code.components(separatedBy: ":")
         let amount = Float(parts[0])!
         let type = Type.fromCode(parts[1])
         let label = parts.count >= 3 ? parts[2] : ""
@@ -68,13 +68,13 @@ class PaymentRepository {
         return Payment(even: amount, my: myLobsters, theirs: theirLobsters, type: type, label: label)
     }
     
-    private static func properties() -> NSDictionary {
+    fileprivate static func properties() -> NSDictionary {
             let propsPath = path()
-            let fileManager = NSFileManager.defaultManager()
-            if (!(fileManager.fileExistsAtPath(propsPath))) {
-                let bundle : NSString = NSBundle.mainBundle().pathForResource("Payments", ofType: "plist")!
+            let fileManager = FileManager.default
+            if (!(fileManager.fileExists(atPath: propsPath))) {
+                let bundle : NSString = Bundle.main.path(forResource: "Payments", ofType: "plist")! as NSString
                 do {
-                    try fileManager.copyItemAtPath(bundle as String, toPath: propsPath)
+                    try fileManager.copyItem(atPath: bundle as String, toPath: propsPath)
                 } catch {
                 }
             }
@@ -82,8 +82,8 @@ class PaymentRepository {
         return NSDictionary(contentsOfFile: propsPath)?.mutableCopy() as! NSDictionary
     }
     
-    private static func path() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
-        return paths.stringByAppendingPathComponent("Payments")
+    fileprivate static func path() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        return paths.appendingPathComponent("Payments")
     }
 }

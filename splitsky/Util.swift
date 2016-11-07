@@ -12,36 +12,47 @@ import UIKit
 class Util {
     static let DARK_GRAY = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
     static let DARK_BLUE = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+    static let ORANGE = UIColor(red: 1, green: 132/255, blue: 3/255, alpha: 1)
     
     static func toMoney(amount: Float) -> String  {
         let PenceDontMatter: Float = 1000
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .DecimalStyle
-        formatter.maximumFractionDigits = abs(amount) >= PenceDontMatter ? 0 : 2
-        return formatter.stringFromNumber(amount)! as String
+        let decPlc = abs(amount) >= PenceDontMatter || amount.truncatingRemainder(dividingBy: 1) < 0.01 ? 0 : 2
+        return toMoney(amount: amount, decPlc: decPlc)
     }
     
-    static func disable(button: UIButton) {
+    static func toMoney(amount: Float, decPlc: Int) -> String  {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumFractionDigits = decPlc
+        numberFormatter.maximumFractionDigits = decPlc
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        return numberFormatter.string(from: NSNumber(value: amount))!
+    }
+    
+    static func disable(_ button: UIButton) {
         button.backgroundColor = DARK_GRAY
-        button.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        button.setTitleColor(UIColor.lightGray, for: UIControlState())
     }
     
-    static func enable(button: UIButton) {
+    static func enable(_ button: UIButton) {
         button.backgroundColor = DARK_BLUE
-        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        button.setTitleColor(UIColor.white, for: UIControlState())
     }
     
-    static func setText(button: UIButton, text: String) {
-        button.setTitle(text, forState: UIControlState.Normal)
-        button.setImage(nil, forState: UIControlState.Normal)
+    static func orange(_ button: UIButton) {
+        button.backgroundColor = ORANGE
     }
     
-    static func setImage(button: UIButton, image: UIImage) {
-        button.setTitle("", forState: UIControlState.Normal)
-        button.setImage(image, forState: UIControlState.Normal)
+    static func setText(_ button: UIButton, text: String) {
+        button.setTitle(text, for: UIControlState())
+        button.setImage(nil, for: UIControlState())
     }
     
-    static func center(button: UIButton) {
-        button.titleLabel?.textAlignment = NSTextAlignment.Center
+    static func setImage(_ button: UIButton, image: UIImage) {
+        button.setTitle("", for: UIControlState())
+        button.setImage(image, for: UIControlState())
+    }
+    
+    static func center(_ button: UIButton) {
+        button.titleLabel?.textAlignment = NSTextAlignment.center
     }
 }

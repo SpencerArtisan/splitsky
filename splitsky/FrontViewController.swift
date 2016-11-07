@@ -21,59 +21,60 @@ class FrontViewController: UIViewController {
         super.viewDidLoad()
         Data.set(PaymentRepository.load())
     }
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent;
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent;
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
         update()
     }
     
-    private func update() {
+    fileprivate func update() {
         blackLabel.text = getBlackLabel()
         style(theyBorrowed, text: FrontViewController.getButtonLabel(Type.theyBorrowed))
         style(theyPaidBill, text: FrontViewController.getButtonLabel(Type.theyPaid))
         style(iBorrowed, text: FrontViewController.getButtonLabel(Type.iBorrowed))
         style(iPaidBill, text:FrontViewController.getButtonLabel(Type.iPaid))
-        style(breakdownButton, text: "\(Data.listName().capitalizedString)\nBreakdown")
+        style(breakdownButton, text: "\(Data.listName().capitalized)\nBreakdown")
+        blackLabel.adjustsFontSizeToFitWidth = true
     }
     
-    private func style(button: UIButton, text: String) {
+    fileprivate func style(_ button: UIButton, text: String) {
         let attributedString = NSMutableAttributedString(string: text)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 16 // Whatever line spacing you want in points
-        paragraphStyle.alignment  = NSTextAlignment.Center
+        paragraphStyle.alignment  = NSTextAlignment.center
         attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         attributedString.addAttribute(NSForegroundColorAttributeName, value: button.currentTitleColor, range:NSMakeRange(0, attributedString.length))
         
-        button.setAttributedTitle(attributedString, forState: UIControlState.Normal)
+        button.setAttributedTitle(attributedString, for: UIControlState())
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let dest: ViewController? = segue.destinationViewController as? ViewController
+        let dest: ViewController? = segue.destination as? ViewController
         if dest != nil {
             dest!.type = Type.fromCode(segue.identifier!)
         }
     }
     
-    private func getBlackLabel() -> String {
-        var text = Data.listName().capitalizedString
+    fileprivate func getBlackLabel() -> String {
+        var text = Data.listName().capitalized
         
         let theyOweMe: Float = Data.theyOweMe()
         if abs(theyOweMe) < 0.01 {
             text = text + " owes me nothing"
         } else {
             text = text + (theyOweMe > 0 ? " owes me " : " is owed ")
-            text = text + Util.toMoney(abs(theyOweMe))
+            text = text + Util.toMoney(amount: abs(theyOweMe))
         }
         return text
     }
     
-    static func getButtonLabel(type: Type) -> String {
-        let they = Data.listName().capitalizedString
+    static func getButtonLabel(_ type: Type) -> String {
+        let they = Data.listName().capitalized
         return type == Type.iPaid ? "I\nPaid Bill" :
             (type == Type.theyPaid ? "\(they)\nPaid Bill" :
                 (type == Type.iBorrowed ? "\(they)\nGave Me" :

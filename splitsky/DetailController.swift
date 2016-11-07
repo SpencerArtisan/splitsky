@@ -17,62 +17,62 @@ class DetailController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(UINib(nibName: "PaymentCell", bundle: nil), forCellReuseIdentifier: "PaymentCell")
+        tableView.register(UINib(nibName: "DetailCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
         typeModal = Modal(viewName: "PaymentType", owner: self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(false, animated: false)
-        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController!.navigationBar.tintColor = UIColor.white
+        navigationController!.navigationBar.barTintColor = UIColor.black
         navigationController!.navigationBar.clipsToBounds = true
     }
     
-    @IBAction func onFood(sender: AnyObject) {
+    @IBAction func onFood(_ sender: AnyObject) {
         addLabel("Food")
     }
     
-    @IBAction func onDrink(sender: AnyObject) {
+    @IBAction func onDrink(_ sender: AnyObject) {
         addLabel("Drink")
     }
 
-    @IBAction func onAccommodation(sender: AnyObject) {
+    @IBAction func onAccommodation(_ sender: AnyObject) {
         addLabel("Accommodation")
     }
     
-    @IBAction func onTickets(sender: AnyObject) {
+    @IBAction func onTickets(_ sender: AnyObject) {
         addLabel("Tickets")
     }
     
-    @IBAction func onTravel(sender: AnyObject) {
+    @IBAction func onTravel(_ sender: AnyObject) {
         addLabel("Travel")
     }
     
-    @IBAction func onGroceries(sender: AnyObject) {
+    @IBAction func onGroceries(_ sender: AnyObject) {
         addLabel("Groceries")
     }
     
-    private func addLabel(name: String) {
+    fileprivate func addLabel(_ name: String) {
         activePayment!.setLabel(name)
         PaymentRepository.save(Data.allPayments())
         tableView.reloadData()
         self.typeModal!.slideDownToBottom(self.view)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.paymentCount()
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath) as! PaymentCell
-        let payment = Data.payments()[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! PaymentCell
+        let payment = Data.payments()[(indexPath as NSIndexPath).row]
         
         if labelColor == nil {
             labelColor = cell.label.backgroundColor
         }
         
         cell.deleteCallback = {
-            Data.removePayment(indexPath.row)
+            Data.removePayment((indexPath as NSIndexPath).row)
             tableView.reloadData()
         }
         
@@ -81,30 +81,33 @@ class DetailController: UITableViewController {
             self.typeModal!.slideUpFromBottom(self.view)
         }
 
-        setWords(payment, cell: cell)
-
-        cell.label.hidden = payment.type() == Type.iBorrowed || payment.type() == Type.theyBorrowed
+        cell.label.isHidden = payment.type() == Type.iBorrowed || payment.type() == Type.theyBorrowed
         
         if payment.hasLabel() {
             Util.setImage(cell.label, image: UIImage(named: payment.label() + "Small")!)
-            cell.label.backgroundColor = UIColor.blackColor()
+            cell.label.backgroundColor = UIColor.black
         } else if labelColor != nil {
             Util.setText(cell.label, text: "Label")
             cell.label.backgroundColor = labelColor!
         }
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.backgroundColor = UIColor.blackColor()
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.backgroundColor = UIColor.black
+        
+        setWords(payment, cell: cell)
         
         cell.layoutIfNeeded()
-        cell.label.frame = CGRectMake(cell.label.frame.origin.x, cell.label.frame.origin.y, 60, cell.label.frame.height)
-        cell.delete.frame = CGRectMake(cell.delete.frame.origin.x + 30, cell.delete.frame.origin.y, 60, cell.delete.frame.height)
-        cell.words.frame = CGRectMake(cell.label.frame.maxX + 10, cell.words.frame.origin.y, 240, cell.words.frame.height)
+         if cell.breakdown.text == "" {
+            cell.words.frame = CGRect(x: cell.words.frame.origin.x, y: 0, width: cell.words.frame.width, height: cell.frame.height)
+        }
+        
 
+    
+        
         return cell
     }
     
-    private func setWords(payment: Payment, cell: PaymentCell) {
-        let they = "\(Data.listName().capitalizedString)"
+    private func setWords(_ payment: Payment, cell: PaymentCell) {
+        let they = "\(Data.listName().capitalized)"
         if payment.type() == Type.theyPaid {
             cell.words.text = "\(they) paid bill of"
         } else if payment.type() == Type.iPaid {
@@ -114,16 +117,21 @@ class DetailController: UITableViewController {
         } else if payment.type() == Type.iBorrowed {
             cell.words.text = "\(they) gave me"
         }
-        cell.words.text = cell.words.text! + " \(Util.toMoney(payment.amount()))\(SPACE)"
+        cell.words.text = cell.words.text! + " \(Util.toMoney(amount: payment.amount()))\(SPACE)"
+        
+         cell.breakdown.text = ""
         if payment.isUneven() {
-            cell.words.text = cell.words.text! + "\n(\(Util.toMoney(payment.evenlySplit())) even"
             if payment.myAllocations() > 0 {
-                cell.words.text = cell.words.text! + ", \(Util.toMoney(payment.myAllocations())) me"
+                cell.breakdown.text = cell.breakdown.text! + "\(Util.toMoney(amount: payment.myAllocations(), decPlc: 0)) me, "
             }
             if payment.theirAllocations() > 0 {
-                cell.words.text = cell.words.text! + ", \(Util.toMoney(payment.theirAllocations())) \(they)"
+                cell.breakdown.text = cell.breakdown.text! + "\(Util.toMoney(amount: payment.theirAllocations(), decPlc: 0)) \(they), "
             }
-            cell.words.text = cell.words.text! + ")\(SPACE)\(SPACE)"
+            if payment.myAllocations() > 0 || payment.theirAllocations() > 0 {
+                cell.breakdown.text = cell.breakdown.text! + "rest even"
+            }
         }
+        
+
     }
 }

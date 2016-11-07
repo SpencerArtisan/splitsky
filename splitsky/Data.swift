@@ -9,8 +9,8 @@
 import Foundation
 
 class Data {
-    private static var _payments = [String:[Payment]]()
-    private static var _listName: String = ""
+    fileprivate static var _payments = [String:[Payment]]()
+    fileprivate static var _listName: String = ""
     
     static func newList() {
         var candidateSuffix = 2
@@ -21,12 +21,12 @@ class Data {
         setList("friend \(candidateSuffix)")
     }
     
-    static func set(payments: [String:[Payment]]) {
+    static func set(_ payments: [String:[Payment]]) {
         _payments = payments
         setList(defaultName())
     }
     
-    static func setList(name: String) {
+    static func setList(_ name: String) {
         _listName = name
         if _payments[_listName] == nil {
             _payments[_listName] = [Payment]()
@@ -57,24 +57,24 @@ class Data {
         return _payments
     }
     
-    static func changeName(oldName: String, newName: String) {
+    static func changeName(_ oldName: String, newName: String) {
         _payments[newName] = _payments[oldName]!
-        _payments.removeValueForKey(oldName)
+        _payments.removeValue(forKey: oldName)
         PaymentRepository.save(_payments)
     }
     
-    static func addPayment(payment: Payment) {
+    static func addPayment(_ payment: Payment) {
         _payments[listName()]!.append(payment)
         PaymentRepository.save(_payments)
     }
     
-    static func removePayment(index: Int) {
-        _payments[listName()]!.removeAtIndex(index)
+    static func removePayment(_ index: Int) {
+        _payments[listName()]!.remove(at: index)
         PaymentRepository.save(_payments)
     }
     
-    static func removeList(name: String) {
-            _payments.removeValueForKey(name)
+    static func removeList(_ name: String) {
+            _payments.removeValue(forKey: name)
         PaymentRepository.save(_payments)
 
         if Data.listName() == name {
@@ -83,11 +83,11 @@ class Data {
     }
     
     static func defaultName() -> String {
-        return _payments.count > 0 ? _payments.keys.sort()[0] : "my friend"
+        return _payments.count > 0 ? _payments.keys.sorted()[0] : "my friend"
     }
     
     static func theyOweMe() -> Float {
-        return _payments[listName()]!.reduce(0, combine: { $0 + $1.theyOweMe() } )
+        return _payments[listName()]!.reduce(0, { $0 + $1.theyOweMe() } )
     }
     
 }
