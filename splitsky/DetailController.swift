@@ -12,6 +12,7 @@ class DetailController: UITableViewController {
     let SPACE = "  \u{200c}"
     var labelColor: UIColor?
     var typeModal: Modal?
+
     
     var activePayment: Payment?
     
@@ -59,6 +60,8 @@ class DetailController: UITableViewController {
         self.typeModal!.slideDownToBottom(self.view)
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.paymentCount()
     }
@@ -99,9 +102,6 @@ class DetailController: UITableViewController {
          if cell.breakdown.text == "" {
             cell.words.frame = CGRect(x: cell.words.frame.origin.x, y: 0, width: cell.words.frame.width, height: cell.frame.height)
         }
-        
-
-    
         
         return cell
     }

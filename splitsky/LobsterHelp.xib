@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Splitsky" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ok, so you had the soup and your friend had the lobster.   Enter the lob-sided parts of the bill, then split the rest 50/50." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-4o-SUh">
+                    <rect key="frame" x="20" y="173" width="335" height="125.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobsters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-A4-1ES">
+                    <rect key="frame" x="0.0" y="80" width="375" height="53"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCn-BE-98t">
+                    <rect key="frame" x="8" y="8" width="359" height="651"/>
+                    <connections>
+                        <action selector="onClickHelp:" destination="-1" eventType="touchUpInside" id="p1J-XC-lQ5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="0.76064387583892612" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="nCn-BE-98t" secondAttribute="bottom" id="C8b-Sg-O8R"/>
+                <constraint firstItem="nCn-BE-98t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="O5I-u3-Fdc"/>
+                <constraint firstItem="PVp-A4-1ES" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="UjM-g3-d2d"/>
+                <constraint firstItem="nCn-BE-98t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="W4f-BI-uYR"/>
+                <constraint firstItem="PVp-A4-1ES" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WVi-Tu-EZh"/>
+                <constraint firstAttribute="trailing" secondItem="WxL-4o-SUh" secondAttribute="trailing" constant="20" id="Yt3-By-lXB"/>
+                <constraint firstAttribute="trailing" secondItem="PVp-A4-1ES" secondAttribute="trailing" id="aaQ-RM-rcf"/>
+                <constraint firstItem="WxL-4o-SUh" firstAttribute="top" secondItem="PVp-A4-1ES" secondAttribute="bottom" constant="40" id="kMV-Cc-cAk"/>
+                <constraint firstItem="WxL-4o-SUh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="r0J-zx-S4u"/>
+                <constraint firstAttribute="trailingMargin" secondItem="nCn-BE-98t" secondAttribute="trailing" id="x6t-5B-z2l"/>
+            </constraints>
+            <point key="canvasLocation" x="-110.5" y="-38.5"/>
+        </view>
+    </objects>
+</document>

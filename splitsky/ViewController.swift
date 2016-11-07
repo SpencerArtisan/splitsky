@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     fileprivate var typeModal: Modal?
     fileprivate var label: String = ""
     fileprivate var splitPayment: Payment?
+    var helpModal: Modal?
     
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
@@ -103,6 +104,7 @@ class ViewController: UIViewController {
             listName.text = "Uneven Split Bill"
             listSummary.isEnabled = false
             splitPayment = Payment.init(amount: amount(), type: type!, label: label)
+            helpModal?.slideDownFromTop(view)
         }
         updateLobsterMode()
         onClear("" as AnyObject)
@@ -122,6 +124,10 @@ class ViewController: UIViewController {
             })
             self.typeModal!.slideUpFromBottom(self.view)
         }
+    }
+    
+    @IBAction func onClickHelp(_ sender: Any) {
+        helpModal?.slideUpFromTop(self.view)
     }
 
     @IBAction func onFood(_ sender: AnyObject) {
@@ -225,6 +231,7 @@ class ViewController: UIViewController {
         update()
         onClear("" as AnyObject)
         typeModal = Modal(viewName: "PaymentType", owner: self)
+        helpModal = Modal(viewName: "LobsterHelp", owner: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
