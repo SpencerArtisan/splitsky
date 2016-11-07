@@ -104,7 +104,10 @@ class ViewController: UIViewController {
             listName.text = "Uneven Split Bill"
             listSummary.isEnabled = false
             splitPayment = Payment.init(amount: amount(), type: type!, label: label)
-            helpModal?.slideDownFromTop(view)
+            if !Preferences.hadLobsterHelp() {
+                helpModal?.slideDownFromTop(view)
+                Preferences.hadLobsterHelp(value: true)
+            }
         }
         updateLobsterMode()
         onClear("" as AnyObject)
