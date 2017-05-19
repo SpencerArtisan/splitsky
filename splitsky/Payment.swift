@@ -14,17 +14,21 @@ class Payment {
     fileprivate var _theirLobsters: Float
     fileprivate var _type: Type
     fileprivate var _label: String
+    fileprivate var _currency: String
+    fileprivate var _rate: Float
     
-    convenience init(amount: Float, type: Type, label: String) {
-        self.init(even:amount, my:0, theirs: 0, type: type, label: label)
+    convenience init(amount: Float, currency: String, rate: Float, type: Type, label: String) {
+        self.init(even:amount, my:0, theirs: 0, currency: currency, rate: rate, type: type, label: label)
     }
     
-    init(even: Float, my: Float, theirs: Float, type: Type, label: String) {
+    init(even: Float, my: Float, theirs: Float, currency: String, rate: Float, type: Type, label: String) {
         _amount = even
         _myLobsters = my
         _theirLobsters = theirs
         _type = type
         _label = label
+        _currency = currency
+        _rate = rate
     }
     
     func amount() -> Float {

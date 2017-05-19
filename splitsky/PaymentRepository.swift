@@ -65,7 +65,7 @@ class PaymentRepository {
         let label = parts.count >= 3 ? parts[2] : ""
         let myLobsters = parts.count >= 4 ? Float(parts[3])! : 0
         let theirLobsters = parts.count >= 5 ? Float(parts[4])! : 0
-        return Payment(even: amount, my: myLobsters, theirs: theirLobsters, type: type, label: label)
+        return Payment(even: amount, my: myLobsters, theirs: theirLobsters, currency: Data.activeCurrency(), rate: Data.activeRate(), type: type, label: label)
     }
     
     fileprivate static func properties() -> NSDictionary {

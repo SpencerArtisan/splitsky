@@ -30,6 +30,10 @@ class Data {
         return _activeCurrency
     }
     
+    static func activeRate() -> Float {
+        return getRate(currencyTla: _activeCurrency)
+    }
+    
     static func setActiveCurrency(currency: Currency) {
         _activeCurrency = currency.tla()
     }
@@ -43,7 +47,7 @@ class Data {
     }
     
     static func getRate(currencyTla: String) -> Float {
-        return _rates[currencyTla] as! Float
+        return currencyTla == "GBP" ? 1.0 : _rates[currencyTla] as! Float
     }
     
     static func newList() {
