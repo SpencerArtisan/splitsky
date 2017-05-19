@@ -30,23 +30,32 @@ class CurrencyController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let row = (indexPath as NSIndexPath).row
         if row == 0 {
             return tableView.dequeueReusableCell(withIdentifier: "CurrencyHeaderCell", for: indexPath) as! CurrencyHeaderCell
         } else {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
-        let currency = Data.currencies()[row - 1]
-        let rate = Util.toMoney(amount: Data.getRate(currencyTla: currency.tla()), decPlc: 2)
-
-        cell.nameLabel.text = currency.name()
-        cell.rateLabel.text = "\(rate) \(currency.tla())"
-        
-        cell.separatorInset = UIEdgeInsets.zero
-        cell.backgroundColor = UIColor.black
-        cell.layoutIfNeeded()
-        
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
+            let currency = Data.currencies()[row - 1]
+            let rate = Util.toMoney(amount: Data.getRate(currencyTla: currency.tla()), decPlc: 2)
+            
+            cell.nameLabel.text = currency.name()
+            cell.rateLabel.text = "\(rate) \(currency.tla())"
+            
+            cell.separatorInset = UIEdgeInsets.zero
+            cell.backgroundColor = UIColor.black
+            cell.layoutIfNeeded()
+            
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = (indexPath as NSIndexPath).row
+        if row != 0 {
+            let currency = Data.currencies()[row - 1]
+            Data.setActiveCurrency(currency: currency)
+            navigationController?.popViewController(animated: true)
         }
     }
 }

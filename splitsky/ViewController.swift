@@ -194,6 +194,7 @@ class ViewController: UIViewController {
         Util.setText(lobsterButton!, text: "Uneven\nSplit")
         Util.setText(evenSplitButton!, text: "50/50\nSplit")
         Util.setText(labelButton!, text: "Label")
+        Util.setText(currencyButton!, text: Data.activeCurrency())
     }
     
     fileprivate func amount() -> Float {
