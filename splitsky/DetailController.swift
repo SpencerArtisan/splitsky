@@ -13,7 +13,6 @@ class DetailController: UITableViewController {
     var labelColor: UIColor?
     var typeModal: Modal?
 
-    
     var activePayment: Payment?
     
     override func viewDidLoad() {

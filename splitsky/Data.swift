@@ -9,8 +9,24 @@
 import Foundation
 
 class Data {
+    fileprivate static var _currencies = [
+        Currency(name: "Euro", tla: "EUR"),
+        Currency(name: "Danish Krone", tla: "DKK"),
+        Currency(name: "Swiss Franc", tla: "CHF"),
+        Currency(name: "Dollar", tla: "USD"),
+        Currency(name: "Swedish Krona", tla: "SEK"),
+        Currency(name: "Turkish Lira", tla: "TRY")
+    ]
     fileprivate static var _payments = [String:[Payment]]()
     fileprivate static var _listName: String = ""
+
+    static func currencies() -> [Currency] {
+        return _currencies
+    }
+    
+    static func currencyCount() -> Int {
+        return _currencies.count
+    }
     
     static func newList() {
         var candidateSuffix = 2

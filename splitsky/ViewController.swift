@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     fileprivate var splitPayment: Payment?
     var helpModal: Modal?
     
+
+    @IBOutlet weak var currencyButton: UIButton!
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var listName: UILabel!
@@ -231,6 +233,7 @@ class ViewController: UIViewController {
         Util.center(evenSplitButton)
         Util.center(lobsterButton)
         Util.center(labelButton)
+        Util.right(currencyButton)
         update()
         onClear("" as AnyObject)
         typeModal = Modal(viewName: "PaymentType", owner: self)

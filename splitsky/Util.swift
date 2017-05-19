@@ -55,4 +55,8 @@ class Util {
     static func center(_ button: UIButton) {
         button.titleLabel?.textAlignment = NSTextAlignment.center
     }
+
+    static func right(_ button: UIButton) {
+        button.titleLabel?.textAlignment = NSTextAlignment.right
+    }
 }

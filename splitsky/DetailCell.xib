@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,10 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="402" height="41"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="402" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="402" height="40.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-UG-wmm">
+                        <rect key="frame" x="325" y="6" width="73" height="28.5"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="GrS-Sm-kgd"/>
@@ -36,6 +40,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex paid bill of 99999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-cO-jZ8" userLabel="words">
+                        <rect key="frame" x="85" y="0.0" width="234" height="22.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="gy3-Bm-sn6"/>
                         </constraints>
@@ -49,6 +54,7 @@
                         </variation>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Aa-mlF">
+                        <rect key="frame" x="4" y="6" width="73" height="28.5"/>
                         <color key="backgroundColor" red="1" green="0.50030612379999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="eAt-kU-ECP"/>
@@ -67,6 +73,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 Alex, 10 me, rest even" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozm-Jn-G7f" userLabel="breakdown">
+                        <rect key="frame" x="85" y="18.5" width="234" height="22"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="vnE-aP-vay"/>
@@ -111,15 +118,15 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="EQp-9N-dOv"/>
+                        <exclude reference="O0J-6k-Y5X"/>
+                        <exclude reference="nif-ax-fCg"/>
                         <exclude reference="12c-aO-4Fn"/>
                         <exclude reference="fZs-rL-pZq"/>
                         <exclude reference="7AG-Rk-Tz7"/>
                         <exclude reference="MDf-cf-vUc"/>
                         <exclude reference="fSN-8O-JEP"/>
                         <exclude reference="ufB-Ut-7gr"/>
-                        <exclude reference="EQp-9N-dOv"/>
-                        <exclude reference="O0J-6k-Y5X"/>
-                        <exclude reference="nif-ax-fCg"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
