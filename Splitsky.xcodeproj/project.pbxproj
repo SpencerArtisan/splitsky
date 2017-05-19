@@ -32,6 +32,9 @@
 		97BF29591ECF6CEF000B515B /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF29571ECF6CEF000B515B /* CurrencyCell.swift */; };
 		97BF295A1ECF6CEF000B515B /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BF29581ECF6CEF000B515B /* CurrencyCell.xib */; };
 		97BF295C1ECF7234000B515B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF295B1ECF7234000B515B /* Currency.swift */; };
+		97BF295E1ECF89BC000B515B /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF295D1ECF89BC000B515B /* RestClient.swift */; };
+		97BF29631ECF93CF000B515B /* CurrencyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */; };
+		97BF29641ECF93CF000B515B /* CurrencyHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */; };
 		97C184111DA828EB0010FBE2 /* AllListsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C184101DA828EB0010FBE2 /* AllListsCell.xib */; };
 		97D716611D8748D4001EF468 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D716601D8748D4001EF468 /* Launch.xib */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,9 @@
 		97BF29571ECF6CEF000B515B /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		97BF29581ECF6CEF000B515B /* CurrencyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
 		97BF295B1ECF7234000B515B /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		97BF295D1ECF89BC000B515B /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHeaderCell.swift; sourceTree = "<group>"; };
+		97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyHeaderCell.xib; sourceTree = "<group>"; };
 		97C184101DA828EB0010FBE2 /* AllListsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllListsCell.xib; sourceTree = "<group>"; };
 		97D716601D8748D4001EF468 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +140,9 @@
 				9797AB241D7C35C800D44D93 /* Util.swift */,
 				974CCEA91DD12352004ACF69 /* Preferences.swift */,
 				974CCEAB1DD1253C004ACF69 /* Prefs.plist */,
+				97BF295D1ECF89BC000B515B /* RestClient.swift */,
+				97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */,
+				97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */,
 			);
 			name = Splitsky;
 			path = splitsky;
@@ -200,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */,
+				97BF29641ECF93CF000B515B /* CurrencyHeaderCell.xib in Resources */,
 				97A53F781D16A8B800BED436 /* Assets.xcassets in Resources */,
 				97C184111DA828EB0010FBE2 /* AllListsCell.xib in Resources */,
 				97D716611D8748D4001EF468 /* Launch.xib in Resources */,
@@ -227,8 +237,10 @@
 				974CCEAA1DD12352004ACF69 /* Preferences.swift in Sources */,
 				97BF29591ECF6CEF000B515B /* CurrencyCell.swift in Sources */,
 				9727A5031D5BDF0B0076F98A /* PaymentCell.swift in Sources */,
+				97BF29631ECF93CF000B515B /* CurrencyHeaderCell.swift in Sources */,
 				97BF295C1ECF7234000B515B /* Currency.swift in Sources */,
 				9797AB231D7C162200D44D93 /* FrontViewController.swift in Sources */,
+				97BF295E1ECF89BC000B515B /* RestClient.swift in Sources */,
 				97A53F731D16A8B800BED436 /* ViewController.swift in Sources */,
 				97484F641D5DAC0A0056912B /* Payment.swift in Sources */,
 				972719721D5BB49800149251 /* DetailController.swift in Sources */,

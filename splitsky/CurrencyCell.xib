@@ -19,17 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dut-8F-9iH">
-                        <rect key="frame" x="8" y="11" width="50" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="fSX-Jd-6Dv"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 EUR = 1.03 GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBM-t3-fdu">
-                        <rect key="frame" x="180" y="11.5" width="140" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.03 EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBM-t3-fdu">
+                        <rect key="frame" x="180" y="11.5" width="140" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="140" id="gIf-Kw-en3"/>
                         </constraints>
@@ -38,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-oS-MbJ">
-                        <rect key="frame" x="63" y="11" width="117" height="21"/>
+                        <rect key="frame" x="20" y="11" width="160" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -47,18 +38,15 @@
                 <constraints>
                     <constraint firstItem="sBM-t3-fdu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4fS-we-SEM"/>
                     <constraint firstAttribute="trailing" secondItem="sBM-t3-fdu" secondAttribute="trailing" id="BIR-vl-5iT"/>
-                    <constraint firstItem="Dut-8F-9iH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ebo-LI-qha"/>
                     <constraint firstItem="lsO-oS-MbJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Nuh-V4-hvs"/>
                     <constraint firstItem="sBM-t3-fdu" firstAttribute="leading" secondItem="lsO-oS-MbJ" secondAttribute="trailing" id="hI0-Ua-wk5"/>
-                    <constraint firstItem="Dut-8F-9iH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="t9B-o6-UvW"/>
-                    <constraint firstItem="lsO-oS-MbJ" firstAttribute="leading" secondItem="Dut-8F-9iH" secondAttribute="trailing" constant="5" id="v1C-ai-zC2"/>
+                    <constraint firstItem="lsO-oS-MbJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="qPE-CE-Fl3"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="nameLabel" destination="lsO-oS-MbJ" id="3Zi-Tz-sa1"/>
                 <outlet property="rateLabel" destination="sBM-t3-fdu" id="ORr-Su-Cme"/>
-                <outlet property="tlaLabel" destination="Dut-8F-9iH" id="4nO-jq-ob0"/>
             </connections>
         </tableViewCell>
     </objects>

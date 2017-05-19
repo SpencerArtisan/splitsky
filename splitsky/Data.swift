@@ -19,13 +19,22 @@ class Data {
     ]
     fileprivate static var _payments = [String:[Payment]]()
     fileprivate static var _listName: String = ""
-
+    fileprivate static var _rates = [String: Any]()
+    
     static func currencies() -> [Currency] {
         return _currencies
     }
     
     static func currencyCount() -> Int {
         return _currencies.count
+    }
+    
+    static func setRates(rates: [String: Any]) {
+        _rates = rates
+    }
+    
+    static func getRate(currencyTla: String) -> Float {
+        return _rates[currencyTla] as! Float
     }
     
     static func newList() {
