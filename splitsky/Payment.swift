@@ -30,6 +30,14 @@ class Payment {
         _currency = currency
         _rate = rate
     }
+ 
+    func currency() -> String {
+        return _currency
+    }
+    
+    func rate() -> Float {
+        return _rate
+    }
     
     func amount() -> Float {
         return _amount

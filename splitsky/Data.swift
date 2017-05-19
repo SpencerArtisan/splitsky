@@ -10,12 +10,13 @@ import Foundation
 
 class Data {
     fileprivate static var _currencies = [
-        Currency(name: "Euro", tla: "EUR"),
-        Currency(name: "Danish Krone", tla: "DKK"),
-        Currency(name: "Swiss Franc", tla: "CHF"),
-        Currency(name: "Dollar", tla: "USD"),
-        Currency(name: "Swedish Krona", tla: "SEK"),
-        Currency(name: "Turkish Lira", tla: "TRY")
+        Currency(name: "Pounds", tla: "GBP", formatter: { v in "£\(v)" }),
+        Currency(name: "Euro", tla: "EUR", formatter: { v in "\(v)€" }),
+        Currency(name: "Danish Krone", tla: "DKK", formatter: { v in "\(v)kr" }),
+        Currency(name: "Swiss Franc", tla: "CHF", formatter: { v in "\(v) CHF" }),
+        Currency(name: "Dollar", tla: "USD", formatter: { v in "$\(v)" }),
+        Currency(name: "Swedish Krona", tla: "SEK", formatter: { v in "\(v)kr" }),
+        Currency(name: "Turkish Lira", tla: "TRY", formatter: { v in "\(v)₺" })
     ]
     fileprivate static var _payments = [String:[Payment]]()
     fileprivate static var _listName: String = ""
@@ -24,6 +25,10 @@ class Data {
     
     static func currencies() -> [Currency] {
         return _currencies
+    }
+    
+    static func getCurrency(tla: String) -> Currency {
+        return _currencies.filter { $0.tla() == tla }.first!
     }
     
     static func activeCurrency() -> String {

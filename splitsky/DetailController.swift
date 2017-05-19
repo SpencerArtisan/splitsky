@@ -116,7 +116,8 @@ class DetailController: UITableViewController {
         } else if payment.type() == Type.iBorrowed {
             cell.words.text = "\(they) gave me"
         }
-        cell.words.text = cell.words.text! + " \(Util.toMoney(amount: payment.amount()))\(SPACE)"
+        let currency = Data.getCurrency(tla: payment.currency())
+        cell.words.text = "\(cell.words.text!) \(currency.format(amount: payment.amount())) \(SPACE)"
         
          cell.breakdown.text = ""
         if payment.isUneven() {
