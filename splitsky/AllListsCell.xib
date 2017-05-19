@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,15 +21,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="388" height="80.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-UG-wmm">
-                        <rect key="frame" x="287" y="6" width="97" height="68.5"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-UG-wmm">
+                        <rect key="frame" x="356" y="26.5" width="28" height="28"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="28" id="6nq-Ps-MxE"/>
                             <constraint firstAttribute="width" constant="71" id="GrS-Sm-kgd"/>
+                            <constraint firstAttribute="width" secondItem="8Bc-UG-wmm" secondAttribute="height" multiplier="1:1" id="RGh-U4-1Vx"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="19"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                        <state key="normal" title="Delete">
+                        <state key="normal" image="Trash">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <variation key="default">
@@ -41,7 +43,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owes me nothing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-cO-jZ8" userLabel="words">
-                        <rect key="frame" x="109" y="0.0" width="174" height="80.5"/>
+                        <rect key="frame" x="133.5" y="0.0" width="218.5" height="80.5"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="gy3-Bm-sn6"/>
@@ -56,7 +58,7 @@
                         </variation>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Aa-mlF">
-                        <rect key="frame" x="4" y="6" width="97" height="68.5"/>
+                        <rect key="frame" x="4" y="6" width="121.5" height="68.5"/>
                         <color key="backgroundColor" red="1" green="0.50030612379999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="eAt-kU-ECP"/>
@@ -90,8 +92,6 @@
                     <constraint firstItem="xuN-cO-jZ8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QXK-2k-3K6"/>
                     <constraint firstItem="8Bc-UG-wmm" firstAttribute="centerY" secondItem="Fvi-Aa-mlF" secondAttribute="centerY" id="cas-U7-rmO"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="cyc-1a-j0y"/>
-                    <constraint firstItem="8Bc-UG-wmm" firstAttribute="height" secondItem="Fvi-Aa-mlF" secondAttribute="height" id="dec-M1-TG1"/>
-                    <constraint firstItem="8Bc-UG-wmm" firstAttribute="width" secondItem="Fvi-Aa-mlF" secondAttribute="width" id="eqr-ag-Pca"/>
                     <constraint firstItem="xuN-cO-jZ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fSN-8O-JEP"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fZs-rL-pZq"/>
                     <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="xuN-cO-jZ8" secondAttribute="trailing" constant="4" id="fbb-2f-IzR"/>
@@ -123,4 +123,7 @@
             <point key="canvasLocation" x="235" y="-143.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Trash" width="48" height="48"/>
+    </resources>
 </document>
