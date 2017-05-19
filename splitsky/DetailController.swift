@@ -59,8 +59,6 @@ class DetailController: UITableViewController {
         self.typeModal!.slideDownToBottom(self.view)
     }
     
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.paymentCount()
     }
@@ -118,7 +116,7 @@ class DetailController: UITableViewController {
         }
         let currency = Data.getCurrency(tla: payment.currency())
         let gbpText = payment.currency() == "GBP" ? "" : "(\(Data.getCurrency(tla: "GBP").format(amount: payment.amount() / payment.rate())))"
-        cell.words.text = "\(cell.words.text!) \(currency.format(amount: payment.amount())) \(gbpText) \(SPACE)"
+        cell.words.text = "\(cell.words.text!) \(currency.format(amount: payment.amount())) \(gbpText)"
         
          cell.breakdown.text = ""
         if payment.isUneven() {
@@ -132,7 +130,5 @@ class DetailController: UITableViewController {
                 cell.breakdown.text = cell.breakdown.text! + "rest even"
             }
         }
-        
-
     }
 }

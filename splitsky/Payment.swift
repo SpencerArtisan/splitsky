@@ -58,8 +58,12 @@ class Payment {
     func type() -> Type {
         return _type
     }
+   
+    func theyOweMeGbp() -> Float {
+        return theyOweMeCurrency() / _rate
+    }
     
-    func theyOweMe() -> Float {
+    func theyOweMeCurrency() -> Float {
         if _type == Type.iBorrowed {
             return -_amount
         } else if _type == Type.theyBorrowed {

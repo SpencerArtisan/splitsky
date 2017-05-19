@@ -130,7 +130,7 @@ class Data {
     }
     
     static func theyOweMe() -> Float {
-        return _payments[listName()]!.reduce(0, { $0 + $1.theyOweMe() } )
+        return _payments[listName()]!.reduce(0, { $0 + $1.theyOweMeGbp() } )
     }
     
 }
