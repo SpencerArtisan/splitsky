@@ -117,7 +117,8 @@ class DetailController: UITableViewController {
             cell.words.text = "\(they) gave me"
         }
         let currency = Data.getCurrency(tla: payment.currency())
-        cell.words.text = "\(cell.words.text!) \(currency.format(amount: payment.amount())) \(SPACE)"
+        let gbpText = payment.currency() == "GBP" ? "" : "(\(Data.getCurrency(tla: "GBP").format(amount: payment.amount() / payment.rate())))"
+        cell.words.text = "\(cell.words.text!) \(currency.format(amount: payment.amount())) \(gbpText) \(SPACE)"
         
          cell.breakdown.text = ""
         if payment.isUneven() {
