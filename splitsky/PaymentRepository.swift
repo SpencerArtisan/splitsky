@@ -51,7 +51,7 @@ class PaymentRepository {
     }
     
     fileprivate static func encode(_ payment: Payment) -> String {
-        return "\(payment.amount()):\(payment.type().toCode()):\(payment.label()):\(payment.myAllocations()):\(payment.theirAllocations())"
+        return "\(payment.amount()):\(payment.type().toCode()):\(payment.label()):\(payment.myAllocations()):\(payment.theirAllocations()):\(payment.currency()):\(payment.rate())"
     }
     
     fileprivate static func decode(_ payments: [String]) -> [Payment] {
@@ -65,7 +65,9 @@ class PaymentRepository {
         let label = parts.count >= 3 ? parts[2] : ""
         let myLobsters = parts.count >= 4 ? Float(parts[3])! : 0
         let theirLobsters = parts.count >= 5 ? Float(parts[4])! : 0
-        return Payment(even: amount, my: myLobsters, theirs: theirLobsters, currency: Data.activeCurrency(), rate: Data.activeRate(), type: type, label: label)
+        let currency = parts.count >= 6 ? parts[5] : "GBP"
+        let rate = parts.count >= 7 ? Float(parts[6])! : 1.0
+        return Payment(even: amount, my: myLobsters, theirs: theirLobsters, currency: currency, rate: rate, type: type, label: label)
     }
     
     fileprivate static func properties() -> NSDictionary {
