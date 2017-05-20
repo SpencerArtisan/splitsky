@@ -10,12 +10,12 @@ import Foundation
 
 class Data {
     fileprivate static var _currencies = [
-        Currency(name: "Pounds", tla: "GBP", formatter: { v in "£\(v)" }),
+        Currency(name: "British Pound", tla: "GBP", formatter: { v in "£\(v)" }),
         Currency(name: "Euro", tla: "EUR", formatter: { v in "\(v)€" }),
         Currency(name: "Danish Krone", tla: "DKK", formatter: { v in "\(v)kr" }),
-        Currency(name: "Swiss Franc", tla: "CHF", formatter: { v in "\(v) CHF" }),
-        Currency(name: "Dollar", tla: "USD", formatter: { v in "$\(v)" }),
         Currency(name: "Swedish Krona", tla: "SEK", formatter: { v in "\(v)kr" }),
+        Currency(name: "Swiss Franc", tla: "CHF", formatter: { v in "\(v) CHF" }),
+        Currency(name: "US Dollar", tla: "USD", formatter: { v in "$\(v)" }),
         Currency(name: "Turkish Lira", tla: "TRY", formatter: { v in "\(v)₺" })
     ]
     fileprivate static var _payments = [String:[Payment]]()
@@ -138,8 +138,8 @@ class Data {
         if abs(theyOweMeGbp) < 0.01 {
             return "owes me nothing"
         } else {
-            let gbpText = "\(Data.getCurrency(tla: "GBP").format(amount: theyOweMeGbp))"
-            let activeCurrencyText = Data.activeCurrency().tla() == "GBP" ? "" : "(\(Data.activeCurrency().format(amount: theyOweMeGbp * Data.activeRate())))"
+            let gbpText = "\(Data.getCurrency(tla: "GBP").format(amount: abs(theyOweMeGbp)))"
+            let activeCurrencyText = Data.activeCurrency().tla() == "GBP" ? "" : "(\(Data.activeCurrency().format(amount: abs(theyOweMeGbp) * Data.activeRate())))"
             return (theyOweMeGbp > 0 ? "owes me " : "is owed ") + "\(gbpText) \(activeCurrencyText)"
         }
     }

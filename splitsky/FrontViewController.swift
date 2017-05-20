@@ -10,7 +10,10 @@ import UIKit
 
 class FrontViewController: UIViewController {
 
-    @IBOutlet weak var blackLabel: UILabel!
+
+    @IBOutlet weak var listNameLabel: UILabel!
+    @IBOutlet weak var summaryButton: UIButton!
+    @IBOutlet weak var currencyButton: UIButton!
     @IBOutlet weak var iBorrowed: UIButton!
     @IBOutlet weak var theyBorrowed: UIButton!
     @IBOutlet weak var iPaidBill: UIButton!
@@ -21,22 +24,25 @@ class FrontViewController: UIViewController {
         super.viewDidLoad()
         Data.set(PaymentRepository.load())
     }
+    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent;
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
         update()
     }
     
     fileprivate func update() {
-        blackLabel.text = getBlackLabel()
         style(theyBorrowed, text: FrontViewController.getButtonLabel(Type.theyBorrowed))
         style(theyPaidBill, text: FrontViewController.getButtonLabel(Type.theyPaid))
         style(iBorrowed, text: FrontViewController.getButtonLabel(Type.iBorrowed))
         style(iPaidBill, text:FrontViewController.getButtonLabel(Type.iPaid))
         style(breakdownButton, text: "\(Data.listName().capitalized)\nBreakdown")
-        blackLabel.adjustsFontSizeToFitWidth = true
+        listNameLabel.text = Data.listName().capitalized
+        Util.setText(summaryButton, text: Data.owingsSummary())
+        Util.setText(currencyButton, text: Data.activeCurrency().tla())
     }
     
     fileprivate func style(_ button: UIButton, text: String) {
@@ -58,10 +64,6 @@ class FrontViewController: UIViewController {
         if dest != nil {
             dest!.type = Type.fromCode(segue.identifier!)
         }
-    }
-    
-    fileprivate func getBlackLabel() -> String {
-        return "\(Data.listName().capitalized) \(Data.owingsSummary())"
     }
     
     static func getButtonLabel(_ type: Type) -> String {

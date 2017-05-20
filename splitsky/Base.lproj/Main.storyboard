@@ -580,7 +580,7 @@
             <objects>
                 <tableViewController id="ruB-cX-UUx" customClass="CurrencyController" customModule="Splitsky" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PMT-Vo-hNe">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -662,20 +662,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splitsky" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-dd-hMk">
-                                <rect key="frame" x="12" y="94" width="353" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Fzk-Cg-GAz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Fzk-Cg-GAz"/>
-                                    </mask>
-                                </variation>
-                            </label>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drl-iB-Myg">
+                                <rect key="frame" x="6" y="107" width="311" height="38"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="22"/>
+                                <state key="normal" title="summary">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="boc-po-orv" kind="show" id="PeD-g8-s8u"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="T3m-36-Qf3">
                                 <rect key="frame" x="188" y="145" width="187" height="173.5"/>
                                 <color key="backgroundColor" red="1" green="0.51667324049999996" blue="0.010451051310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -728,25 +724,48 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="IS" id="9Ug-TJ-Mg5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="listName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-lB-LuE">
+                                <rect key="frame" x="6" y="75.5" width="101.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuI-IN-pOd">
+                                <rect key="frame" x="317" y="109" width="50" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Xvm-Qu-cnT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Yif-KJ-FzE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="GBP">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ruB-cX-UUx" kind="show" id="8Xs-Z2-hD5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="top" secondItem="LCd-aH-cET" secondAttribute="bottom" constant="1" id="0c6-5f-6ZE"/>
                             <constraint firstItem="Snu-D2-eB8" firstAttribute="width" secondItem="ilb-b0-4bE" secondAttribute="width" id="0ij-QS-OiN"/>
                             <constraint firstItem="T3m-36-Qf3" firstAttribute="height" secondItem="LCd-aH-cET" secondAttribute="height" id="1tD-7V-PlJ"/>
+                            <constraint firstItem="tuI-IN-pOd" firstAttribute="leading" secondItem="Drl-iB-Myg" secondAttribute="trailing" id="1vC-cQ-806"/>
                             <constraint firstAttribute="trailing" secondItem="LCd-aH-cET" secondAttribute="trailing" id="2Y9-QE-IxV"/>
+                            <constraint firstItem="LCd-aH-cET" firstAttribute="top" secondItem="tuI-IN-pOd" secondAttribute="bottom" id="3U1-Cm-3lE"/>
+                            <constraint firstItem="LCd-aH-cET" firstAttribute="top" secondItem="Drl-iB-Myg" secondAttribute="bottom" id="4EI-aj-OHd"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="height" secondItem="LCd-aH-cET" secondAttribute="height" id="4gI-ey-jqB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jgt-AI-gij" secondAttribute="trailing" id="4pE-sM-hHb"/>
                             <constraint firstItem="LCd-aH-cET" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="bottom" constant="1" id="5e3-Jr-eLZ"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="top" secondItem="jgt-AI-gij" secondAttribute="bottom" id="74d-vW-zeR"/>
-                            <constraint firstItem="DPE-dd-hMk" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" constant="74" id="91e-M3-BUS"/>
-                            <constraint firstAttribute="trailing" secondItem="DPE-dd-hMk" secondAttribute="trailing" constant="10" id="9Nm-Fm-Oaz"/>
+                            <constraint firstItem="Drl-iB-Myg" firstAttribute="leading" secondItem="kb7-lB-LuE" secondAttribute="leading" id="8Cb-af-9CZ"/>
                             <constraint firstAttribute="trailing" secondItem="3C1-cG-jWj" secondAttribute="trailing" id="B5U-2N-vYj"/>
                             <constraint firstItem="ws4-Ci-CkI" firstAttribute="leading" secondItem="Snu-D2-eB8" secondAttribute="leading" id="BKH-Qo-0sg"/>
                             <constraint firstItem="dgV-Gr-aST" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="bottom" id="DAh-1g-MQJ"/>
                             <constraint firstItem="ws4-Ci-CkI" firstAttribute="top" secondItem="grC-ej-Np8" secondAttribute="top" id="E4T-Sn-2u0"/>
                             <constraint firstItem="grC-ej-Np8" firstAttribute="leading" secondItem="ilb-b0-4bE" secondAttribute="leading" id="EI6-6f-JV1"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="leading" secondItem="Kvs-4K-ETV" secondAttribute="leading" id="Fv3-Lt-J8u"/>
+                            <constraint firstItem="kb7-lB-LuE" firstAttribute="leading" secondItem="Kvs-4K-ETV" secondAttribute="leading" constant="6" id="HQ1-Yc-3Bl"/>
                             <constraint firstItem="jgt-AI-gij" firstAttribute="leading" secondItem="Kvs-4K-ETV" secondAttribute="leading" id="HbF-kj-rUd"/>
                             <constraint firstItem="T3m-36-Qf3" firstAttribute="bottom" secondItem="LCd-aH-cET" secondAttribute="bottom" id="HmI-Tn-k1f"/>
                             <constraint firstItem="ws4-Ci-CkI" firstAttribute="width" secondItem="ilb-b0-4bE" secondAttribute="width" id="MXO-Dh-fXY"/>
@@ -761,18 +780,18 @@
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="trailing" secondItem="LCd-aH-cET" secondAttribute="trailing" id="W2A-5F-MZe"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="top" secondItem="3C1-cG-jWj" secondAttribute="bottom" id="W9e-hb-RDA"/>
                             <constraint firstItem="LCd-aH-cET" firstAttribute="top" secondItem="jgt-AI-gij" secondAttribute="bottom" id="WM6-5R-7xs"/>
+                            <constraint firstItem="Drl-iB-Myg" firstAttribute="top" secondItem="kb7-lB-LuE" secondAttribute="bottom" id="WZs-2L-xxp"/>
                             <constraint firstItem="LCd-aH-cET" firstAttribute="leading" secondItem="Kvs-4K-ETV" secondAttribute="leading" id="Xzy-QH-bb8"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="leading" secondItem="LCd-aH-cET" secondAttribute="leading" id="Z0h-Ck-h6p"/>
                             <constraint firstItem="Snu-D2-eB8" firstAttribute="leading" secondItem="ilb-b0-4bE" secondAttribute="trailing" constant="1" id="atv-hA-b0U"/>
                             <constraint firstItem="T3m-36-Qf3" firstAttribute="top" secondItem="LCd-aH-cET" secondAttribute="top" id="beo-UP-NP2"/>
                             <constraint firstItem="dgV-Gr-aST" firstAttribute="top" secondItem="LCd-aH-cET" secondAttribute="bottom" id="dl6-0W-2pK"/>
                             <constraint firstItem="grC-ej-Np8" firstAttribute="top" secondItem="ilb-b0-4bE" secondAttribute="bottom" constant="1" id="eTa-w0-pfh"/>
-                            <constraint firstItem="DPE-dd-hMk" firstAttribute="top" secondItem="Kvs-4K-ETV" secondAttribute="topMargin" constant="10" id="ezB-sN-2lf"/>
                             <constraint firstItem="Snu-D2-eB8" firstAttribute="leading" secondItem="T3m-36-Qf3" secondAttribute="leading" id="fqh-3B-sOb"/>
                             <constraint firstItem="dgV-Gr-aST" firstAttribute="top" secondItem="ilb-b0-4bE" secondAttribute="bottom" id="gGn-Lv-wcI"/>
                             <constraint firstItem="grC-ej-Np8" firstAttribute="top" secondItem="LCd-aH-cET" secondAttribute="bottom" constant="1" id="gu4-Vg-Ahd"/>
-                            <constraint firstItem="DPE-dd-hMk" firstAttribute="leading" secondItem="Kvs-4K-ETV" secondAttribute="leadingMargin" constant="-4" id="il1-zK-Kep"/>
                             <constraint firstItem="ilb-b0-4bE" firstAttribute="width" secondItem="LCd-aH-cET" secondAttribute="width" id="ixd-TO-0ls"/>
+                            <constraint firstAttribute="trailing" secondItem="tuI-IN-pOd" secondAttribute="trailing" constant="8" id="j88-HS-4vW"/>
                             <constraint firstItem="jgt-AI-gij" firstAttribute="top" secondItem="Kvs-4K-ETV" secondAttribute="topMargin" constant="60" id="lBP-NV-B3h"/>
                             <constraint firstItem="3C1-cG-jWj" firstAttribute="top" secondItem="Bok-jZ-wqj" secondAttribute="bottom" id="lR0-eT-ap6"/>
                             <constraint firstItem="Snu-D2-eB8" firstAttribute="trailing" secondItem="T3m-36-Qf3" secondAttribute="trailing" id="mUh-ic-XNT"/>
@@ -794,7 +813,6 @@
                                 <exclude reference="urH-J8-E2n"/>
                                 <exclude reference="yaa-lE-nvb"/>
                                 <exclude reference="zvM-5C-Xr0"/>
-                                <exclude reference="ezB-sN-2lf"/>
                                 <exclude reference="2Y9-QE-IxV"/>
                                 <exclude reference="5e3-Jr-eLZ"/>
                                 <exclude reference="Xzy-QH-bb8"/>
@@ -814,17 +832,19 @@
                     <navigationItem key="navigationItem" id="Xns-yH-G3A"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="blackLabel" destination="DPE-dd-hMk" id="Wps-ve-PLk"/>
                         <outlet property="breakdownButton" destination="T3m-36-Qf3" id="uqY-BN-YmD"/>
+                        <outlet property="currencyButton" destination="tuI-IN-pOd" id="cJJ-Rr-dXx"/>
                         <outlet property="iBorrowed" destination="ilb-b0-4bE" id="utx-mf-bNu"/>
                         <outlet property="iPaidBill" destination="grC-ej-Np8" id="WqI-GB-7Vp"/>
+                        <outlet property="listNameLabel" destination="kb7-lB-LuE" id="i1b-7H-YIG"/>
+                        <outlet property="summaryButton" destination="Drl-iB-Myg" id="aTE-Fd-DsM"/>
                         <outlet property="theyBorrowed" destination="Snu-D2-eB8" id="xBZ-Rc-6hG"/>
                         <outlet property="theyPaidBill" destination="ws4-Ci-CkI" id="hLf-91-gIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8R-0B-cL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="131"/>
+            <point key="canvasLocation" x="668" y="130.88455772113943"/>
         </scene>
         <!--All Lists Controller-->
         <scene sceneID="qK1-v0-y4a">
@@ -852,7 +872,7 @@
             <objects>
                 <tableViewController id="boc-po-orv" customClass="DetailController" customModule="Splitsky" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" id="SLO-6e-u1D">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -891,6 +911,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Iae-cZ-tTq"/>
-        <segue reference="FKZ-GN-t4j"/>
+        <segue reference="8Xs-Z2-hD5"/>
+        <segue reference="UuX-s8-h1y"/>
     </inferredMetricsTieBreakers>
 </document>
