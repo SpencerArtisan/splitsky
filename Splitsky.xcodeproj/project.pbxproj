@@ -35,6 +35,8 @@
 		97BF295E1ECF89BC000B515B /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF295D1ECF89BC000B515B /* RestClient.swift */; };
 		97BF29631ECF93CF000B515B /* CurrencyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */; };
 		97BF29641ECF93CF000B515B /* CurrencyHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */; };
+		97BF29671ED047DF000B515B /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BF29651ED047DF000B515B /* LabelCell.swift */; };
+		97BF29681ED047DF000B515B /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BF29661ED047DF000B515B /* LabelCell.xib */; };
 		97C184111DA828EB0010FBE2 /* AllListsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C184101DA828EB0010FBE2 /* AllListsCell.xib */; };
 		97D716611D8748D4001EF468 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D716601D8748D4001EF468 /* Launch.xib */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		97BF295D1ECF89BC000B515B /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHeaderCell.swift; sourceTree = "<group>"; };
 		97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyHeaderCell.xib; sourceTree = "<group>"; };
+		97BF29651ED047DF000B515B /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		97BF29661ED047DF000B515B /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		97C184101DA828EB0010FBE2 /* AllListsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllListsCell.xib; sourceTree = "<group>"; };
 		97D716601D8748D4001EF468 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +147,8 @@
 				97BF295D1ECF89BC000B515B /* RestClient.swift */,
 				97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */,
 				97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */,
+				97BF29651ED047DF000B515B /* LabelCell.swift */,
+				97BF29661ED047DF000B515B /* LabelCell.xib */,
 			);
 			name = Splitsky;
 			path = splitsky;
@@ -220,6 +226,7 @@
 				9797AB4E1D7CB17700D44D93 /* CHARRING.ttf in Resources */,
 				974CCEAC1DD1253C004ACF69 /* Prefs.plist in Resources */,
 				977F23591D5DE8670054F075 /* Payments.plist in Resources */,
+				97BF29681ED047DF000B515B /* LabelCell.xib in Resources */,
 				97A316011D6A005800A2A28D /* Label.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +254,7 @@
 				97A315FF1D69A93600A2A28D /* AllListsController.swift in Sources */,
 				97A53F711D16A8B800BED436 /* AppDelegate.swift in Sources */,
 				977F235F1D5E54C10054F075 /* Modal.swift in Sources */,
+				97BF29671ED047DF000B515B /* LabelCell.swift in Sources */,
 				9727A4FE1D5BD2D30076F98A /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

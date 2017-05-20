@@ -43,6 +43,7 @@ class FrontViewController: UIViewController {
         listNameLabel.text = Data.listName().capitalized
         Util.setText(summaryButton, text: Data.owingsSummary())
         Util.setText(currencyButton, text: Data.activeCurrency().tla())
+        summaryButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     fileprivate func style(_ button: UIButton, text: String) {
