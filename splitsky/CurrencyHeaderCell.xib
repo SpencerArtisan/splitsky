@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 GBP is worth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LW-3e-B78">
-                        <rect key="frame" x="155" y="4" width="140" height="21"/>
+                        <rect key="frame" x="12" y="4" width="140" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="140" id="CDS-vD-sg4"/>
                         </constraints>
@@ -29,8 +29,8 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="0LW-3e-B78" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bUW-Mk-bvV"/>
                     <constraint firstItem="0LW-3e-B78" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lFj-Mb-bY2"/>
-                    <constraint firstAttribute="trailing" secondItem="0LW-3e-B78" secondAttribute="trailing" constant="25" id="mQH-45-3ca"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

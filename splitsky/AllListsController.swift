@@ -60,7 +60,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         }
         cell.words.isHidden = true
         cell.delete.isHidden = true
-        cell.label.setTitle("Add", for: UIControlState())
+        cell.label.setTitle("New friend", for: UIControlState())
         return cell
     }
     

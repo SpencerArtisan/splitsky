@@ -69,7 +69,7 @@ class DetailController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.paymentCount()
+        return Data.paymentCount() + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,8 +104,8 @@ class DetailController: UITableViewController {
                 Util.setImage(cell.label, image: UIImage(named: payment.label() + "Small")!)
                 cell.label.backgroundColor = UIColor.black
             } else if labelColor != nil {
-                Util.setText(cell.label, text: "Label")
-                cell.label.backgroundColor = labelColor!
+                Util.setImage(cell.label, image: UIImage(named: "Question")!)
+                cell.label.backgroundColor = UIColor.black
             }
             cell.separatorInset = UIEdgeInsets.zero
             cell.backgroundColor = UIColor.black

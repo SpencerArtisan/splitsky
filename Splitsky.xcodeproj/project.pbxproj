@@ -129,6 +129,7 @@
 				9727A5021D5BDF0B0076F98A /* DetailCell.xib */,
 				97BF29581ECF6CEF000B515B /* CurrencyCell.xib */,
 				97BF29571ECF6CEF000B515B /* CurrencyCell.swift */,
+				97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */,
 				97BF29531ECF69C4000B515B /* CurrencyController.swift */,
 				97BF295B1ECF7234000B515B /* Currency.swift */,
 				972719711D5BB49800149251 /* DetailController.swift */,
@@ -146,7 +147,6 @@
 				974CCEAB1DD1253C004ACF69 /* Prefs.plist */,
 				97BF295D1ECF89BC000B515B /* RestClient.swift */,
 				97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */,
-				97BF29621ECF93CF000B515B /* CurrencyHeaderCell.xib */,
 				97BF29651ED047DF000B515B /* LabelCell.swift */,
 				97BF29661ED047DF000B515B /* LabelCell.xib */,
 			);

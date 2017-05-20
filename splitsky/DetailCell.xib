@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,14 +21,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-UG-wmm">
-                        <rect key="frame" x="370" y="6.5" width="28" height="28"/>
+                        <rect key="frame" x="374" y="10" width="20" height="20"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                         </accessibility>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="GrS-Sm-kgd"/>
                             <constraint firstAttribute="width" secondItem="8Bc-UG-wmm" secondAttribute="height" multiplier="1:1" id="JhS-ji-uPw"/>
-                            <constraint firstAttribute="width" constant="28" id="uDd-vf-Vzc"/>
+                            <constraint firstAttribute="width" constant="20" id="uDd-vf-Vzc"/>
                         </constraints>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" image="Trash">
@@ -45,7 +44,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex paid bill of 99999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-cO-jZ8" userLabel="words">
-                        <rect key="frame" x="97" y="0.0" width="273" height="22.5"/>
+                        <rect key="frame" x="52" y="0.0" width="316" height="22.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="gy3-Bm-sn6"/>
                         </constraints>
@@ -58,14 +57,14 @@
                             </mask>
                         </variation>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Aa-mlF">
-                        <rect key="frame" x="4" y="6" width="85" height="28.5"/>
-                        <color key="backgroundColor" red="1" green="0.50030612379999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Aa-mlF">
+                        <rect key="frame" x="4" y="6" width="40" height="28.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="eAt-kU-ECP"/>
+                            <constraint firstAttribute="width" constant="40" id="iHo-ky-TuD"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="19"/>
-                        <state key="normal" title="Label">
+                        <state key="normal" image="Question">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <variation key="default">
@@ -78,7 +77,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 Alex, 10 me, rest even" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozm-Jn-G7f" userLabel="breakdown">
-                        <rect key="frame" x="97" y="18.5" width="273" height="22"/>
+                        <rect key="frame" x="52" y="18.5" width="316" height="22"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="110" id="vnE-aP-vay"/>
@@ -96,9 +95,8 @@
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Fvi-Aa-mlF" secondAttribute="bottom" id="12c-aO-4Fn"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="width" secondItem="Fvi-Aa-mlF" secondAttribute="width" multiplier="3.2" id="3gv-32-jR2"/>
                     <constraint firstItem="xuN-cO-jZ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7AG-Rk-Tz7"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="8Bc-UG-wmm" secondAttribute="trailing" constant="-4" id="9xS-t0-hlN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8Bc-UG-wmm" secondAttribute="trailing" id="9xS-t0-hlN"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-4" id="D5R-BE-nHf"/>
                     <constraint firstItem="Ozm-Jn-G7f" firstAttribute="width" secondItem="xuN-cO-jZ8" secondAttribute="width" id="E0w-ru-Sed"/>
                     <constraint firstAttribute="bottomMargin" secondItem="8Bc-UG-wmm" secondAttribute="bottom" id="EQp-9N-dOv"/>
@@ -112,7 +110,7 @@
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="cyc-1a-j0y"/>
                     <constraint firstItem="xuN-cO-jZ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fSN-8O-JEP"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fZs-rL-pZq"/>
-                    <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="xuN-cO-jZ8" secondAttribute="trailing" id="fbb-2f-IzR"/>
+                    <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="xuN-cO-jZ8" secondAttribute="trailing" constant="6" id="fbb-2f-IzR"/>
                     <constraint firstAttribute="bottom" secondItem="Fvi-Aa-mlF" secondAttribute="bottom" constant="6" id="g1f-4g-auN"/>
                     <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="Fvi-Aa-mlF" secondAttribute="trailing" constant="6" id="nif-ax-fCg"/>
                     <constraint firstItem="Ozm-Jn-G7f" firstAttribute="leading" secondItem="xuN-cO-jZ8" secondAttribute="leading" id="uHd-nT-moy"/>
@@ -144,6 +142,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Question" width="25" height="25"/>
         <image name="Trash" width="48" height="48"/>
     </resources>
 </document>
