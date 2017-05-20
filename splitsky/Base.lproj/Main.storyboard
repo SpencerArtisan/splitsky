@@ -266,9 +266,9 @@
                                     <action selector="onLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OmV-FC-QDT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e9-xA-h8C">
-                                <rect key="frame" x="6" y="41.5" width="91" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e9-xA-h8C">
+                                <rect key="frame" x="6" y="41.5" width="311" height="38"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="22"/>
                                 <state key="normal" title="summary">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -296,9 +296,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51Q-gb-GIz">
-                                <rect key="frame" x="287" y="44" width="80" height="36"/>
+                                <rect key="frame" x="317" y="44" width="50" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Akk-tc-Umg"/>
+                                    <constraint firstAttribute="width" constant="50" id="Akk-tc-Umg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="GBP">
@@ -427,6 +427,7 @@
                             <constraint firstAttribute="trailing" secondItem="QHD-09-Si6" secondAttribute="trailing" id="hDM-hp-MbE"/>
                             <constraint firstItem="FRs-Rp-qpM" firstAttribute="height" secondItem="K7a-6I-eSq" secondAttribute="height" id="hKR-QH-in1"/>
                             <constraint firstItem="Das-qE-pK5" firstAttribute="leading" secondItem="QHD-09-Si6" secondAttribute="leading" id="hR6-xd-mhI"/>
+                            <constraint firstItem="51Q-gb-GIz" firstAttribute="leading" secondItem="7e9-xA-h8C" secondAttribute="trailing" id="hpw-Jm-8z3"/>
                             <constraint firstItem="FRs-Rp-qpM" firstAttribute="bottom" secondItem="g4u-Z4-ya3" secondAttribute="bottom" id="iQ5-0a-Yr5"/>
                             <constraint firstAttribute="trailing" secondItem="QHD-09-Si6" secondAttribute="trailing" id="ibs-jb-w8L"/>
                             <constraint firstItem="g4u-Z4-ya3" firstAttribute="leading" secondItem="K7a-6I-eSq" secondAttribute="leading" id="jet-uU-L6H"/>
@@ -514,16 +515,16 @@
                                 <exclude reference="YYJ-Qk-74f"/>
                                 <exclude reference="cX5-6q-Et6"/>
                                 <exclude reference="xTa-q8-Ck9"/>
+                                <exclude reference="FoU-lW-Jpe"/>
+                                <exclude reference="ScV-bz-Ljs"/>
+                                <exclude reference="pzf-pl-8yD"/>
+                                <exclude reference="wVF-UZ-qaq"/>
                                 <exclude reference="8bx-hC-12X"/>
                                 <exclude reference="GWf-iA-ZyC"/>
                                 <exclude reference="LN1-B6-sIg"/>
                                 <exclude reference="aDr-iV-cdp"/>
                                 <exclude reference="jet-uU-L6H"/>
                                 <exclude reference="u2l-sy-Wte"/>
-                                <exclude reference="FoU-lW-Jpe"/>
-                                <exclude reference="ScV-bz-Ljs"/>
-                                <exclude reference="pzf-pl-8yD"/>
-                                <exclude reference="wVF-UZ-qaq"/>
                                 <exclude reference="QCN-YN-2jb"/>
                                 <exclude reference="QRb-5h-atE"/>
                                 <exclude reference="UH7-T6-HbW"/>

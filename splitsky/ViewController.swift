@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             splitPayment!.allocateToMe(amount())
             updateLobsterMode()
         } else if amount() > 0 {
-            addPayment(Payment(amount: amount(), currency: Data.activeCurrency(), rate: Data.activeRate(), type: type!, label: label))
+            addPayment(Payment(amount: amount(), currency: Data.activeCurrency().tla(), rate: Data.activeRate(), type: type!, label: label))
         }
         onClear("" as AnyObject)
     }
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
             Util.setText(lobsterButton, text: "\(Data.listName().capitalized)\nLobster")
             listName.text = "Uneven Split Bill"
             listSummary.isEnabled = false
-            splitPayment = Payment.init(amount: amount(), currency: Data.activeCurrency(), rate: Data.activeRate(), type: type!, label: label)
+            splitPayment = Payment.init(amount: amount(), currency: Data.activeCurrency().tla(), rate: Data.activeRate(), type: type!, label: label)
             if !Preferences.hadLobsterHelp() {
                 helpModal?.slideDownFromTop(view)
                 Preferences.hadLobsterHelp(value: true)
@@ -179,22 +179,18 @@ class ViewController: UIViewController {
     
     fileprivate func update() {
         listName.text = Data.listName().capitalized
-        let totalOwingsAmount: Float = Data.theyOweMe()
-        if abs(totalOwingsAmount) < 0.01 {
-            listSummary.setTitle("owes me nothing", for: UIControlState())
-        } else {
-            let prefix = totalOwingsAmount > 0 ? "owes me" : "is owed"
-            Util.setText(listSummary, text: prefix + " " + Util.toMoney(amount: abs(totalOwingsAmount)))
-        }
+        Util.setText(listSummary, text: Data.owingsSummary())
         
         navigation.title = FrontViewController.getButtonLabel(type!).replacingOccurrences(of: "\n", with: " ")
         listSummary.isEnabled = true
+        listSummary.titleLabel?.minimumScaleFactor = 0.5
+        listSummary.titleLabel?.adjustsFontSizeToFitWidth = true
         label = ""
         splitPayment = nil
         Util.setText(lobsterButton!, text: "Uneven\nSplit")
         Util.setText(evenSplitButton!, text: "50/50\nSplit")
         Util.setText(labelButton!, text: "Label")
-        Util.setText(currencyButton!, text: Data.activeCurrency())
+        Util.setText(currencyButton!, text: Data.activeCurrency().tla())
     }
     
     fileprivate func amount() -> Float {

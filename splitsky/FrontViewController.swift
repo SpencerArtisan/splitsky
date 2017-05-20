@@ -61,16 +61,7 @@ class FrontViewController: UIViewController {
     }
     
     fileprivate func getBlackLabel() -> String {
-        var text = Data.listName().capitalized
-        
-        let theyOweMe: Float = Data.theyOweMe()
-        if abs(theyOweMe) < 0.01 {
-            text = text + " owes me nothing"
-        } else {
-            text = text + (theyOweMe > 0 ? " owes me " : " is owed ")
-            text = text + Util.toMoney(amount: abs(theyOweMe))
-        }
-        return text
+        return "\(Data.listName().capitalized) \(Data.owingsSummary())"
     }
     
     static func getButtonLabel(_ type: Type) -> String {

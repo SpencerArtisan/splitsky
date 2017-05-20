@@ -32,7 +32,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     fileprivate func notWorthMentioning() -> Bool {
-        return Data.theyOweMe() == 0 && Data.listCount() <= 1 && !Data.isNamed()
+        return Data.theyOweMeGbp() == 0 && Data.listCount() <= 1 && !Data.isNamed()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,14 +105,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     fileprivate func setWords(_ cell: PaymentCell) {
-        let totalOwingsAmount = Data.theyOweMe()
-        
-        if abs(totalOwingsAmount) < 0.01 {
-            cell.words.text = "owes me nothing"
-        } else {
-            cell.words.text = totalOwingsAmount < 0 ? "is owed" : "owes me"
-            cell.words.text = cell.words.text! + " " + Util.toMoney(amount: abs(totalOwingsAmount))
-        }
+        cell.words.text = Data.owingsSummary()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -31,8 +31,8 @@ class Data {
         return _currencies.filter { $0.tla() == tla }.first!
     }
     
-    static func activeCurrency() -> String {
-        return _activeCurrency
+    static func activeCurrency() -> Currency {
+        return getCurrency(tla: _activeCurrency)
     }
     
     static func activeRate() -> Float {
@@ -129,8 +129,19 @@ class Data {
         return _payments.count > 0 ? _payments.keys.sorted()[0] : "my friend"
     }
     
-    static func theyOweMe() -> Float {
+    static func theyOweMeGbp() -> Float {
         return _payments[listName()]!.reduce(0, { $0 + $1.theyOweMeGbp() } )
+    }
+    
+    static func owingsSummary() -> String {
+        let theyOweMeGbp = self.theyOweMeGbp()
+        if abs(theyOweMeGbp) < 0.01 {
+            return "owes me nothing"
+        } else {
+            let gbpText = "\(Data.getCurrency(tla: "GBP").format(amount: theyOweMeGbp))"
+            let activeCurrencyText = Data.activeCurrency().tla() == "GBP" ? "" : "(\(Data.activeCurrency().format(amount: theyOweMeGbp * Data.activeRate())))"
+            return (theyOweMeGbp > 0 ? "owes me " : "is owed ") + "\(gbpText) \(activeCurrencyText)"
+        }
     }
     
 }
