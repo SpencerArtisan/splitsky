@@ -74,6 +74,7 @@ class Data {
         if _payments[_listName] == nil {
             _payments[_listName] = [Payment]()
         }
+        Preferences.setLastFriend(name)
     }
     
     static func listCount() -> Int {
@@ -104,6 +105,7 @@ class Data {
         _payments[newName] = _payments[oldName]!
         _payments.removeValue(forKey: oldName)
         PaymentRepository.save(_payments)
+        Preferences.setLastFriend(newName)
     }
     
     static func addPayment(_ payment: Payment) {
@@ -126,7 +128,7 @@ class Data {
     }
     
     static func defaultName() -> String {
-        return _payments.count > 0 ? _payments.keys.sorted()[0] : "my friend"
+        return Preferences.getLastFriend() ?? (_payments.count > 0 ? _payments.keys.sorted()[0] : "my friend")
     }
     
     static func theyOweMeGbp() -> Float {

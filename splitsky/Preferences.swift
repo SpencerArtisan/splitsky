@@ -19,6 +19,15 @@ class Preferences {
         properties().setValue(value, forKey: "hadLobsterHelp")
         write()
     }
+
+    static func setLastFriend(_ value: String) {
+        properties().setValue(value, forKey: "lastFriend")
+        write()
+    }
+    
+    static func getLastFriend() -> String? {
+        return properties().value(forKey: "lastFriend") as? String
+    }
     
     private static func properties() -> NSDictionary {
         if props == nil {
