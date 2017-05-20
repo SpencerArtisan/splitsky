@@ -19,6 +19,7 @@ class RestClient {
                         //Implement your logic
                         print(json)
                         let rates: [String: Any] = json["rates"] as! [String : Any]
+                        Preferences.setRates(rates)
                         Data.setRates(rates: rates)
 
                     }

@@ -20,8 +20,8 @@ class Data {
     ]
     fileprivate static var _payments = [String:[Payment]]()
     fileprivate static var _listName: String = ""
-    fileprivate static var _rates = [String: Any]()
-    fileprivate static var _activeCurrency: String = "GBP"
+    fileprivate static var _rates = Preferences.getRates() ?? [String: Any]()
+    fileprivate static var _activeCurrency: String = Preferences.getLastCurrency() ?? "GBP"
     
     static func currencies() -> [Currency] {
         return _currencies
@@ -41,6 +41,7 @@ class Data {
     
     static func setActiveCurrency(currency: Currency) {
         _activeCurrency = currency.tla()
+        Preferences.setLastCurrency(currency.tla())
     }
     
     static func currencyCount() -> Int {

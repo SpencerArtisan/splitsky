@@ -29,6 +29,24 @@ class Preferences {
         return properties().value(forKey: "lastFriend") as? String
     }
     
+    static func setLastCurrency(_ value: String) {
+        properties().setValue(value, forKey: "lastCurrency")
+        write()
+    }
+    
+    static func getLastCurrency() -> String? {
+        return properties().value(forKey: "lastCurrency") as? String
+    }
+    
+    static func setRates(_ rates: [String: Any]) {
+        properties().setValue(rates, forKey: "rates")
+        write()
+    }
+    
+    static func getRates() -> [String: Any]? {
+        return properties().value(forKey: "rates") as? [String: Any]
+    }
+    
     private static func properties() -> NSDictionary {
         if props == nil {
             let propsPath = path()
