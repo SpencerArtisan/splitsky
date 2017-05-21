@@ -1,18 +1,18 @@
 //
-//  DetailController.swift
+//  HomeCurrencyController.swift
 //  Splitsky
 //
-//  Created by Spencer Ward on 10/08/2016.
-//  Copyright © 2016 Spencer Ward. All rights reserved.
+//  Created by Spencer Ward on 21/05/2017.
+//  Copyright © 2017 Spencer Ward. All rights reserved.
 //
 
 import UIKit
 
-class CurrencyController: UITableViewController {
+class HomeCurrencyController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "CurrencyCell", bundle: nil), forCellReuseIdentifier: "CurrencyCell")
-        tableView.register(UINib(nibName: "CurrencyHeaderCell", bundle: nil), forCellReuseIdentifier: "CurrencyHeaderCell")    }
+        tableView.register(UINib(nibName: "HomeCurrencyCell", bundle: nil), forCellReuseIdentifier: "HomeCurrencyCell")
+        tableView.register(UINib(nibName: "HomeCurrencyHeaderCell", bundle: nil), forCellReuseIdentifier: "HomeCurrencyHeaderCell")    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(false, animated: false)
@@ -22,7 +22,7 @@ class CurrencyController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 40
+        return 40
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,16 +33,12 @@ class CurrencyController: UITableViewController {
         
         let row = (indexPath as NSIndexPath).row
         if row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyHeaderCell", for: indexPath) as! CurrencyHeaderCell
-            cell.label.text = "1 \(Data.homeCurrency()!.tla()) is worth"
-            return cell
+            return tableView.dequeueReusableCell(withIdentifier: "HomeCurrencyHeaderCell", for: indexPath) as! HomeCurrencyHeaderCell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCurrencyCell", for: indexPath) as! HomeCurrencyCell
             let currency = Data.currencies()[row - 1]
-            let rate = Util.toMoney(amount: Data.getRate(currencyTla: currency.tla()), decPlc: 2)
             
-            cell.nameLabel.text = currency.name()
-            cell.rateLabel.text = "\(rate) \(currency.tla())"
+            cell.currency.text = currency.name()
             
             cell.separatorInset = UIEdgeInsets.zero
             cell.backgroundColor = UIColor.black
@@ -56,8 +52,12 @@ class CurrencyController: UITableViewController {
         let row = (indexPath as NSIndexPath).row
         if row != 0 {
             let currency = Data.currencies()[row - 1]
-            Data.setActiveCurrency(currency: currency)
-            navigationController?.popViewController(animated: true)
+            Data.setHomeCurrency(currency: currency)
+            RestClient.getRates(onCompletion: {_ in
+                DispatchQueue.main.async {
+                    Data.set(PaymentRepository.load())
+                    self.navigationController?.popViewController(animated: true)
+                }})
         }
     }
 }

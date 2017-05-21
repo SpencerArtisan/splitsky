@@ -32,7 +32,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     fileprivate func notWorthMentioning() -> Bool {
-        return Data.theyOweMeGbp() == 0 && Data.listCount() <= 1 && !Data.isNamed()
+        return Data.theyOweMeHomeCurrency() == 0 && Data.listCount() <= 1 && !Data.isNamed()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

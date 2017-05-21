@@ -9,4 +9,5 @@
 import UIKit
 
 class CurrencyHeaderCell: UITableViewCell {
+    @IBOutlet weak var label: UILabel!
 }

@@ -52,7 +52,7 @@ class PaymentRepository {
     
     fileprivate static func encode(_ payment: Payment) -> String {
         return "\(payment.amount()):\(payment.type().toCode()):\(payment.label()):\(payment.myAllocations()):\(payment.theirAllocations()):\(payment.currency()):\(payment.rate())"
-    }
+        }
     
     fileprivate static func decode(_ payments: [String]) -> [Payment] {
         return payments.map {decode($0)}
@@ -65,7 +65,8 @@ class PaymentRepository {
         let label = parts.count >= 3 ? parts[2] : ""
         let myLobsters = parts.count >= 4 ? Float(parts[3])! : 0
         let theirLobsters = parts.count >= 5 ? Float(parts[4])! : 0
-        let currency = parts.count >= 6 ? parts[5] : "GBP"
+        let currency = parts.count >= 6 ? parts[5] : (Data.homeCurrency() == nil ? "Unknown" : Data.homeCurrency()!.tla())
+        
         let rate = parts.count >= 7 ? Float(parts[6])! : 1.0
         return Payment(even: amount, my: myLobsters, theirs: theirLobsters, currency: currency, rate: rate, type: type, label: label)
     }

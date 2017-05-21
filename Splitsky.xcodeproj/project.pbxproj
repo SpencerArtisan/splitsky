@@ -15,6 +15,11 @@
 		974CCEA81DD11612004ACF69 /* LobsterHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974CCEA71DD11612004ACF69 /* LobsterHelp.xib */; };
 		974CCEAA1DD12352004ACF69 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974CCEA91DD12352004ACF69 /* Preferences.swift */; };
 		974CCEAC1DD1253C004ACF69 /* Prefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 974CCEAB1DD1253C004ACF69 /* Prefs.plist */; };
+		974F6E481ED1DA47007994BC /* HomeCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974F6E471ED1DA47007994BC /* HomeCurrencyController.swift */; };
+		974F6E4B1ED1DA76007994BC /* HomeCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974F6E491ED1DA76007994BC /* HomeCurrencyCell.swift */; };
+		974F6E4C1ED1DA76007994BC /* HomeCurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974F6E4A1ED1DA76007994BC /* HomeCurrencyCell.xib */; };
+		974F6E4F1ED1DCA4007994BC /* HomeCurrencyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974F6E4D1ED1DCA4007994BC /* HomeCurrencyHeaderCell.swift */; };
+		974F6E501ED1DCA4007994BC /* HomeCurrencyHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974F6E4E1ED1DCA4007994BC /* HomeCurrencyHeaderCell.xib */; };
 		977F23591D5DE8670054F075 /* Payments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 977F23581D5DE8670054F075 /* Payments.plist */; };
 		977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977F235A1D5DE9F00054F075 /* PaymentRepository.swift */; };
 		977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977F235C1D5E38F10054F075 /* PaymentType.xib */; };
@@ -50,6 +55,11 @@
 		974CCEA71DD11612004ACF69 /* LobsterHelp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LobsterHelp.xib; sourceTree = "<group>"; };
 		974CCEA91DD12352004ACF69 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		974CCEAB1DD1253C004ACF69 /* Prefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Prefs.plist; sourceTree = "<group>"; };
+		974F6E471ED1DA47007994BC /* HomeCurrencyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCurrencyController.swift; sourceTree = "<group>"; };
+		974F6E491ED1DA76007994BC /* HomeCurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCurrencyCell.swift; sourceTree = "<group>"; };
+		974F6E4A1ED1DA76007994BC /* HomeCurrencyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCurrencyCell.xib; sourceTree = "<group>"; };
+		974F6E4D1ED1DCA4007994BC /* HomeCurrencyHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCurrencyHeaderCell.swift; sourceTree = "<group>"; };
+		974F6E4E1ED1DCA4007994BC /* HomeCurrencyHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCurrencyHeaderCell.xib; sourceTree = "<group>"; };
 		977F23581D5DE8670054F075 /* Payments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Payments.plist; sourceTree = "<group>"; };
 		977F235A1D5DE9F00054F075 /* PaymentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
 		977F235C1D5E38F10054F075 /* PaymentType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentType.xib; sourceTree = "<group>"; };
@@ -118,6 +128,7 @@
 			children = (
 				9797AB2C1D7CB0B700D44D93 /* Fonts */,
 				97A53F771D16A8B800BED436 /* Assets.xcassets */,
+				97A53F701D16A8B800BED436 /* AppDelegate.swift */,
 				97A53F7C1D16A8B800BED436 /* Info.plist */,
 				977F23581D5DE8670054F075 /* Payments.plist */,
 				97D716601D8748D4001EF468 /* Launch.xib */,
@@ -134,7 +145,6 @@
 				97BF295B1ECF7234000B515B /* Currency.swift */,
 				972719711D5BB49800149251 /* DetailController.swift */,
 				977F235E1D5E54C10054F075 /* Modal.swift */,
-				97A53F701D16A8B800BED436 /* AppDelegate.swift */,
 				9797AB221D7C162200D44D93 /* FrontViewController.swift */,
 				97A53F721D16A8B800BED436 /* ViewController.swift */,
 				97A315FE1D69A93600A2A28D /* AllListsController.swift */,
@@ -149,6 +159,11 @@
 				97BF29611ECF93CF000B515B /* CurrencyHeaderCell.swift */,
 				97BF29651ED047DF000B515B /* LabelCell.swift */,
 				97BF29661ED047DF000B515B /* LabelCell.xib */,
+				974F6E471ED1DA47007994BC /* HomeCurrencyController.swift */,
+				974F6E491ED1DA76007994BC /* HomeCurrencyCell.swift */,
+				974F6E4A1ED1DA76007994BC /* HomeCurrencyCell.xib */,
+				974F6E4D1ED1DCA4007994BC /* HomeCurrencyHeaderCell.swift */,
+				974F6E4E1ED1DCA4007994BC /* HomeCurrencyHeaderCell.xib */,
 			);
 			name = Splitsky;
 			path = splitsky;
@@ -214,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974F6E4C1ED1DA76007994BC /* HomeCurrencyCell.xib in Resources */,
 				977F235D1D5E38F10054F075 /* PaymentType.xib in Resources */,
 				97BF29641ECF93CF000B515B /* CurrencyHeaderCell.xib in Resources */,
 				97A53F781D16A8B800BED436 /* Assets.xcassets in Resources */,
@@ -221,6 +237,7 @@
 				97D716611D8748D4001EF468 /* Launch.xib in Resources */,
 				97BF295A1ECF6CEF000B515B /* CurrencyCell.xib in Resources */,
 				9727A5041D5BDF0B0076F98A /* DetailCell.xib in Resources */,
+				974F6E501ED1DCA4007994BC /* HomeCurrencyHeaderCell.xib in Resources */,
 				97A53F761D16A8B800BED436 /* Main.storyboard in Resources */,
 				974CCEA81DD11612004ACF69 /* LobsterHelp.xib in Resources */,
 				9797AB4E1D7CB17700D44D93 /* CHARRING.ttf in Resources */,
@@ -243,10 +260,13 @@
 				977F235B1D5DE9F00054F075 /* PaymentRepository.swift in Sources */,
 				974CCEAA1DD12352004ACF69 /* Preferences.swift in Sources */,
 				97BF29591ECF6CEF000B515B /* CurrencyCell.swift in Sources */,
+				974F6E4B1ED1DA76007994BC /* HomeCurrencyCell.swift in Sources */,
+				974F6E4F1ED1DCA4007994BC /* HomeCurrencyHeaderCell.swift in Sources */,
 				9727A5031D5BDF0B0076F98A /* PaymentCell.swift in Sources */,
 				97BF29631ECF93CF000B515B /* CurrencyHeaderCell.swift in Sources */,
 				97BF295C1ECF7234000B515B /* Currency.swift in Sources */,
 				9797AB231D7C162200D44D93 /* FrontViewController.swift in Sources */,
+				974F6E481ED1DA47007994BC /* HomeCurrencyController.swift in Sources */,
 				97BF295E1ECF89BC000B515B /* RestClient.swift in Sources */,
 				97A53F731D16A8B800BED436 /* ViewController.swift in Sources */,
 				97484F641D5DAC0A0056912B /* Payment.swift in Sources */,

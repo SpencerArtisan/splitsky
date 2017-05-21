@@ -38,6 +38,15 @@ class Preferences {
         return properties().value(forKey: "lastCurrency") as? String
     }
     
+    static func setHomeCurrency(_ value: String) {
+        properties().setValue(value, forKey: "homeCurrency")
+        write()
+    }
+    
+    static func getHomeCurrency() -> String? {
+        return properties().value(forKey: "homeCurrency5") as? String
+    }
+    
     static func setRates(_ rates: [String: Any]) {
         properties().setValue(rates, forKey: "rates")
         write()

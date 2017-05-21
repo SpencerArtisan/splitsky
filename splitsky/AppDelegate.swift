@@ -16,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        RestClient.getRates()
+
+        if Data.homeCurrency() != nil {
+            RestClient.getRates(onCompletion: {})
+            Data.set(PaymentRepository.load())
+        } else {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let navigationController = window?.rootViewController as? UINavigationController
+            let homeCurrencyController = mainStoryboard.instantiateViewController(withIdentifier: "homeCurrencyController") as! HomeCurrencyController
+            navigationController?.pushViewController(homeCurrencyController, animated: true)
+        }
         return true
     }
 

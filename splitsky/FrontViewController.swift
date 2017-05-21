@@ -22,7 +22,6 @@ class FrontViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Data.set(PaymentRepository.load())
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -42,7 +41,7 @@ class FrontViewController: UIViewController {
         style(breakdownButton, text: "\(Data.listName().capitalized)\nBreakdown")
         listNameLabel.text = Data.listName().capitalized
         Util.setText(summaryButton, text: Data.owingsSummary())
-        Util.setText(currencyButton, text: Data.activeCurrency().tla())
+        Util.setText(currencyButton, text: Data.activeCurrency()?.tla())
         summaryButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     

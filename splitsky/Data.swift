@@ -15,13 +15,19 @@ class Data {
         Currency(name: "Danish Krone", tla: "DKK", formatter: { v in "\(v)kr" }),
         Currency(name: "Swedish Krona", tla: "SEK", formatter: { v in "\(v)kr" }),
         Currency(name: "Swiss Franc", tla: "CHF", formatter: { v in "\(v) CHF" }),
+        Currency(name: "Chinese Yen", tla: "CNY", formatter: { v in "¥\(v)" }),
+        Currency(name: "Turkish Lira", tla: "TRY", formatter: { v in "\(v)₺" }),
         Currency(name: "US Dollar", tla: "USD", formatter: { v in "$\(v)" }),
-        Currency(name: "Turkish Lira", tla: "TRY", formatter: { v in "\(v)₺" })
+        Currency(name: "Canadian Dollar", tla: "CAD", formatter: { v in "$\(v)" }),
+        Currency(name: "Australian Dollar", tla: "AUD", formatter: { v in "$\(v)" }),
+        Currency(name: "New Zealand Dollar", tla: "NZD", formatter: { v in "$\(v)" })
     ]
     fileprivate static var _payments = [String:[Payment]]()
     fileprivate static var _listName: String = ""
     fileprivate static var _rates = Preferences.getRates() ?? [String: Any]()
-    fileprivate static var _activeCurrency: String = Preferences.getLastCurrency() ?? "GBP"
+    fileprivate static var _homeCurrency: String? = Preferences.getHomeCurrency()
+    fileprivate static var _activeCurrency: String? = Preferences.getLastCurrency() ?? _homeCurrency
+
     
     static func currencies() -> [Currency] {
         return _currencies
@@ -31,17 +37,27 @@ class Data {
         return _currencies.filter { $0.tla() == tla }.first!
     }
     
-    static func activeCurrency() -> Currency {
-        return getCurrency(tla: _activeCurrency)
+    static func activeCurrency() -> Currency? {
+        return _activeCurrency != nil ? getCurrency(tla: _activeCurrency!) : nil
     }
     
-    static func activeRate() -> Float {
-        return getRate(currencyTla: _activeCurrency)
+    static func homeCurrency() -> Currency? {
+        return _homeCurrency != nil ? getCurrency(tla: _homeCurrency!) : nil
+    }
+    
+    static func activeRate() -> Float? {
+        return _activeCurrency != nil ? getRate(currencyTla: _activeCurrency!) : nil
     }
     
     static func setActiveCurrency(currency: Currency) {
         _activeCurrency = currency.tla()
         Preferences.setLastCurrency(currency.tla())
+    }
+    
+    static func setHomeCurrency(currency: Currency) {
+        _homeCurrency = currency.tla()
+        Preferences.setHomeCurrency(currency.tla())
+
     }
     
     static func currencyCount() -> Int {
@@ -53,7 +69,7 @@ class Data {
     }
     
     static func getRate(currencyTla: String) -> Float {
-        return currencyTla == "GBP" ? 1.0 : _rates[currencyTla] as! Float
+        return currencyTla == _homeCurrency ? 1.0 : _rates[currencyTla] as! Float
     }
     
     static func newList() {
@@ -132,18 +148,22 @@ class Data {
         return Preferences.getLastFriend() ?? (_payments.count > 0 ? _payments.keys.sorted()[0] : "my friend")
     }
     
-    static func theyOweMeGbp() -> Float {
-        return _payments[listName()]!.reduce(0, { $0 + $1.theyOweMeGbp() } )
+    static func theyOweMeHomeCurrency() -> Float {
+        return _payments[listName()]!.reduce(0, { $0 + $1.theyOweMeHomeCurrency() } )
     }
     
     static func owingsSummary() -> String {
-        let theyOweMeGbp = self.theyOweMeGbp()
-        if abs(theyOweMeGbp) < 0.01 {
+        if _activeCurrency == nil || _homeCurrency == nil {
+            return ""
+        }
+        
+        let theyOweMeHomeCurrency = self.theyOweMeHomeCurrency()
+        if abs(theyOweMeHomeCurrency) < 0.01 {
             return "owes me nothing"
         } else {
-            let gbpText = "\(Data.getCurrency(tla: "GBP").format(amount: abs(theyOweMeGbp)))"
-            let activeCurrencyText = Data.activeCurrency().tla() == "GBP" ? "" : "(\(Data.activeCurrency().format(amount: abs(theyOweMeGbp) * Data.activeRate())))"
-            return (theyOweMeGbp > 0 ? "owes me " : "is owed ") + "\(gbpText) \(activeCurrencyText)"
+            let homeCurrencyText = "\(Data.homeCurrency()!.format(amount: abs(theyOweMeHomeCurrency))) "
+            let activeCurrencyText = Data.activeCurrency()!.tla() == _homeCurrency ? "" : "(\(Data.activeCurrency()!.format(amount: abs(theyOweMeHomeCurrency) * Data.activeRate()!)))"
+            return (theyOweMeHomeCurrency > 0 ? "owes me " : "is owed ") + "\(homeCurrencyText) \(activeCurrencyText)"
         }
     }
     

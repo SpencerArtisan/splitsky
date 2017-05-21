@@ -9,7 +9,6 @@
 import UIKit
 
 class DetailController: UITableViewController {
-    let SPACE = "  \u{200c}"
     var labelColor: UIColor?
     var typeModal: Modal?
 
@@ -132,9 +131,10 @@ class DetailController: UITableViewController {
         } else if payment.type() == Type.iBorrowed {
             cell.words.text = "\(they) gave me"
         }
-        let currency = Data.getCurrency(tla: payment.currency())
-        let gbpText = payment.currency() == "GBP" ? "" : "(\(Data.getCurrency(tla: "GBP").format(amount: payment.amount() / payment.rate())))"
-        cell.words.text = "\(cell.words.text!) \(currency.format(amount: payment.amount())) \(gbpText)"
+        let paymentCurrency = Data.getCurrency(tla: payment.currency())
+        let paymentCurrencyText = paymentCurrency.format(amount: payment.amount())
+        let homeCurrencyText = (payment.currency() == Data.homeCurrency()!.tla()) ? "" : " (\(Data.homeCurrency()!.format(amount: payment.amount() / payment.rate())))"
+        cell.words.text = "\(cell.words.text!) \(paymentCurrencyText)\(homeCurrencyText)"
         
          cell.breakdown.text = ""
         if payment.isUneven() {

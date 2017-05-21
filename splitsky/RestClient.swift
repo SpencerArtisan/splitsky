@@ -2,10 +2,10 @@ import Foundation
 
 class RestClient {
 
-    static func getRates() {
+    static func getRates(onCompletion: @escaping () -> ()) {
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
-        let url = URL(string: "http://api.fixer.io/latest?base=GBP")!
+        let url = URL(string: "http://api.fixer.io/latest?base=\(Data.homeCurrency()!.tla())")!
         
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
@@ -27,6 +27,8 @@ class RestClient {
                     print("error in JSONSerialization")
                 }
             }
+            
+            onCompletion()
         })
         task.resume()
     }

@@ -42,9 +42,11 @@ class Util {
         button.backgroundColor = ORANGE
     }
     
-    static func setText(_ button: UIButton, text: String) {
+    static func setText(_ button: UIButton, text: String?) {
+        if text != nil {
         button.setTitle(text, for: UIControlState())
         button.setImage(nil, for: UIControlState())
+        }
     }
     
     static func setImage(_ button: UIButton, image: UIImage) {

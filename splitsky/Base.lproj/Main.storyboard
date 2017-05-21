@@ -578,7 +578,7 @@
         <!--Currency Controller-->
         <scene sceneID="Rn1-mi-lMI">
             <objects>
-                <tableViewController id="ruB-cX-UUx" customClass="CurrencyController" customModule="Splitsky" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="currencyController" id="ruB-cX-UUx" customClass="CurrencyController" customModule="Splitsky" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PMT-Vo-hNe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -594,15 +594,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NuL-Uf-Dg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1899" y="931"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="c2n-75-iLA">
-            <objects>
-                <viewController id="aeD-2h-UI8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3zW-aE-LRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="401" y="1075"/>
+            <point key="canvasLocation" x="2239" y="1041"/>
         </scene>
         <!--Front View Controller-->
         <scene sceneID="ZcP-ej-vdA">
@@ -908,10 +900,31 @@
             </objects>
             <point key="canvasLocation" x="-146" y="131"/>
         </scene>
+        <!--Home Currency Controller-->
+        <scene sceneID="VF6-Uw-Txi">
+            <objects>
+                <tableViewController storyboardIdentifier="homeCurrencyController" id="j2J-pg-T37" customClass="HomeCurrencyController" customModule="Splitsky" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RCo-ou-Efk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="j2J-pg-T37" id="Qt6-06-JhR"/>
+                            <outlet property="delegate" destination="j2J-pg-T37" id="9ZZ-ha-rE1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4up-U0-XYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="909"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Iae-cZ-tTq"/>
         <segue reference="8Xs-Z2-hD5"/>
+        <segue reference="Iae-cZ-tTq"/>
         <segue reference="UuX-s8-h1y"/>
     </inferredMetricsTieBreakers>
 </document>
