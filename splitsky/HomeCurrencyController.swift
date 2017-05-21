@@ -53,6 +53,7 @@ class HomeCurrencyController: UITableViewController {
         if row != 0 {
             let currency = Data.currencies()[row - 1]
             Data.setHomeCurrency(currency: currency)
+            Data.setActiveCurrency(currency: currency)
             RestClient.getRates(onCompletion: {_ in
                 DispatchQueue.main.async {
                     Data.set(PaymentRepository.load())

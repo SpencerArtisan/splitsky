@@ -44,7 +44,7 @@ class Preferences {
     }
     
     static func getHomeCurrency() -> String? {
-        return properties().value(forKey: "homeCurrency5") as? String
+        return properties().value(forKey: "homeCurrency") as? String
     }
     
     static func setRates(_ rates: [String: Any]) {
