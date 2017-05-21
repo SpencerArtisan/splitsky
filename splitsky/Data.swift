@@ -57,7 +57,6 @@ class Data {
     static func setHomeCurrency(currency: Currency) {
         _homeCurrency = currency.tla()
         Preferences.setHomeCurrency(currency.tla())
-
     }
     
     static func currencyCount() -> Int {
@@ -68,8 +67,8 @@ class Data {
         _rates = rates
     }
     
-    static func getRate(currencyTla: String) -> Float {
-        return currencyTla == _homeCurrency ? 1.0 : _rates[currencyTla] as! Float
+    static func getRate(currencyTla: String) -> Float? {
+        return currencyTla == _homeCurrency ? 1.0 : _rates[currencyTla] as? Float
     }
     
     static func newList() {
