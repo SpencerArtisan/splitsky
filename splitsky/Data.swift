@@ -12,15 +12,17 @@ class Data {
     fileprivate static var _currencies = [
         Currency(name: "British Pound", tla: "GBP", formatter: { v in "£\(v)" }),
         Currency(name: "Euro", tla: "EUR", formatter: { v in "\(v)€" }),
+        Currency(name: "Australian Dollar", tla: "AUD", formatter: { v in "$\(v)" }),
+        Currency(name: "Canadian Dollar", tla: "CAD", formatter: { v in "$\(v)" }),
+        Currency(name: "Chinese Yen", tla: "CNY", formatter: { v in "¥\(v)" }),
+        Currency(name: "Czech Koruna", tla: "CZK", formatter: { v in "\(v)Kč" }),
         Currency(name: "Danish Krone", tla: "DKK", formatter: { v in "\(v)kr" }),
+        Currency(name: "New Zealand Dollar", tla: "NZD", formatter: { v in "$\(v)" }),
+        Currency(name: "Polish Zloty", tla: "PLN", formatter: { v in "\(v)zł" }),
         Currency(name: "Swedish Krona", tla: "SEK", formatter: { v in "\(v)kr" }),
         Currency(name: "Swiss Franc", tla: "CHF", formatter: { v in "\(v) CHF" }),
-        Currency(name: "Chinese Yen", tla: "CNY", formatter: { v in "¥\(v)" }),
         Currency(name: "Turkish Lira", tla: "TRY", formatter: { v in "\(v)₺" }),
-        Currency(name: "US Dollar", tla: "USD", formatter: { v in "$\(v)" }),
-        Currency(name: "Canadian Dollar", tla: "CAD", formatter: { v in "$\(v)" }),
-        Currency(name: "Australian Dollar", tla: "AUD", formatter: { v in "$\(v)" }),
-        Currency(name: "New Zealand Dollar", tla: "NZD", formatter: { v in "$\(v)" })
+        Currency(name: "US Dollar", tla: "USD", formatter: { v in "$\(v)" })
     ]
     fileprivate static var _payments = [String:[Payment]]()
     fileprivate static var _listName: String = ""
