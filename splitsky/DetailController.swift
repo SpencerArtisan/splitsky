@@ -80,7 +80,7 @@ class DetailController: UITableViewController {
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! PaymentCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
             let payment = Data.payments()[row - 1]
             
             if labelColor == nil {
@@ -120,21 +120,21 @@ class DetailController: UITableViewController {
         }
     }
     
-    private func setWords(_ payment: Payment, cell: PaymentCell) {
+    private func setWords(_ payment: Payment, cell: DetailCell) {
         let they = "\(Data.listName().capitalized)"
         if payment.type() == Type.theyPaid {
-            Util.setText(cell.words, text: "\(they) paid bill of")
+            cell.words.text = "\(they) paid bill of"
         } else if payment.type() == Type.iPaid {
-            Util.setText(cell.words, text: "I paid bill of")
+            cell.words.text = "I paid bill of"
         } else if payment.type() == Type.theyBorrowed {
-            Util.setText(cell.words, text: "I gave \(they)")
+            cell.words.text = "I gave \(they)"
         } else if payment.type() == Type.iBorrowed {
-            Util.setText(cell.words, text: "\(they) gave me")
+            cell.words.text = "\(they) gave me"
         }
         let paymentCurrency = Data.getCurrency(tla: payment.currency())
         let paymentCurrencyText = paymentCurrency.format(amount: payment.amount())
         let homeCurrencyText = (payment.currency() == Data.homeCurrency()!.tla()) ? "" : " (\(Data.homeCurrency()!.format(amount: payment.amount() / payment.rate())))"
-        Util.setText(cell.words, text: "\(cell.words.currentTitle!) \(paymentCurrencyText)\(homeCurrencyText)")
+        cell.words.text = "\(cell.words.text!) \(paymentCurrencyText)\(homeCurrencyText)"
         
          cell.breakdown.text = ""
         if payment.isUneven() {

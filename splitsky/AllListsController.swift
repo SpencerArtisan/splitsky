@@ -43,7 +43,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     fileprivate func addFriendCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllListsCell", for: indexPath) as! PaymentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllListsCell", for: indexPath) as! AllListsCell
         cell.separatorInset = UIEdgeInsets.zero
         cell.backgroundColor = UIColor.black
         cell.labelCallback = {
@@ -63,7 +63,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     fileprivate func addRowCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllListsCell", for: indexPath) as! PaymentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllListsCell", for: indexPath) as! AllListsCell
         cell.words.isHidden = false
         cell.delete.isHidden = false
         
@@ -107,7 +107,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         return cell
     }
     
-    fileprivate func setWords(_ cell: PaymentCell) {
+    fileprivate func setWords(_ cell: AllListsCell) {
         Util.setText(cell.words, text: Data.owingsSummary())
     }
 

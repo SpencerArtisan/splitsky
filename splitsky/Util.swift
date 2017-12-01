@@ -44,8 +44,8 @@ class Util {
     
     static func setText(_ button: UIButton, text: String?) {
         if text != nil {
-        button.setTitle(text, for: UIControlState())
-        button.setImage(nil, for: UIControlState())
+            button.setTitle(text, for: UIControlState())
+            button.setImage(nil, for: UIControlState())
         }
     }
     
