@@ -116,7 +116,12 @@ class ViewController: UIViewController {
     }
     
     fileprivate func updateLobsterMode() {
-        Util.setText(listSummary, text: "Remainder \(splitPayment!.evenlySplit())")
+        let remainder = splitPayment!.evenlySplit()
+        if remainder == 0.0 {
+            paymentDone()
+        } else {
+            Util.setText(listSummary, text: "Remainder \(remainder)")
+        }
     }
     
     // Or the Split Remainder button in lobster mode
@@ -171,6 +176,10 @@ class ViewController: UIViewController {
     
     fileprivate func addPayment(_ payment: Payment) {
         Data.addPayment(payment)
+        paymentDone()
+    }
+    
+    fileprivate func paymentDone() {
         update()
         onClear("" as AnyObject)
         Util.setText(labelButton!, text: "Label")
