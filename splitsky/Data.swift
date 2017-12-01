@@ -141,7 +141,7 @@ class Data {
         PaymentRepository.save(_payments)
 
         if Data.listName() == name {
-            Data.setList(defaultName())
+            Data.setList((_payments.count > 0 ? _payments.keys.sorted()[0] : "my friend"))
         }
     }
     

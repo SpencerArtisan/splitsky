@@ -3,13 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "FrontViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():FrontViewController.swift">
+         contextName = "static Data.isNamed() -&gt; Bool:Data.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sender!">
-            </PersistentString>
-            <PersistentString
-               value = "dest.type!">
+               value = "_listName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -17,10 +14,32 @@
          contextName = "main:AppDelegate.swift">
       </ContextState>
       <ContextState
+         contextName = "FrontViewController.prepare(for:sender:):FrontViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
+            </PersistentString>
+            <PersistentString
+               value = "segue.destination as? ViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AllListsController.tableView(UITableView, didSelectRowAtIndexPath : NSIndexPath) -&gt; ():AllListsController.swift">
          <PersistentStrings>
             <PersistentString
                value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Data.defaultName():Data.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Preferences.getLastFriend() ?? (_payments.count &gt; 0 ? _payments.keys.sorted()[0] : &quot;my friend&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "Preferences.getLastFriend()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -36,21 +55,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FrontViewController.prepare(for:sender:):FrontViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "segue.destination">
-            </PersistentString>
-            <PersistentString
-               value = "segue.destination as? ViewController">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "static Data.removeList(_:):Data.swift">
       </ContextState>
       <ContextState
-         contextName = "static Data.isNamed() -&gt; Bool:Data.swift">
+         contextName = "FrontViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():FrontViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "_listName">
+               value = "sender!">
+            </PersistentString>
+            <PersistentString
+               value = "dest.type!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
