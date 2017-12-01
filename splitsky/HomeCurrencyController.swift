@@ -15,7 +15,7 @@ class HomeCurrencyController: UITableViewController {
         tableView.register(UINib(nibName: "HomeCurrencyHeaderCell", bundle: nil), forCellReuseIdentifier: "HomeCurrencyHeaderCell")    }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController!.setNavigationBarHidden(false, animated: false)
+        navigationController!.setNavigationBarHidden(true, animated: false)
         navigationController!.navigationBar.tintColor = UIColor.white
         navigationController!.navigationBar.barTintColor = UIColor.black
         navigationController!.navigationBar.clipsToBounds = true
