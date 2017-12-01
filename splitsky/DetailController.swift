@@ -123,18 +123,18 @@ class DetailController: UITableViewController {
     private func setWords(_ payment: Payment, cell: PaymentCell) {
         let they = "\(Data.listName().capitalized)"
         if payment.type() == Type.theyPaid {
-            cell.words.text = "\(they) paid bill of"
+            Util.setText(cell.words, text: "\(they) paid bill of")
         } else if payment.type() == Type.iPaid {
-            cell.words.text = "I paid bill of"
+            Util.setText(cell.words, text: "I paid bill of")
         } else if payment.type() == Type.theyBorrowed {
-            cell.words.text = "I gave \(they)"
+            Util.setText(cell.words, text: "I gave \(they)")
         } else if payment.type() == Type.iBorrowed {
-            cell.words.text = "\(they) gave me"
+            Util.setText(cell.words, text: "\(they) gave me")
         }
         let paymentCurrency = Data.getCurrency(tla: payment.currency())
         let paymentCurrencyText = paymentCurrency.format(amount: payment.amount())
         let homeCurrencyText = (payment.currency() == Data.homeCurrency()!.tla()) ? "" : " (\(Data.homeCurrency()!.format(amount: payment.amount() / payment.rate())))"
-        cell.words.text = "\(cell.words.text!) \(paymentCurrencyText)\(homeCurrencyText)"
+        Util.setText(cell.words, text: "\(cell.words.currentTitle!) \(paymentCurrencyText)\(homeCurrencyText)")
         
          cell.breakdown.text = ""
         if payment.isUneven() {

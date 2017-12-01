@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,7 +26,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-UG-wmm">
-                        <rect key="frame" x="360" y="30.5" width="20" height="20"/>
+                        <rect key="frame" x="348" y="30.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="6nq-Ps-MxE"/>
                             <constraint firstAttribute="width" constant="71" id="GrS-Sm-kgd"/>
@@ -42,24 +46,20 @@
                             <action selector="onDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TlL-c4-Ad7"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owes me nothing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-cO-jZ8" userLabel="words">
-                        <rect key="frame" x="129" y="0.0" width="225" height="80.5"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="110" id="gy3-Bm-sn6"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="gy3-Bm-sn6"/>
-                            </mask>
-                        </variation>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-Du-fIr">
+                        <rect key="frame" x="128" y="6" width="208" height="68.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="onWords:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IaF-m9-ly6"/>
+                        </connections>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Aa-mlF">
-                        <rect key="frame" x="4" y="6" width="125" height="68.5"/>
+                        <rect key="frame" x="16" y="6" width="100" height="68.5"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="100" id="P9W-3S-3ZZ"/>
                             <constraint firstAttribute="width" constant="71" id="eAt-kU-ECP"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -80,36 +80,27 @@
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Fvi-Aa-mlF" secondAttribute="bottom" id="12c-aO-4Fn"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7AG-Rk-Tz7"/>
                     <constraint firstAttribute="trailingMargin" secondItem="8Bc-UG-wmm" secondAttribute="trailing" id="9xS-t0-hlN"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-4" id="D5R-BE-nHf"/>
                     <constraint firstAttribute="bottomMargin" secondItem="8Bc-UG-wmm" secondAttribute="bottom" id="EQp-9N-dOv"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="MDf-cf-vUc"/>
+                    <constraint firstItem="jLN-Du-fIr" firstAttribute="height" secondItem="Fvi-Aa-mlF" secondAttribute="height" id="JWH-TJ-y9O"/>
+                    <constraint firstItem="jLN-Du-fIr" firstAttribute="centerY" secondItem="Fvi-Aa-mlF" secondAttribute="centerY" id="KTS-aO-HQF"/>
                     <constraint firstItem="8Bc-UG-wmm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="O0J-6k-Y5X"/>
-                    <constraint firstAttribute="bottom" secondItem="xuN-cO-jZ8" secondAttribute="bottom" id="P5e-nk-oZ9"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="leading" secondItem="Fvi-Aa-mlF" secondAttribute="trailing" id="PPf-6b-OcY"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QXK-2k-3K6"/>
+                    <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="jLN-Du-fIr" secondAttribute="trailing" constant="12" id="Suh-TT-3bP"/>
                     <constraint firstItem="8Bc-UG-wmm" firstAttribute="centerY" secondItem="Fvi-Aa-mlF" secondAttribute="centerY" id="cas-U7-rmO"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="cyc-1a-j0y"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fSN-8O-JEP"/>
                     <constraint firstItem="Fvi-Aa-mlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fZs-rL-pZq"/>
-                    <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="xuN-cO-jZ8" secondAttribute="trailing" constant="6" id="fbb-2f-IzR"/>
                     <constraint firstAttribute="bottom" secondItem="Fvi-Aa-mlF" secondAttribute="bottom" constant="6" id="g1f-4g-auN"/>
-                    <constraint firstItem="xuN-cO-jZ8" firstAttribute="width" secondItem="Fvi-Aa-mlF" secondAttribute="width" multiplier="1.8" id="l63-hK-ofI"/>
+                    <constraint firstItem="jLN-Du-fIr" firstAttribute="leading" secondItem="Fvi-Aa-mlF" secondAttribute="trailing" constant="12" id="muk-IJ-uzL"/>
                     <constraint firstItem="8Bc-UG-wmm" firstAttribute="leading" secondItem="Fvi-Aa-mlF" secondAttribute="trailing" constant="6" id="nif-ax-fCg"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="xuN-cO-jZ8" secondAttribute="bottom" id="ufB-Ut-7gr"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="12c-aO-4Fn"/>
+                        <exclude reference="fZs-rL-pZq"/>
                         <exclude reference="EQp-9N-dOv"/>
                         <exclude reference="O0J-6k-Y5X"/>
                         <exclude reference="nif-ax-fCg"/>
-                        <exclude reference="12c-aO-4Fn"/>
-                        <exclude reference="fZs-rL-pZq"/>
-                        <exclude reference="7AG-Rk-Tz7"/>
-                        <exclude reference="MDf-cf-vUc"/>
-                        <exclude reference="fSN-8O-JEP"/>
-                        <exclude reference="ufB-Ut-7gr"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -117,7 +108,7 @@
             <connections>
                 <outlet property="delete" destination="8Bc-UG-wmm" id="fzg-24-CAo"/>
                 <outlet property="label" destination="Fvi-Aa-mlF" id="6zn-t4-LIb"/>
-                <outlet property="words" destination="xuN-cO-jZ8" id="tXe-el-PqZ"/>
+                <outlet property="words" destination="jLN-Du-fIr" id="cf6-E0-pzA"/>
             </connections>
             <point key="canvasLocation" x="235" y="-143.5"/>
         </tableViewCell>

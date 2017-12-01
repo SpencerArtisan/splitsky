@@ -27,7 +27,6 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 1
         return notWorthMentioning() ? 1 : 1 + Data.listCount()
     }
     
@@ -36,7 +35,6 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if (indexPath as NSIndexPath).row == 0 {
             return addFriendCell(tableView, indexPath: indexPath)
         } else {
@@ -98,6 +96,11 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
             labelTextBox.delegate = self
         }
         
+        cell.wordsCallback = {
+            Data.setList(name)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
         cell.separatorInset = UIEdgeInsets.zero
         cell.backgroundColor = UIColor.black
         
@@ -105,19 +108,9 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
     }
     
     fileprivate func setWords(_ cell: PaymentCell) {
-        cell.words.text = Data.owingsSummary()
+        Util.setText(cell.words, text: Data.owingsSummary())
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath as NSIndexPath).row != 0 {
-            let allPayments = Data.allPayments()
-            let names = allPayments.keys.sorted()
-            let name = names.count >= (indexPath as NSIndexPath).row ? names[(indexPath as NSIndexPath).row - 1] : Data.defaultName()
-            Data.setList(name)
-            navigationController?.popViewController(animated: true)
-        }
-    }
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length

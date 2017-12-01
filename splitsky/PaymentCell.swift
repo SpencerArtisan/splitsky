@@ -13,7 +13,8 @@ class PaymentCell: UITableViewCell {
     var labelCallback: (() -> ())?
     var wordsCallback: (() -> ())?
 
-    @IBOutlet weak var words: UILabel!
+    
+    @IBOutlet weak var words: UIButton!
     @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var label: UIButton!
     @IBOutlet weak var breakdown: UILabel!
@@ -24,5 +25,9 @@ class PaymentCell: UITableViewCell {
     
     @IBAction func onDelete(_ sender: AnyObject) {
         deleteCallback!()
+    }
+    
+    @IBAction func onWords(_ sender: Any) {
+        wordsCallback!()
     }
 }
