@@ -118,6 +118,7 @@ class ViewController: UIViewController {
     fileprivate func updateLobsterMode() {
         let remainder = splitPayment!.evenlySplit()
         if remainder == 0.0 {
+            addPayment(splitPayment!)
             paymentDone()
         } else {
             Util.setText(listSummary, text: "Remainder \(remainder)")

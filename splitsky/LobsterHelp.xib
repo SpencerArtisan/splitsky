@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,26 +12,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Splitsky" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-4o-SUh">
-                    <rect key="frame" x="20" y="103" width="333" height="301"/>
-                    <mutableString key="text">Ok, so you had the soup and your friend had the lobster. It's hardly fair, you paying for half their lobster. You won't enjoy your soup now, thinking about the injustice. 
-No need to worry. There is a way to save the evening.  The Lobster button lets you enter the lopsided parts of the bill. When you're done, split the rest 50/50.</mutableString>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-4o-SUh" userLabel="Blurb">
+                    <rect key="frame" x="20" y="93" width="278" height="351"/>
+                    <string key="text">Ok, so you had the soup and your friend had the lobster. It's hardly fair, you paying for half their lobster. You won't enjoy your soup now, thinking about the injustice. 
+No need to worry. There is a way to save the evening.  The Lobster button lets you enter the lopsided parts of the bill. When you're done, split the rest 50/50.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobsters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-A4-1ES">
-                    <rect key="frame" x="0.0" y="10" width="375" height="53"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobsters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-A4-1ES">
+                    <rect key="frame" x="0.0" y="10" width="320" height="53"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCn-BE-98t">
-                    <rect key="frame" x="16" y="55" width="343" height="647"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCn-BE-98t">
+                    <rect key="frame" x="16" y="0.0" width="288" height="480"/>
                     <connections>
                         <action selector="onClickHelp:" destination="-1" eventType="touchUpInside" id="p1J-XC-lQ5"/>
                     </connections>
@@ -46,11 +46,11 @@ No need to worry. There is a way to save the evening.  The Lobster button le
                 <constraint firstItem="PVp-A4-1ES" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WVi-Tu-EZh"/>
                 <constraint firstAttribute="trailing" secondItem="WxL-4o-SUh" secondAttribute="trailing" constant="22" id="Yt3-By-lXB"/>
                 <constraint firstAttribute="trailing" secondItem="PVp-A4-1ES" secondAttribute="trailing" id="aaQ-RM-rcf"/>
-                <constraint firstItem="WxL-4o-SUh" firstAttribute="top" secondItem="PVp-A4-1ES" secondAttribute="bottom" constant="40" id="kMV-Cc-cAk"/>
+                <constraint firstItem="WxL-4o-SUh" firstAttribute="top" secondItem="PVp-A4-1ES" secondAttribute="bottom" constant="30" id="kMV-Cc-cAk"/>
                 <constraint firstItem="WxL-4o-SUh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="r0J-zx-S4u"/>
                 <constraint firstAttribute="trailingMargin" secondItem="nCn-BE-98t" secondAttribute="trailing" id="x6t-5B-z2l"/>
             </constraints>
-            <point key="canvasLocation" x="-110.5" y="-38.5"/>
+            <point key="canvasLocation" x="-111" y="-39"/>
         </view>
     </objects>
 </document>
