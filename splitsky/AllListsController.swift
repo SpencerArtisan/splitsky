@@ -88,7 +88,11 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         
         cell.labelCallback = {
             self.activeList = name
-            self.labelModal!.slideUpFromBottom(self.view)
+            let guide = self.view.safeAreaLayoutGuide
+            let insets = self.view.safeAreaInsets
+            let height = guide.layoutFrame.size.height
+
+            self.labelModal!.slideUpFromBottom(self.view, amount: 284 + insets.bottom * 2)
             let labelTextBox = self.labelModal?.findElementByTag(1) as! UITextField
             labelTextBox.enablesReturnKeyAutomatically = true
             labelTextBox.text = name

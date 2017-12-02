@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/AllListsController.swift"
-            timestampString = "533843206.726741"
+            timestampString = "533917252.811873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Modal.swift"
-            timestampString = "495885345.14256"
+            timestampString = "533917252.812012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.610482"
+            timestampString = "533847088.903115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/ViewController.swift"
-            timestampString = "533846491.610553"
+            timestampString = "533917252.8122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/AllListsController.swift"
-            timestampString = "533843206.727259"
+            timestampString = "533917252.813073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Modal.swift"
-            timestampString = "497395483.00646"
+            timestampString = "533917252.813379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/AllListsController.swift"
-            timestampString = "533843206.727574"
+            timestampString = "533917252.813551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/ViewController.swift"
-            timestampString = "533846491.610944"
+            timestampString = "533917252.813706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/CurrencyController.swift"
-            timestampString = "533846491.611225"
+            timestampString = "533847088.904121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.611268"
+            timestampString = "533847088.904205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/DetailController.swift"
-            timestampString = "533842922.542521"
+            timestampString = "533917252.814345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.611319"
+            timestampString = "533847088.904273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/DetailController.swift"
-            timestampString = "533842922.543495"
+            timestampString = "533917252.814662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -586,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.611443"
+            timestampString = "533847088.904416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -698,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.611519"
+            timestampString = "533847088.904517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.611569"
+            timestampString = "533847088.904588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/Data.swift"
-            timestampString = "533846491.611606"
+            timestampString = "533847088.904643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -778,11 +778,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/AllListsController.swift"
-            timestampString = "533843206.728079"
+            timestampString = "533917252.815083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "addRowCell(_:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -794,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/DetailController.swift"
-            timestampString = "533842922.544447"
+            timestampString = "533917252.81519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -810,7 +810,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/DetailController.swift"
-            timestampString = "533842922.544637"
+            timestampString = "533917252.815271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -826,7 +826,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/DetailController.swift"
-            timestampString = "533842922.544823"
+            timestampString = "533917252.815348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -842,7 +842,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/DetailController.swift"
-            timestampString = "533842922.545005"
+            timestampString = "533917252.815422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -858,11 +858,170 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/AllListsController.swift"
-            timestampString = "533843224.044398"
+            timestampString = "533917252.815519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
+            landmarkName = "addRowCell(_:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/Modal.swift"
+            timestampString = "533917252.815605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "slideVertically(_:start:end:hide:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Splitsky.Modal.(slideVertically in _817F350EAA42C630742C517F0F70B71A)(__ObjC.UIView, start: CoreGraphics.CGFloat, end: CoreGraphics.CGFloat, hide: Swift.Bool) -&gt; ()"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerward/code/madeleine/splitsky/splitsky/Modal.swift"
+                  timestampString = "533912692.603301"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "2353">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Splitsky.Modal.(slideVertically in _817F350EAA42C630742C517F0F70B71A)(__ObjC.UIView, start: CoreGraphics.CGFloat, end: CoreGraphics.CGFloat, hide: Swift.Bool) -&gt; ()"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerward/code/madeleine/splitsky/splitsky/Modal.swift"
+                  timestampString = "533912692.605967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "746">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Bool) -&gt; () in Splitsky.Modal.(slideVertically in _817F350EAA42C630742C517F0F70B71A)(__ObjC.UIView, start: CoreGraphics.CGFloat, end: CoreGraphics.CGFloat, hide: Swift.Bool) -&gt; ()"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerward/code/madeleine/splitsky/splitsky/Modal.swift"
+                  timestampString = "533912692.608801"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/DetailController.swift"
+            timestampString = "533917252.815686"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/AllListsController.swift"
+            timestampString = "533917252.815758"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "addRowCell(_:indexPath:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Splitsky.AllListsController.(addRowCell in _99A15CAA2E6977750735FAC9B400E585)(__ObjC.UITableView, indexPath: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerward/code/madeleine/splitsky/splitsky/AllListsController.swift"
+                  timestampString = "533913441.865343"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "844">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Splitsky.AllListsController.(addRowCell in _99A15CAA2E6977750735FAC9B400E585)(__ObjC.UITableView, indexPath: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerward/code/madeleine/splitsky/splitsky/AllListsController.swift"
+                  timestampString = "533913441.868353"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1520">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/AllListsController.swift"
+            timestampString = "533917252.815835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "addRowCell(_:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/AllListsController.swift"
+            timestampString = "533917252.815909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "addRowCell(_:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>

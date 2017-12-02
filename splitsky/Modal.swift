@@ -36,11 +36,19 @@ class Modal {
     }
     
     func slideUpFromBottom(_ parentView: UIView) {
-        slideVertically(parentView, start: parentView.frame.height, end: parentView.frame.height - self.view.frame.height, hide: false)
+        slideUpFromBottom(parentView, amount: self.view.frame.height)
     }
     
     func slideDownToBottom(_ parentView: UIView) {
-        slideVertically(parentView, start: parentView.frame.height - self.view.frame.height, end: parentView.frame.height, hide: true)
+        slideDownToBottom(parentView, amount: self.view.frame.height)
+    }
+    
+    func slideUpFromBottom(_ parentView: UIView, amount: CGFloat) {
+        slideVertically(parentView, start: parentView.frame.height, end: parentView.frame.height - amount, hide: false)
+    }
+    
+    func slideDownToBottom(_ parentView: UIView, amount: CGFloat) {
+        slideVertically(parentView, start: parentView.frame.height - amount, end: parentView.frame.height, hide: true)
     }
     
     func slideOutFromLeft(_ parentView: UIView) {
