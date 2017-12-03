@@ -80,7 +80,8 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         cell.label.titleLabel!.numberOfLines = 1
         cell.label.titleLabel!.adjustsFontSizeToFitWidth = true
         cell.label.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        
+        cell.words.titleLabel!.adjustsFontSizeToFitWidth = true
+
         cell.deleteCallback = {
             Data.removeList(name)
             tableView.reloadData()

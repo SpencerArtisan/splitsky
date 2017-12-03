@@ -10,8 +10,7 @@ import UIKit
 
 class FrontViewController: UIViewController {
 
-
-    @IBOutlet weak var listNameLabel: UILabel!
+    @IBOutlet weak var listNameButton: UIButton!
     @IBOutlet weak var summaryButton: UIButton!
     @IBOutlet weak var currencyButton: UIButton!
     @IBOutlet weak var iBorrowed: UIButton!
@@ -39,7 +38,7 @@ class FrontViewController: UIViewController {
         style(iBorrowed, text: FrontViewController.getButtonLabel(Type.iBorrowed))
         style(iPaidBill, text:FrontViewController.getButtonLabel(Type.iPaid))
         style(breakdownButton, text: "\(Data.listName().capitalized)\nBreakdown")
-        listNameLabel.text = Data.listName().capitalized
+        Util.setText(listNameButton, text: Data.listName().capitalized)
         Util.setText(summaryButton, text: Data.owingsSummary())
         Util.setText(currencyButton, text: Data.activeCurrency()?.tla())
         summaryButton.titleLabel?.adjustsFontSizeToFitWidth = true

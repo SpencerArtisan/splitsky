@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     fileprivate var label: String = ""
     fileprivate var splitPayment: Payment?
     var helpModal: Modal?
-    
 
     @IBOutlet weak var currencyButton: UIButton!
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var number: UILabel!
-    @IBOutlet weak var listName: UILabel!
+
+    @IBOutlet weak var listNameButton: UIButton!
     @IBOutlet weak var listSummary: UIButton!
     @IBOutlet weak var evenSplitButton: UIButton!
     @IBOutlet weak var lobsterButton: UIButton!
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
             Util.setText(labelButton, text: "Split\nRest\n50/50")
             Util.setText(evenSplitButton, text: "My\nLobster")
             Util.setText(lobsterButton, text: "\(Data.listName().capitalized)\nLobster")
-            listName.text = "Uneven Split Bill"
+            Util.setText(listNameButton, text: "Uneven Split Bill")
             listSummary.isEnabled = false
             splitPayment = Payment.init(amount: amount(), currency: Data.activeCurrency()!.tla(), rate: Data.activeRate()!, type: type!, label: label)
             if !Preferences.hadLobsterHelp() {
@@ -188,7 +188,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func update() {
-        listName.text = Data.listName().capitalized
+        Util.setText(listNameButton, text: Data.listName().capitalized)
         Util.setText(listSummary, text: Data.owingsSummary())
         
         navigation.title = FrontViewController.getButtonLabel(type!).replacingOccurrences(of: "\n", with: " ")
