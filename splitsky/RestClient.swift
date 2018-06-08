@@ -26,8 +26,7 @@ class RestClient {
     }
     
     static fileprivate func getRate(session: URLSession, from: String, to: String, resultHandler: @escaping (Float) -> ()) {
-        let key = "QACQuYvgmRf7iH67sha4bPT9T79XwP1"
-        let url = URL(string: "https://www.amdoren.com/api/currency.php?api_key=\(key)&from=\(from)&to=\(to)")!
+        let url = URL(string: "http://free.currencyconverterapi.com/api/v5/convert?q=\(from)_\(to)&compact=ultra")!
         
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
@@ -36,12 +35,15 @@ class RestClient {
                 print(error!.localizedDescription)
             } else {
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]
-                    {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any] {
                         //Implement your logic
                         print(json)
-                        let rate: Float = (json["amount"] as! NSNumber).floatValue
-                        resultHandler(rate)
+                        if let rate: NSNumber = json["\(from)_\(to)"] as? NSNumber {
+                            resultHandler(rate.floatValue)
+                        } else {
+                            print("Failed to find a rate from \(from) to \(to)")
+                            resultHandler(1.0)
+                        }
                     }
                 } catch {
                     print("error in JSONSerialization")
@@ -49,6 +51,5 @@ class RestClient {
             }
         })
         task.resume()
-
     }
 }
