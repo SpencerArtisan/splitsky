@@ -26,7 +26,8 @@ class RestClient {
     }
     
     static fileprivate func getRate(session: URLSession, from: String, to: String, resultHandler: @escaping (Float) -> ()) {
-        let url = URL(string: "https://www.amdoren.com/api/currency.php?api_key=QACQuYvgmRf7iH67sha4bPT9T79XwP&from=\(from)&to=\(to)")!
+        let key = "QACQuYvgmRf7iH67sha4bPT9T79XwP1"
+        let url = URL(string: "https://www.amdoren.com/api/currency.php?api_key=\(key)&from=\(from)&to=\(to)")!
         
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
