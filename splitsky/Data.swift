@@ -47,8 +47,8 @@ class Data {
         return _homeCurrency != nil ? getCurrency(tla: _homeCurrency!) : nil
     }
     
-    static func activeRate() -> Float? {
-        return _activeCurrency != nil ? getRate(currencyTla: _activeCurrency!) : nil
+    static func activeRate() -> Float {
+        return _activeCurrency != nil ? getRate(currencyTla: _activeCurrency!) : 1.0
     }
     
     static func setActiveCurrency(currency: Currency) {
@@ -69,8 +69,8 @@ class Data {
         _rates = rates
     }
     
-    static func getRate(currencyTla: String) -> Float? {
-        return currencyTla == _homeCurrency ? 1.0 : _rates[currencyTla] as? Float
+    static func getRate(currencyTla: String) -> Float {
+        return currencyTla == _homeCurrency ? 1.0 : _rates[currencyTla] as! Float
     }
     
     static func newList() {
@@ -163,7 +163,7 @@ class Data {
             return "owes me nothing"
         } else {
             let homeCurrencyText = "\(Data.homeCurrency()!.format(amount: abs(theyOweMeHomeCurrency))) "
-            let activeCurrencyText = Data.activeCurrency()!.tla() == _homeCurrency ? "" : "(\(Data.activeCurrency()!.format(amount: abs(theyOweMeHomeCurrency) * Data.activeRate()!)))"
+            let activeCurrencyText = Data.activeCurrency()!.tla() == _homeCurrency ? "" : "(\(Data.activeCurrency()!.format(amount: abs(theyOweMeHomeCurrency) * Data.activeRate())))"
             return (theyOweMeHomeCurrency > 0 ? "owes me " : "is owed ") + "\(homeCurrencyText) \(activeCurrencyText)"
         }
     }

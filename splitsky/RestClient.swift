@@ -5,7 +5,28 @@ class RestClient {
     static func getRates(onCompletion: @escaping () -> ()) {
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
-        let url = URL(string: "http://api.fixer.io/latest?base=\(Data.homeCurrency()!.tla())")!
+        let from = Data.homeCurrency()!.tla()
+        var rates: [String: Any] = [:]
+
+        Data.currencies().forEach {
+            let to = $0.tla()
+            getRate(session: session, from: from, to: to, resultHandler: { (rate) in
+                print("Rate from \(from) to \(to) is \(rate)")
+                rates[to] = rate
+                
+                if rates.count == Data.currencies().count {
+                    print("ALL CURRENCY RATES RETRIEVED")
+        
+                    Preferences.setRates(rates)
+                    Data.setRates(rates: rates)
+                    onCompletion()
+                }
+            })
+        }
+    }
+    
+    static fileprivate func getRate(session: URLSession, from: String, to: String, resultHandler: @escaping (Float) -> ()) {
+        let url = URL(string: "https://www.amdoren.com/api/currency.php?api_key=QACQuYvgmRf7iH67sha4bPT9T79XwP&from=\(from)&to=\(to)")!
         
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
@@ -18,18 +39,15 @@ class RestClient {
                     {
                         //Implement your logic
                         print(json)
-                        let rates: [String: Any] = json["rates"] as! [String : Any]
-                        Preferences.setRates(rates)
-                        Data.setRates(rates: rates)
-
+                        let rate: Float = (json["amount"] as! NSNumber).floatValue
+                        resultHandler(rate)
                     }
                 } catch {
                     print("error in JSONSerialization")
                 }
             }
-            
-            onCompletion()
         })
         task.resume()
+
     }
 }

@@ -39,7 +39,7 @@ class CurrencyController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
             let currency = Data.currencies()[row - 1]
-            let rate = Util.toMoney(amount: Data.getRate(currencyTla: currency.tla())!, decPlc: 2)
+            let rate = Util.toMoney(amount: Data.getRate(currencyTla: currency.tla()), decPlc: 2)
             
             cell.nameLabel.text = currency.name()
             cell.rateLabel.text = "\(rate) \(currency.tla())"

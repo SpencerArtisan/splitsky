@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             splitPayment!.allocateToMe(amount())
             updateLobsterMode()
         } else if amount() > 0 {
-            addPayment(Payment(amount: amount(), currency: Data.activeCurrency()!.tla(), rate: Data.activeRate()!, type: type!, label: label))
+            addPayment(Payment(amount: amount(), currency: Data.activeCurrency()!.tla(), rate: Data.activeRate(), type: type!, label: label))
         }
         onClear("" as AnyObject)
     }
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
             Util.setText(lobsterButton, text: "\(Data.listName().capitalized)\nLobster")
             Util.setText(listNameButton, text: "Uneven Split Bill")
             listSummary.isEnabled = false
-            splitPayment = Payment.init(amount: amount(), currency: Data.activeCurrency()!.tla(), rate: Data.activeRate()!, type: type!, label: label)
+            splitPayment = Payment.init(amount: amount(), currency: Data.activeCurrency()!.tla(), rate: Data.activeRate(), type: type!, label: label)
             if !Preferences.hadLobsterHelp() {
                 helpModal?.slideDownFromTop(view)
                 Preferences.hadLobsterHelp(value: true)
