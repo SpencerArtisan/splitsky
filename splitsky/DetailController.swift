@@ -25,7 +25,7 @@ class DetailController: UITableViewController {
         if indexPath.row == 0 {
             return 30
         } else {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
     }
     

@@ -58,7 +58,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         }
         cell.words.isHidden = true
         cell.delete.isHidden = true
-        cell.label.setTitle("New friend", for: UIControlState())
+        cell.label.setTitle("New friend", for: UIControl.State())
         return cell
     }
     
@@ -76,7 +76,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
         setWords(cell)
         
         Data.setList(oldList)
-        cell.label.setTitle(name.capitalized, for: UIControlState())
+        cell.label.setTitle(name.capitalized, for: UIControl.State())
         cell.label.titleLabel!.numberOfLines = 1
         cell.label.titleLabel!.adjustsFontSizeToFitWidth = true
         cell.label.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
@@ -91,7 +91,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
             self.activeList = name
             let guide = self.view.safeAreaLayoutGuide
             let insets = self.view.safeAreaInsets
-            let height = guide.layoutFrame.size.height
+            _ = guide.layoutFrame.size.height
 
             self.labelModal!.slideUpFromBottom(self.view, amount: 284 + insets.bottom * 2)
             let labelTextBox = self.labelModal?.findElementByTag(1) as! UITextField
@@ -118,7 +118,7 @@ class AllListsController: UITableViewController, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
-        let newLength = text.characters.count + string.characters.count - range.length
+        let newLength = text.count + string.count - range.length
         return newLength <= 9
     }
     

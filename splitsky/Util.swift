@@ -30,12 +30,12 @@ class Util {
     
     static func disable(_ button: UIButton) {
         button.backgroundColor = DARK_GRAY
-        button.setTitleColor(UIColor.lightGray, for: UIControlState())
+        button.setTitleColor(UIColor.lightGray, for: UIControl.State())
     }
     
     static func enable(_ button: UIButton) {
         button.backgroundColor = DARK_BLUE
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setTitleColor(UIColor.white, for: UIControl.State())
     }
     
     static func orange(_ button: UIButton) {
@@ -44,14 +44,14 @@ class Util {
     
     static func setText(_ button: UIButton, text: String?) {
         if text != nil {
-            button.setTitle(text, for: UIControlState())
-            button.setImage(nil, for: UIControlState())
+            button.setTitle(text, for: UIControl.State())
+            button.setImage(nil, for: UIControl.State())
         }
     }
     
     static func setImage(_ button: UIButton, image: UIImage) {
-        button.setTitle("", for: UIControlState())
-        button.setImage(image, for: UIControlState())
+        button.setTitle("", for: UIControl.State())
+        button.setImage(image, for: UIControl.State())
     }
     
     static func center(_ button: UIButton) {

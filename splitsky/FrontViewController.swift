@@ -49,10 +49,10 @@ class FrontViewController: UIViewController {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 16 // Whatever line spacing you want in points
         paragraphStyle.alignment  = NSTextAlignment.center
-        attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: button.currentTitleColor, range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: button.currentTitleColor, range:NSMakeRange(0, attributedString.length))
         
-        button.setAttributedTitle(attributedString, for: UIControlState())
+        button.setAttributedTitle(attributedString, for: UIControl.State())
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -54,7 +54,7 @@ class HomeCurrencyController: UITableViewController {
             let currency = Data.currencies()[row - 1]
             Data.setHomeCurrency(currency: currency)
             Data.setActiveCurrency(currency: currency)
-            RestClient.getRates(onCompletion: {_ in
+            RestClient.getRates(onCompletion: {
                 DispatchQueue.main.async {
                     Data.set(PaymentRepository.load())
                     self.navigationController?.popViewController(animated: true)

@@ -170,7 +170,7 @@ class ViewController: UIViewController {
             self.view.subviews.forEach { $0.alpha = 1 }
         })
         label = name
-        Util.setImage(labelButton!, image: UIImage(named: name)!.withRenderingMode(UIImageRenderingMode.alwaysTemplate))
+        Util.setImage(labelButton!, image: UIImage(named: name)!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate))
         labelButton.tintColor = UIColor.white
         self.typeModal!.slideDownToBottom(self.view)
     }
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
         if number.text! == "0" + SPACE {
             number.text = ""
         }
-        if number.text!.replacingOccurrences(of: ".", with: "").characters.count < 7 && noMoreThan2DecimalPlaces() {
+        if number.text!.replacingOccurrences(of: ".", with: "").count < 7 && noMoreThan2DecimalPlaces() {
             addText(digit)
         }
         if splitPayment == nil || amount() <= splitPayment!.evenlySplit() {
@@ -224,7 +224,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func noMoreThan2DecimalPlaces() -> Bool {
-        return !numberText().contains(".") || (numberText() as NSString).substring(from: numberText().characters.count - 2).contains(("."))
+        return !numberText().contains(".") || (numberText() as NSString).substring(from: numberText().count - 2).contains(("."))
     }
 
     fileprivate func addText(_ char: String) {
@@ -260,7 +260,7 @@ class ViewController: UIViewController {
             evenSplitButton.frame = CGRect(x: 0, y: evenSplitButton.frame.origin.y, width: view.frame.width, height: evenSplitButton.frame.height)
             labelButton.removeFromSuperview()
             lobsterButton.removeFromSuperview()
-            evenSplitButton.setTitle("Done", for: UIControlState())
+            evenSplitButton.setTitle("Done", for: UIControl.State())
         }
     }
 }
