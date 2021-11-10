@@ -14,8 +14,8 @@
             filePath = "splitsky/RestClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "getRate(session:from:to:resultHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "splitsky/RestClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "getRate(session:from:to:resultHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,6 +40,70 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AFB7698D-5069-4116-9421-075AC5657307"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/RestClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getRate(session:from:to:resultHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23728076-EFC1-49BB-89CE-32A0C84BD3D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/RestClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getRate(session:from:to:resultHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "23728076-EFC1-49BB-89CE-32A0C84BD3D9 - f87f6c9a1df4ff1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Splitsky.RestClient.(getRate in _3FC724454F9D066D07714CD7FBFB9ADE)(session: __C.NSURLSession, from: Swift.String, to: Swift.String, resultHandler: (Swift.Float) -&gt; ()) -&gt; ()"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerkward/code/madeleine/splitsky/splitsky/RestClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1055">
+               </Location>
+               <Location
+                  uuid = "23728076-EFC1-49BB-89CE-32A0C84BD3D9 - 37c9d4da8ced2edc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Splitsky.RestClient.(getRate in _3FC724454F9D066D07714CD7FBFB9ADE)(session: __C.NSURLSession, from: Swift.String, to: Swift.String, resultHandler: (Swift.Float) -&gt; ()) -&gt; ()"
+                  moduleName = "Splitsky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/spencerkward/code/madeleine/splitsky/splitsky/RestClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "407">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6DD5FF2-DC48-4EF9-B0B7-433F5A39DA2D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -55,49 +119,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "23728076-EFC1-49BB-89CE-32A0C84BD3D9"
+            uuid = "E1875A14-7898-458F-BF03-2D5918F2B911"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "splitsky/RestClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "getRate(session:from:to:resultHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "23728076-EFC1-49BB-89CE-32A0C84BD3D9 - 7feeffd20324f85b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Splitsky.RestClient.(getRate in _3FC724454F9D066D07714CD7FBFB9ADE)(session: __C.NSURLSession, from: Swift.String, to: Swift.String, resultHandler: (Swift.Float) -&gt; ()) -&gt; ()"
-                  moduleName = "Splitsky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/spencerkward/code/madeleine/splitsky/splitsky/RestClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1055">
-               </Location>
-               <Location
-                  uuid = "23728076-EFC1-49BB-89CE-32A0C84BD3D9 - b0584792923d287e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Splitsky.RestClient.(getRate in _3FC724454F9D066D07714CD7FBFB9ADE)(session: __C.NSURLSession, from: Swift.String, to: Swift.String, resultHandler: (Swift.Float) -&gt; ()) -&gt; ()"
-                  moduleName = "Splitsky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/spencerkward/code/madeleine/splitsky/splitsky/RestClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "407">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1D56650-F5A8-4AAB-ADB5-67C583F599FC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/RestClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getRate(session:from:to:resultHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5036CEC-508B-4DEA-AC0D-025B56473A9D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "splitsky/RestClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getRate(session:from:to:resultHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

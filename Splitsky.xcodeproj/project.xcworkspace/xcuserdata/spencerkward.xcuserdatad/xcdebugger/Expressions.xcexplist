@@ -3,18 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "static RestClient.getRate(session:from:to:resultHandler:):RestClient.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in static RestClient.getRate(session:from:to:resultHandler:):RestClient.swift">
          <PersistentStrings>
             <PersistentString
-               value = "q as! [String: Any]">
+               value = "JSONSerialization.jsonObject(with: data!, options: .allowFragments)">
             </PersistentString>
             <PersistentString
-               value = "r as! NSNumber">
+               value = "json.getClass()">
+            </PersistentString>
+            <PersistentString
+               value = "rate.floatValue">
+            </PersistentString>
+            <PersistentString
+               value = "data.data(using: .utf8)">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static RestClient.getRate(session:from:to:resultHandler:):RestClient.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

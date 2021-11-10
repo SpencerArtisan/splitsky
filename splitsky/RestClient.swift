@@ -27,13 +27,8 @@ class RestClient {
     
     static fileprivate func getRate(session: URLSession, from: String, to: String, resultHandler: @escaping (Float) -> ()) {
         let url = URL(string:
-            "https://api.exchangeratesapi.io/latest?base=\(from)&symbols=\(to)")!
-//            "http://www.google.com?currency=\(from)\(to)")!
-        
-//        let fake = """
-//        {"rates":{"USD":1.2359689992},"base":"GBP","date":"2020-03-31"}
-//        """
-        
+            "https://api.exchangerate.host/convert?from=\(from)&to=\(to)")!
+
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
             
@@ -43,16 +38,19 @@ class RestClient {
                 do {
 //                    let data2 = fake.data(using: .utf8)
                     if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any] {
-                        //Implement your logic
-                        print("Request to url " + url.absoluteString)
+                        
+                        print("Result of request to url " + url.absoluteString + ":")
                         print(json)
-                        let q = json["rates"] as! [String: Any]
-                        let w = q[to]
-
-                        if let rate: NSNumber = w as? NSNumber {
-                            resultHandler(rate.floatValue)
+                        
+                        if let rate = json["result"] {
+                            if let rate: NSNumber = rate as? NSNumber {
+                                resultHandler(rate.floatValue)
+                            } else {
+                                print("Failed to find a rate from \(from) to \(to)")
+                                resultHandler(1.0)
+                            }
                         } else {
-                            print("Failed to find a rate from \(from) to \(to)")
+                            print("Could not find rates element in json response")
                             resultHandler(1.0)
                         }
                     }
